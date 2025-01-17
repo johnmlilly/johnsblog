@@ -1,7 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const yearElement = document.getElementById("currentYearFooter");
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  });
+// Set current year in site footer
+document.getElementById("currentYearFooter").textContent = new Date().getFullYear();
+ 
   
