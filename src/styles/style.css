@@ -6,22 +6,23 @@
   --fs-700: 2rem;
 
   --ff-body: "Roboto", sans-serif;
-  --ff-heading: "Playfair Display", serif;
+  --ff-heading: "Stardos Stencil", serif;
 
   --fw-400: 400;
   --fw-700: 700;
   --fw-900: 900;
 
-  --clr-primary-200: hsla(169, 70%, 95%, 1);
-  --clr-primary-300: hsla(169, 100%, 39%, 1);
-  --clr-primary-400: hsla(169, 100%, 26%, 1);
-  --clr-primary-500: hsla(169, 100%, 16%, 1);
+  --clr-primary-200: hsla(220, 90%, 80%, 1);  /* Light Jedi blue */
+  --clr-primary-300: rgba(69, 109, 255, 0.2);  /* Soft blue with transparency */
+  --clr-primary-400: hsla(220, 90%, 55%, 1);  /* Medium bright blue */
+  --clr-primary-500: hsla(220, 90%, 45%, 1);  /* Rich, deeper Jedi blue */
 
-  --clr-neutral-100: hsla(0, 0%, 100%, 1);
-  --clr-neutral-300: hsla(0, 0%, 50%, 1);
-  --clr-neutral-400: hsla(0, 0%, 40%, 1);
-  --clr-neutral-500: hsla(0, 0%, 60%, 1);
-  --clr-neutral-900: hsla(0, 0%, 10%, 1);
+  --clr-neutral-100: hsla(0, 0%, 100%, 1);     /* White */
+  --clr-neutral-300: hsla(0, 0%, 50%, 1);      /* Mid gray */
+  --clr-neutral-400: hsla(0, 0%, 40%, 1);      /* Darker gray */
+  --clr-neutral-500: hsla(0, 0%, 60%, 1);      /* Slightly lighter gray */
+  --clr-neutral-900: hsla(0, 0%, 10%, 1);      /* Dark gray */
+
 }
 
 @media (min-width: 35em) {
