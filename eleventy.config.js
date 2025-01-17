@@ -5,6 +5,8 @@ export default function(eleventyConfig) {
 eleventyConfig.addPassthroughCopy('./src/styles/style.css');
 eleventyConfig.addPassthroughCopy('./src/assets') ;
 eleventyConfig.addPassthroughCopy('./src/scripts/main.js');
+eleventyConfig.addPassthroughCopy('./src/admin');
+
 // Get current year for footer
 eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
