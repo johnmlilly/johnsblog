@@ -4,13 +4,19 @@ body {
     background-color: #f5f7fa; /* Light gray background */
     color: #333; /* Dark text color */
     line-height: 1.6;
+    padding: 0.5rem 2.5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', sans-serif; /* Star Wars style for headings */
-    color: var(--clr-neutral-300); /* Jedi blue */
+    color: #333;
   }
   
+  p {
+    color: #333;
+}
+  
+
   a {
     color: var(--clr-primary-400);
     text-decoration: none;
@@ -23,5 +29,7 @@ body {
   img {
     max-width: 100%;
     height: auto;
+    margin-block: 1rem;
+    border-radius: 0.25rem;
   }
   
