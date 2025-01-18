@@ -3,10 +3,10 @@ layout: 'base.njk'
 ---
 <article class="main-article">
 <div class="container container--narrow flow">
-  
     <h1 class="article-title">
       {{ title }}
     </h1>
+     <p class="snippet__meta">by <span>{{ author }}</span> on <span>{{ date | postDate }}</span></p>
     <figure class="main-article__figure">
       <img src="/assets/blog/{{ image }}" alt="{{ imageAlt }}">
       <figcaption>
