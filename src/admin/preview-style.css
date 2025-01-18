@@ -8,11 +8,11 @@ body {
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', sans-serif; /* Star Wars style for headings */
-    color: #456dff; /* Jedi blue */
+    color: var(--clr-neutral-300); /* Jedi blue */
   }
   
   a {
-    color: #456dff;
+    color: var(--clr-primary-400);
     text-decoration: none;
   }
   
@@ -23,6 +23,5 @@ body {
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Rounded corners for images */
   }
   
