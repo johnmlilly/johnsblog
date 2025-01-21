@@ -12,12 +12,13 @@
   --fw-700: 700;
   --fw-900: 900;
 
-  --clr-primary-200: hsla(220, 90%, 90%, 1);  /* Light Jedi blue */
-  --clr-primary-300: rgba(69, 109, 255, 0.2);  /* Soft blue with transparency */
-  --clr-primary-400: hsla(220, 90%, 55%, 1);  /* Medium bright blue */
-  --clr-primary-500: hsla(220, 90%, 45%, 1);  /* Rich, deeper Jedi blue */
+  --clr-primary-200: hsla(0, 80%, 90%, 1);  /* Light maroon red */
+  --clr-primary-300: rgba(153, 50, 50, 0.2);  /* Soft maroon red with transparency */
+  --clr-primary-400: hsla(0, 70%, 50%, 1);  /* Medium bright red */
+  --clr-primary-500: hsla(0, 70%, 40%, 1);  /* Rich, deeper maroon red */
 
   --clr-neutral-100: hsla(0, 0%, 100%, 1);     /* White */
+  --clr-neutral-200: hsla(0, 0%, 90%, 1); /* Light Gray */
   --clr-neutral-300: hsla(0, 0%, 50%, 1);      /* Mid gray */
   --clr-neutral-400: hsla(0, 0%, 40%, 1);      /* Darker gray */
   --clr-neutral-500: hsla(0, 0%, 60%, 1);      /* Slightly lighter gray */
