@@ -7,6 +7,13 @@ layout: 'base.njk'
       {{ title }}
     </h1>
      <p class="snippet__meta">by <span>{{ author }}</span> on <span>{{ date | postDate }}</span></p>
+    <ul class="snippet__tags">
+      {% for tag in tags %}
+        {% if tag != 'post' and tag != 'featured' %}
+          <li>{{ tag }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
     <figure class="main-article__figure">
       <img src="/assets/blog/{{ image }}" alt="{{ imageAlt }}">
       <figcaption>
