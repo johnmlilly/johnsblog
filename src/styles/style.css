@@ -347,6 +347,22 @@ section,
   }
 }
 
+.snippet__tags {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding-inline: 0;
+  font-size: 0.9rem;
+  color: var(--clr-neutral-500);
+  text-transform: uppercase;
+}
+
+.snippet__tags li {
+  border: 1px solid var(--clr-neutral-200);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
 .btn {
   cursor: pointer;
   text-decoration: none;
