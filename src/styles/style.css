@@ -6,7 +6,7 @@
   --fs-700: 2rem;
 
   --ff-body: "Raleway", sans-serif;
-  --ff-heading: "Playfair", serif;
+  --ff-heading: "Garamond", serif;
 
   --fw-400: 400;
   --fw-700: 700;
@@ -59,6 +59,20 @@ blockquote,
 dl,
 dd {
   margin: 0;
+}
+
+/* EB Garamond Font - Headers */
+
+
+
+/* Raleway Font - Body */
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Raleway-VariableFont_wght.ttf') format("truetype");
+  font-display: swap;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
