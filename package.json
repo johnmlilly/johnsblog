@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "eleventy-plugin-lazyimages": "^2.1.2",
     "luxon": "^3.5.0"
   }
 }

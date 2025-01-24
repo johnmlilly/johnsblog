@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import lazyLoadingImages from "eleventy-plugin-lazyimages";
 
 export default function(eleventyConfig) {
 
@@ -8,6 +9,7 @@ eleventyConfig.addPassthroughCopy('./src/assets') ;
 eleventyConfig.addPassthroughCopy('./src/scripts/main.js');
 eleventyConfig.addPassthroughCopy('./src/admin');
 eleventyConfig.addPlugin(syntaxHighlight);
+eleventyConfig.addPlugin(lazyLoadingImages);
 
 // Get current year for footer
 eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
