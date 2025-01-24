@@ -148,6 +148,17 @@ section,
   padding: min(10vh, 10em) 0;
 }
 
+pre {
+  background: #2d2d2d;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-block: 1.5rem;
+}
+
+code[class] {
+  color: var(--clr-neutral-100);
+  overflow: auto
+}
 
 
 /* //////////////////////
