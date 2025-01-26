@@ -4,9 +4,9 @@ import lazyLoadingImages from "eleventy-plugin-lazyimages";
 
 export default function(eleventyConfig) {
 
-eleventyConfig.addPassthroughCopy('./src/styles/style.css');
+eleventyConfig.addPassthroughCopy('./src/styles');
 eleventyConfig.addPassthroughCopy('./src/assets') ;
-eleventyConfig.addPassthroughCopy('./src/scripts/main.js');
+eleventyConfig.addPassthroughCopy('./src/scripts');
 eleventyConfig.addPassthroughCopy('./src/admin');
 eleventyConfig.addPlugin(syntaxHighlight);
 eleventyConfig.addPlugin(lazyLoadingImages);
