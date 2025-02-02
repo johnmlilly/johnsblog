@@ -10,7 +10,7 @@ tags:
   - post
   - featured
   - javascript
-image: /article-5.jpg
+image: /blog/article-5.jpg
 imageAlt: This is a test
 ---
 `Testing code snippet.`
