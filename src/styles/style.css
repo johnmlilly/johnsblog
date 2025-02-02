@@ -437,7 +437,7 @@ iframe {
 }
 
 .snippet__date {
-  font-size: var(--fs-300);
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: var(--clr-neutral-400)
 }
