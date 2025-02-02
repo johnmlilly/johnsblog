@@ -3,10 +3,15 @@ layout: 'base.njk'
 ---
 <article class="main-article">
 <div class="container container--narrow flow">
-    <h1 class="article-title">
+  <div>
+    <div>
+      <span class="snippet__date">{{ date | postDate }} // {{ content | emojiReadTime }}</span> 
+      <h1 class="article-title">
       {{ title }}
     </h1>
-     <p class="snippet__meta">by <span>{{ author }}</span> on <span>{{ date | postDate }}</span></p>
+     <p class="snippet__meta">
+      {{ author }}
+      </p>
     <ul class="snippet__tags">
       {% for tag in tags %}
         {% if tag != 'post' and tag != 'featured' %}
@@ -14,12 +19,14 @@ layout: 'base.njk'
         {% endif %}
       {% endfor %}
     </ul>
-    <figure class="main-article__figure">
-      <img src="/assets/blog/{{ image }}" alt="{{ imageAlt }}">
-      <figcaption>
-       {{ imageAlt }}
-      </figcaption>
+    </div>
+    <div>
+      <figure class="main-article__figure">
+      <img class="article-image" src="/assets/blog/{{ image }}" alt="{{ imageAlt }}">
     </figure>
+    <hr />
+    </div>
+  </div>
     {{ content | safe }}
 </div>
 {% cloneWarsQuote %}
