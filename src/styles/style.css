@@ -170,12 +170,11 @@ picture {
   margin: 1rem auto 0.5rem auto;
 }
 
+/* //////////////////////
+  Individual article page
+  /////////////////////// */
 
-iframe {
-  aspect-ratio: 16 / 9;
-  border-radius: 0.5rem;
-  width: 100%;
-}
+
 
 
 /* Inherit fonts for inputs and buttons */
@@ -230,17 +229,31 @@ section,
 }
 
 pre {
-  background: #2d2d2d;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  position: relative;
   margin-block: 1.5rem;
 }
 
-code[class] {
-  color: var(--clr-neutral-100);
-  overflow: auto
+pre:has(code) button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: var(--fs-500);
+  background-color: var(--clr-neutral-300);
+  border: 1px ridge var(--clr-neutral-300);
+  border-radius: 0.55rem;
+  text-shadow: #c4c4c4 0 0 2px;
 }
 
+pre:has(code) button:hover {
+  cursor: pointer;
+  background-color: var(--clr-neutral-200);
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+  width: 100%;
+}
 
 /* //////////////////////
   Utility Classes
@@ -377,6 +390,10 @@ code[class] {
     margin-bottom: 3rem;
   }
 
+  .main-article__figure {
+    padding-block: 0 1.5rem;
+  }
+
   .main-article__figure figcaption {
     margin: 1rem 0;
     font-size: var(--fs-300);
@@ -387,11 +404,8 @@ code[class] {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 0.5rem;
-    margin-bottom: 2rem;
+    -bottom: 2rem;
   }
-
-  
-  
 
 /* //////////////////////
   Article snippets
