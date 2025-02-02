@@ -5,12 +5,12 @@
   --fs-600: 1.875rem;
   --fs-700: 2rem;
 
-  --ff-body: "Raleway", sans-serif;
-  --ff-heading: "Garamond", serif;
+  --ff-body: "IBM Plex Sans", sans-serif;
+  --ff-heading: "IBM Plex Sans", sans-serif;
 
   --fw-400: 400;
-  --fw-700: 700;
-  --fw-900: 900;
+  --fw-700: 600;
+  --fw-900: 700;
 
   --clr-primary-200: hsla(0, 80%, 90%, 1);  /* Light maroon red */
   --clr-primary-300: rgba(153, 50, 50, 0.2);  /* Soft maroon red with transparency */
@@ -26,7 +26,7 @@
 
 }
 
-@media (min-width: 35em) {
+@media (min-width: 560px) {
   :root {
     --fs-300: 1rem;
     --fs-400: 1.125rem;
@@ -61,17 +61,29 @@ dd {
   margin: 0;
 }
 
-/* EB Garamond Font - Headers */
-
-
-
-/* Raleway Font - Body */
+/* Raleway Font */
 
 @font-face {
-  font-family: "Raleway";
+  font-family: "IBM Plex Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/Raleway-VariableFont_wght.ttf') format("truetype");
+  src: url('/assets/fonts/IBMPlexSans-Regular.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/IBMPlexSans-Semibold.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/IBMPlexSans-Bold.ttf') format("truetype");
   font-display: swap;
 }
 
@@ -271,6 +283,7 @@ code[class] {
 
 .article-title {
   font-size: var(--fs-700);
+  padding-block: 1rem 0.5rem;
 }
 
 .section-title {
@@ -341,7 +354,7 @@ code[class] {
   object-fit: cover;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 725px) {
   .hero > div {
     grid-auto-flow: column;
   }
@@ -369,6 +382,16 @@ code[class] {
     font-size: var(--fs-300);
     opacity: .9;
   }
+
+  .article-image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  
+  
 
 /* //////////////////////
   Article snippets
@@ -399,8 +422,10 @@ code[class] {
   color: var(--clr-neutral-300);
 }
 
-.snippet__meta span {
-  color: var(--clr-neutral-900);
+.snippet__date {
+  font-size: var(--fs-300);
+  text-transform: uppercase;
+  color: var(--clr-neutral-400)
 }
 
 .snippet .btn {
@@ -439,7 +464,7 @@ code[class] {
   display: flex;
   gap: 1rem;
   list-style: none;
-  padding-inline: 0;
+  padding: 0 0 1rem 0;
   font-size: 0.9rem;
   color: var(--clr-neutral-500);
   text-transform: uppercase;
