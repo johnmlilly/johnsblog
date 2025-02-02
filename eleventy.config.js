@@ -2,6 +2,7 @@ import { DateTime } from "luxon";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import lazyLoadingImages from "eleventy-plugin-lazyimages";
 import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
+import metagen from "eleventy-plugin-metagen";
 
 export default function(eleventyConfig) {
 
@@ -15,6 +16,7 @@ eleventyConfig.addPlugin(emojiReadTime, {
   emoji: "🕒",
   label: "minute read"
 });
+eleventyConfig.addPlugin(metagen);
 
 // Get current year for footer
 eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

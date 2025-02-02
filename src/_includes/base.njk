@@ -9,8 +9,18 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <title>{{ title }}</title>
     <link rel="icon" type="image/x-icon" href="/assets/logo/lightsaber-only-red.svg">
+    {% metagen 
+      title=title,
+      desc=description,
+      url='https://thisjedicodes.netlify.app' + page.url,
+      img='/assets' + image,
+      img_alt=imageAlt,
+      twitter_card_type='summary_large_image',
+      twitter_handle='johnmlilly_',
+      name=author,
+      generator='eleventy'
+    %}
   </head>
   <body>
     {% include 'header.njk' %}
