@@ -7,28 +7,28 @@ const copyButtonIcon = '<i class="bi bi-copy"></i>&nbsp;Copy';
 let blocks = document.querySelectorAll("pre:has(code)");
 
 blocks.forEach((block) => {
-    let codeElement = block.querySelector("code");
+    let codeElements = block.querySelectorAll("code");
 
-    // Extract language from the class (e.g., "language-javascript")
-    let languageClass = [...codeElement.classList].find(cls => cls.startsWith("language-"));
-    let language = languageClass ? languageClass.replace("language-", "") : "Code Snippet";
+    codeElements.forEach(codeElement => {
+        // Extract language from the class (e.g., "language-javascript")
+        let languageClass = [...codeElement.classList].find(cls => cls.startsWith("language-"));
+        let language = languageClass ? languageClass.replace("language-", "") : "Code Snippet";
+        // Create and insert a header into the pre element
+        let codeHeader = document.createElement("div");
+        codeHeader.innerText = language.toUpperCase();
+        codeHeader.classList.add("code-language-header");
 
-    // Create and insert a header into the pre element
-    let codeHeader = document.createElement("div");
-    codeHeader.innerText = language.toUpperCase();
-    codeHeader.classList.add("code-language-header");
+        block.insertBefore(codeHeader, codeElement);
 
-    block.insertBefore(codeHeader, codeElement);
-    // only add button if browser supports Clipboard API
-    if (navigator.clipboard) {
+         // Copy code block to the clipboard using Clipboard API
         let button = document.createElement("button");
         button.innerHTML = copyButtonIcon;
         codeHeader.appendChild(button);
 
         button.addEventListener("click", async () => {
-        await copyCode(block, button);
+            await copyCode(block, button);
         });
-    }
+    });
 });
 
 async function copyCode(block, button) {
