@@ -96,7 +96,7 @@ ol:where([role="list"]) {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
@@ -376,8 +376,7 @@ iframe {
 
 .hero__image {
   width: 100%;
-  /* max-height: max(15rem, 40vh); */
-  object-fit: cover;
+  filter: grayscale(1);
 }
 
 @media (min-width: 725px) {
