@@ -19,21 +19,20 @@ collections:
       - { label: "Description", name: "description", widget: "markdown" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { - label: "Tags"
-            name: "tags"
-            widget: "list"
-            default: ["post"]
-            allow_add: true
-            field:
-              label: "Tag"
-              name: "tag"
-              widget: "select"
-              options: 
-                - post
-                - featured
-                - tutorial
-                - announcement
-        }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default: ["post"]
+        allow_add: true
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "select"
+          options: 
+            - post
+            - featured
+            - javascript
+            - c#
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
