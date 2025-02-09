@@ -359,6 +359,7 @@ iframe {
 
 .site-footer div:nth-child(2) a {
   color: var(--clr-white);
+  font-size: var(--fs-default);
 }
 
 .site-footer p {
