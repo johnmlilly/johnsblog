@@ -25,6 +25,7 @@
   "dependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
+    "@picocss/pico": "^2.0.6",
     "bootstrap-icons": "^1.11.3",
     "eleventy-plugin-lazyimages": "^2.1.2",
     "eleventy-plugin-metagen": "^1.8.3",
