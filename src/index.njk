@@ -4,31 +4,27 @@ layout: 'base.njk'
 image: '/logo/Full-logo-red.png'
 ---
  
-<main>
-  <section class="hero">
-    <div class="container flow">
-      <div class="hero__content flow">
-        <h1 class="section-title">Hello there!</h1>
+  <section class="container">
+    <div class="grid">
+      <div class="hero__content">
+        <h1>Hello there!</h1>
         <p>My name is <strong>John Lilly</strong> and I'm a full stack web developer. I'm passionate about using the latest technology to help others achieve their goals. </p>
-        <div class="flex-group">
-          <a href="#featured-articles" class="btn btn--primary">Featured articles</a>
-        </div>
+          <a role="button" href="#featured-articles">Featured articles</a>
       </div>
       <div>
         <img src="/assets/John-Lilly_headshot-1.jpg" alt="John Lilly Headshot" class="hero__image">
-        </div>
+      </div>
     </div>
   </section>
 
-<section id="featured-articles" class="featured-articles">
-  <div class="container flow">
-    <h2 class="section-title text-center ">Featured articles</h2>
-    <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
-     <ul role="list" class="articles__list flow">
+<section id="featured-articles" class="container">
+  <div>
+    <h2 class="text-center">Recent posts</h2>
+    <p>Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
+     <div class="grid grid-3">
     {%- for post in collections.featured | reverse -%}
       {% include 'article-snippet.njk' %}
     {%- endfor -%}
-    </ul>
+    </div>
   </div>
 </section> 
-</main>

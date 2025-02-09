@@ -1,8 +1,8 @@
 ---
 layout: 'base.njk'
 ---
-<article class="main-article">
-<div class="container container--narrow flow">
+<div class="article-container container">
+<div>
   <div>
     <div>
       <span class="snippet__date">{{ date | postDate }} // {{ content | emojiReadTime }}</span> 
@@ -21,12 +21,12 @@ layout: 'base.njk'
     </ul>
     </div>
     <div>
-      <figure class="main-article__figure">
-      <img class="article-image" src="/assets{{ image }}" alt="{{ imageAlt }}">
+      <figure>
+      <img src="/assets{{ image }}" alt="{{ imageAlt }}">
     </figure>
     </div>
   </div>
     {{ content | safe }}
 </div>
 {% cloneWarsQuote %}
-</article>
+</div>
