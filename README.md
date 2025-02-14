@@ -1,24 +1,85 @@
-# JAMStack personal blog - starter files
+# My Personal Blog - Built with 11ty, Pico CSS, and DeCap CMS
 
-These are the starting files used by [Kevin Powell](https://kevinpowell.co) to create a personal blog site for the [Codementor](https://www.codementor.io/) DevProjects Challenge, [Create a fast and secure blog using JAMStack](https://www.codementor.io/projects/web/create-a-fast-and-secure-blog-using-jamstack-c93coupnxb). You are free to use them however you want to get started with the challenge, if you'd like to start working on creating the site without worrying about the content itself.
+## Overview
+This is my personal blog site built using the **11ty ([Eleventy](https://www.11ty.dev/)) static site generator**, styled with **P[ico CSS*](https://picocss.com/)*, and powered by **[Decap CMS*](https://decapcms.org/)* for easy content management. The project is based on the starter files from **Kevin Powell's repository**, originally created for the Codementor DevProjects Challenge: *Create a fast and secure blog using JAMstack.*
 
-The provided files are finished pages using regular HTML and CSS. The HTML files can be broken down into peices, and used to build out the different templates and partial files using a templating language of your choice.
+## Features
+- **11ty (Eleventy):** A simple and flexible static site generator for fast and efficient builds.
+- **Pico CSS:** A lightweight, classless CSS framework for a clean and modern design.
+- **Decap CMS:** Provides a user-friendly, Git-based content management system for adding and editing blog posts.
+- **Markdown Support:** All blog posts are written in Markdown for simplicity and portability.
+- **Custom Components:** Implements reusable components using **Nunjucks (njk) templates**.
+- **Optimized Images:** Uses the 11ty Image Plugin for efficient image loading and performance.
+- **Responsive Design:** Fully responsive and mobile-friendly layout.
 
-The styling of the pages is already complete. That said, the `design-files` folder contains both a Figma file, and .jpg of a design if you want to try to build it from scratch. You do not need to use this design at all either, it depends on how you wish to approach the challenge.
+## Installation & Setup
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js** (LTS recommended)
+- **npm** or **pnpm/yarn**
 
-The `src` folder contains files so that you can get your project up and running without worrying about content for posts/articles. That folder contains:
+### Clone the Repository
+```sh
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
 
-- HTML files to use as a base for the different page layouts. These can be turned into the templates that will be used.
-- CSS file for styling the pages
-- 5 blog articles in the `blog` folder
-- images and a logo in the `assets` folder
+### Install Dependencies
+```sh
+npm install
+```
 
-The articles are written in Markdown, and include Front Matter. Depending on the Static Site Generator you use, it is possible that you will have to modify these a little if you wish to use them. 
+### Run the Development Server
+```sh
+npm run dev
+```
+### Build for Production
+```sh
+npm run build
+```
+This generates a production-ready version of the site in the `./public/` directory.
 
-## DevProjects Challenge
+## Content Management with DeCap CMS
+This project integrates **DeCap CMS** to manage blog posts without requiring direct access to the repo. Blog posts are stored as Markdown files in `src/blog/`.
 
-As mentioned, these files are here to help get started with a DevProjects challenge. Please visit the [challenge page](#) to learn more about the challenge.
+To access the CMS:
+1. Navigate to `/admin/` on your deployed site.
+2. Log in using the configured authentication method.
+3. Create, edit, or delete posts with a simple UI.
 
-## Tutorial
+## File Structure
+```
+📂 your-repo-name/
+├── 📂 src/
+│   ├── 📂 _includes/       # Nunjucks templates & components
+│   ├── 📂 _data/           # JSON/YAML data files
+│   ├── 📂 blog/           # Blog post Markdown files
+│   ├── 📂 styles/         # Pico CSS & custom styles
+│   ├── index.njk         # Homepage template
+│   ├── admin/            # DeCap CMS config
+├── 📂 public/             # Generated static site
+├── 📜 .eleventy.js         # 11ty configuration
+├── 📜 package.json        # Dependencies & scripts
+├── 📜 README.md           # Project documentation
+```
 
-You can [watch this video](https://youtu.be/4wD00RT6d-g) to see how Kevin uses Eleventy, Netlify, and Netlify CMS to create a full-featured blog site built entirely with static files.
+## Deployment
+The site can be deployed on any static hosting provider such as:
+- **Netlify** (recommended, supports Decap CMS natively)
+- **Vercel**
+- **GitHub Pages**
+- **Cloudflare Pages**
+
+
+## Credits
+- **Kevin Powell** - Provided the original starter files for the Codementor challenge.
+- **Pico CSS** - For a lightweight and beautiful styling approach.
+- **Eleventy** - The static site generator powering this project.
+- **Decap CMS** - For making content management seamless.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+🚀 Happy coding and may the Force be with you! ✨
+
