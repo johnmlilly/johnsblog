@@ -1,7 +1,7 @@
 # My Personal Blog - Built with 11ty, Pico CSS, and DeCap CMS
 
 ## Overview
-This is my personal blog site built using the **11ty ([Eleventy](https://www.11ty.dev/)) static site generator**, styled with **P[ico CSS*](https://picocss.com/)*, and powered by **[Decap CMS*](https://decapcms.org/)* for easy content management. The project is based on the starter files from **Kevin Powell's repository**, originally created for the Codementor DevProjects Challenge: *Create a fast and secure blog using JAMstack.*
+This is my personal blog site built using the **11ty ([Eleventy](https://www.11ty.dev/)) static site generator**, styled with **[Pico CSS](https://picocss.com/)**, and powered by **[Decap CMS](https://decapcms.org/)** for easy content management. The project is based on the starter files from **Kevin Powell's repository**, originally created for the Codementor DevProjects Challenge: *Create a fast and secure blog using JAMstack.*
 
 ## Features
 - **11ty (Eleventy):** A simple and flexible static site generator for fast and efficient builds.
