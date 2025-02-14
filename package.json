@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --quiet",
     "build": "eleventy"
   },
   "repository": {
@@ -20,15 +20,15 @@
   },
   "homepage": "https://github.com/johnmlilly/johnsblog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
-  },
-  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
-    "@picocss/pico": "^2.0.6",
-    "bootstrap-icons": "^1.11.3",
     "eleventy-plugin-metagen": "^1.8.3",
     "luxon": "^3.5.0"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "bootstrap-icons": "^1.11.3"
   }
 }
