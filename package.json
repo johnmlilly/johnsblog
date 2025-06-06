@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/johnmlilly/johnsblog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^6.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy": "^3.1.1",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "eleventy-plugin-metagen": "^1.8.3",
     "luxon": "^3.5.0"
