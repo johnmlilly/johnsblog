@@ -1,16 +1,17 @@
-<article class="article-cards {% if loop.first %}featured{% endif %}">
-     {% if loop.first %}
-      <span class="featured-banner">
-        <i class="bi bi-bookmark-star"></i> Latest Post
-      </span>
-    {% endif %}
-    <img src="/assets{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="snippet__image">
-    <div>
-        <h3>
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h3>
-        <p><span>{{ post.data.date | postDate }}</span></p>
-        <p>This is a new article that I&#39;ll be posting</p> 
-        <a role="button" href="{{ post.url }}" class="secondary outline">Read More</a>
+<article class="blog-card">
+    <div class="blog-card-content">
+      <h3>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <p class="blog-date">{{ post.data.date | postDate }}</p>
+      <p class="blog-excerpt">{{ post.data.description }}</p>
+      <div class="blog-tags">
+        {%- for tag in post.data.tags -%}
+          {%- if tag != "post" and tag != "featured" -%}
+            <span class="tag">{{ tag }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <a href="{{ post.url }}" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
     </div>
 </article>
