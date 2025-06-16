@@ -1,0 +1,21 @@
+
+
+<article class="project-card">
+    <div class="project-image">
+    <img src="/images/{{ image }}" alt="Project Alpha">
+    </div>
+    <div class="project-content">
+    <h3>{{ project.data.title }}</h3>
+    <p>{{ project.data.description }}</p>
+    <div class="project-tags">
+        {%- for tag in project.data.tags -%}
+        {%- if tag != "post" and tag != "featured" and tag != "projects" -%}
+          <span class="tag">{{ tag }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <a href="{{ project.data.link }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        View Project <i class="fas fa-external-link-alt"></i>
+    </a>
+    </div>
+</article>
