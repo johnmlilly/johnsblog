@@ -5,27 +5,211 @@ image: '/logo/Full-logo-red.png'
 description: Welcome to John Lilly's blog
 ---
  
-  <section class="container">
-    <div class="grid">
-      <div class="hero__content">
-        <h1>Hello there!</h1>
-        <p>My name is <strong>John Lilly</strong> and I'm a full stack web developer. I'm passionate about using the latest technology to help others achieve their goals. </p>
-          <a class="contrast" role="button" href="#featured-articles">Featured articles</a>
-      </div>
-      <div>
-        <img loading="eager" src="/assets/John-Lilly_headshot-1.jpg" alt="John Lilly Headshot" class="hero__image">
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Hey, I'm John Lilly</h1>
+          <p>Software engineer, writer, and creator. I build things for the web and share what I learn.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#about" class="btn btn-outline">About Me</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-image-container">
+            <img src="/assets/John-Lilly_headshot-1.jpg" alt="John Lilly" class="profile-image">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-<section id="featured-articles" class="container">
-  <div>
-    <h2 class="text-center">Recent posts</h2>
-    <p>Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
-     <div class="grid grid-3">
-    {%- for post in collections.featured | reverse -%}
-      {% include 'article-snippet.njk' %}
-    {%- endfor -%}
+<!-- Blog Section -->
+  <section id="blog" class="blog-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest Articles</h2>
+        <a href="/blog" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <div class="blog-grid">
+        {%- for post in collections.featured | reverse -%}
+          {% include 'article-snippet.njk' %}
+        {%- endfor -%}
+      </div>
     </div>
-  </div>
-</section> 
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        
+        {%- for project in collections.project | reverse -%}
+          {% include 'projects.njk' %}
+        {%- endfor -%}
+            
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="/images/profile-placeholder.jpg" alt="John Lilly">
+        </div>
+        <div class="about-content">
+          <h2>About Me</h2>
+          <div class="about-text">
+            <p>Hi there! I'm John Lilly, a software engineer with over 8 years of experience building web applications and digital experiences.</p>
+            <p>I specialize in frontend development with React and Next.js, but I'm also comfortable working across the full stack. I'm passionate about creating intuitive, accessible, and performant user interfaces.</p>
+            <p>When I'm not coding, you can find me writing technical articles, contributing to open source projects, or exploring the outdoors. I believe in continuous learning and sharing knowledge with the developer community.</p>
+            <p>Currently, I'm working as a Senior Software Engineer at TechCorp, where I lead frontend development for our flagship product.</p>
+          </div>
+          <div class="about-buttons">
+            <a href="/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            <a href="/contact.html" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2>Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fas fa-code"></i>
+            <h3>Frontend Development</h3>
+          </div>
+          <ul class="skill-list">
+            <li>React</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>Tailwind CSS</li>
+            <li>Redux</li>
+            <li>React Query</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fas fa-server skill-icon"></i>
+            <h3>Backend Development</h3>
+          </div>
+          <ul class="skill-list">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>GraphQL</li>
+            <li>REST APIs</li>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
+            <li>Firebase</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fas fa-tools skill-icon"></i>
+            <h3>Tools & Methodologies</h3>
+          </div>
+          <ul class="skill-list">
+            <li>Git</li>
+            <li>GitHub Actions</li>
+            <li>Docker</li>
+            <li>Jest</li>
+            <li>Testing Library</li>
+            <li>Agile</li>
+            <li>CI/CD</li>
+            <li>Performance Optimization</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fas fa-paint-brush skill-icon"></i>
+            <h3>Design & UX</h3>
+          </div>
+          <ul class="skill-list">
+            <li>Figma</li>
+            <li>UI/UX Design</li>
+            <li>Responsive Design</li>
+            <li>Accessibility</li>
+            <li>Animation</li>
+            <li>Design Systems</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fas fa-lightbulb skill-icon"></i>
+            <h3>Other Skills</h3>
+          </div>
+          <ul class="skill-list">
+            <li>Technical Writing</li>
+            <li>SEO</li>
+            <li>Analytics</li>
+            <li>Performance Monitoring</li>
+            <li>A/B Testing</li>
+            <li>Mentoring</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <i class="fas fa-graduation-cap skill-icon"></i>
+            <h3>Currently Learning</h3>
+          </div>
+          <ul class="skill-list">
+            <li>Rust</li>
+            <li>WebAssembly</li>
+            <li>Three.js</li>
+            <li>Machine Learning</li>
+            <li>Web3 Technologies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta-section">
+    <div class="container">
+      <div class="contact-cta-content">
+        <h2>Let's Work Together</h2>
+        <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+        <a href="/contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+      document.body.classList.add('menu-open');
+    });
+    
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  </script>
