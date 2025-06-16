@@ -28,7 +28,6 @@
     "luxon": "^3.5.0"
   },
   "dependencies": {
-    "@picocss/pico": "^2.0.6",
-    "bootstrap-icons": "^1.11.3"
+    "lucide": "^0.515.0"
   }
 }
