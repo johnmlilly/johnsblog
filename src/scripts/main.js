@@ -2,7 +2,7 @@
 // **** Copy and paste code from code elements
 // Reference: https://www.roboleary.net/demos/iNGpDikU/preview/?tab=code
 
-const copyButtonIcon = '<i class="bi bi-copy"></i>&nbsp;Copy';
+const copyButtonIcon = '<i data-lucide="copy"></i>&nbsp;Copy';
 // only pre elements that have a code as a child
 let blocks = document.querySelectorAll("pre:has(code)");
 
@@ -38,7 +38,7 @@ async function copyCode(block, button) {
   await navigator.clipboard.writeText(text);
 
   // visual feedback that task is completed
-  button.innerHTML = '<i class="bi bi-check-circle"></i>&nbsp;Copied!'
+  button.innerHTML = '<i data-lucide="circlecheck"></i>&nbsp;Copied!'
 
   setTimeout(() => {
     button.innerHTML = copyButtonIcon;
