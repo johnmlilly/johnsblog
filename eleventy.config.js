@@ -17,7 +17,7 @@ export default function(eleventyConfig) {
 
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {
-    emoji: "🕒",
+    emoji: "",
     label: "minute read"
   });
 
