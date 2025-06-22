@@ -1,32 +1,109 @@
 ---
 layout: 'base.njk'
 ---
-<div class="article-container container">
-<div>
-  <div>
+<!-- Article Header -->
+  <header class="article-header">
+    <div class="container">
+      <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
     <div>
-      <span class="snippet__date">{{ date | postDate }} // {{ content | emojiReadTime }}</span> 
-      <h1 class="article-title">
-      {{ title }}
-    </h1>
-     <p class="snippet__meta">
-      {{ author }}
-      </p>
-    <ul class="snippet__tags">
-      {% for tag in tags %}
+      <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li aria-current="page">{{ title }}</li>
+      </ol>
+    </div>
+  </nav>
+      <div class="article-meta">
+        <span>
+          <i data-lucide="calendar"></i>
+          {{ date | postDate }}
+        </span>
+        <span>
+          <i data-lucide="clock"></i>
+          {{ content | emojiReadTime }}
+        </span>
+      </div>
+      <h1 class="article-title"> {{ title }}</h1>
+      <p class="article-subtitle">{{ description }}</p>
+      <div class="article-tags">
+        {% for tag in tags %}
         {% if tag != 'post' and tag != 'featured' %}
-          <li>{{ tag }}</li>
+          <span class="tag">{{ tag }}</span>
         {% endif %}
       {% endfor %}
-    </ul>
+      </div>
+      <div class="author-info">
+        <img src="/assets/KaraLorynPhotography_04162022_johnlillyheadshots-0013.jpg" alt="John Lilly" class="author-avatar">
+        <div class="author-details">
+          <span class="author-name">{{ author }}</span>
+          <span class="author-title">Software Engineer</span>
+        </div>
+      </div>
     </div>
-    <div>
-      <figure>
-      <img src="/assets{{ image }}" alt="{{ imageAlt }}">
-    </figure>
+  </header>
+   <!-- Article Content -->
+    <div class="article-content container">
+      <article class="prose">
+        <div class="article-image">
+          <figure>
+            <img src="/assets{{ image }}" alt="{{ imageAlt }}">
+          </figure>
+        </div>
+        {{ content | safe }}
+        <div class="article-footer">
+          <div class="article-share">
+            <h4>Share this article</h4>
+            <div class="share-buttons">
+              <a href="#" class="share-button twitter" aria-label="Share on Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="share-button linkedin" aria-label="Share on LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="share-button facebook" aria-label="Share on Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <button class="share-button copy" aria-label="Copy link">
+                <i class="fas fa-link"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
-    {{ content | safe }}
+    <!-- Related Articles -->
+  <section class="related-articles">
+    <div class="container">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        {%- set count = 0 -%}
+          {%- for post in collections.featured | reverse -%}
+            {%- if count < 3 -%}
+              {% include 'article-snippet.njk' %}
+              {%- set count = count + 1 -%}
+            {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
 </div>
 {% cloneWarsQuote %}
 </div>
+<script>
+ // Copy link functionality
+    const copyButton = document.querySelector('.share-button.copy');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          copyButton.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => {
+            copyButton.innerHTML = '<i class="fas fa-link"></i>';
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy link:', err);
+        }
+      });
+    }
+</script>
