@@ -12,6 +12,11 @@ layout: 'base.njk'
         <li><a href="/#blog">Blog</a></li>
         <li aria-current="page">{{ title }}</li>
       </ol>
+      <div class="article-image">
+          <figure>
+            <img src="/assets{{ image }}" alt="{{ imageAlt }}">
+          </figure>
+        </div>
     </div>
   </nav>
       <div class="article-meta">
@@ -45,11 +50,6 @@ layout: 'base.njk'
    <!-- Article Content -->
     <div class="article-content container">
       <article class="prose">
-        <div class="article-image">
-          <figure>
-            <img src="/assets{{ image }}" alt="{{ imageAlt }}">
-          </figure>
-        </div>
         {{ content | safe }}
         <div class="article-footer">
           <div class="article-share">
