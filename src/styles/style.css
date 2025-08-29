@@ -968,23 +968,14 @@ body.menu-open {
   padding-block: 1.5rem 0;
 }
 
-.star-wars-quote blockquote {
-  font-style: italic;
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  border: none;
+.star-wars-quote h2 {
+  margin-top: inherit !important;
 }
 
-.star-wars-quote blockquote span {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+.star-wars-quote h2::after {
+  position: relative;
 }
 
-.star-wars-quote blockquote,
-.star-wars-quote p,
-.star-wars-quote span {
-  color: var(--color-text);
-}
 
 .console {
   background: var(--color-background-alt);
