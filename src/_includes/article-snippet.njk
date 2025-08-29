@@ -1,17 +1,25 @@
-<article class="blog-card">
-    <div class="blog-card-content">
-      <h3>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </h3>
-      <p class="blog-date">{{ post.data.date | postDate }}</p>
-      <p class="blog-excerpt">{{ post.data.description }}</p>
-      <div class="blog-tags">
-        {%- for tag in post.data.tags -%}
-          {%- if tag != "post" and tag != "featured" -%}
-            <span class="tag">{{ tag }}</span>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-      <a href="{{ post.url }}" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
-    </div>
+ <article class="card-post">
+          <div class="card-header">
+        <span class="card-category">
+              {%- for tag in post.data.tags -%}
+                {%- if tag != "post" and tag != "featured" -%}
+                  {{ tag }}
+                {%- endif -%}
+              {%- endfor -%}
+            </span>            
+            <div class="card-meta">
+              <i data-lucide="calendar"></i>
+             <time datetime="{{ post.data.date }}">{{ post.data.date | postDate }}</time>
+
+              <span><i data-lucide="clock"></i> {{ content | emojiReadTime }}</span>
+            </div>
+          </div>
+          <div class="card-image">
+            <img src="/assets/blog/article-1.jpg" alt="Performance optimization">
+          </div>
+          <div class="card-content">
+              <a href="{{ post.url }}"><h3>{{ post.data.title }}</h3></a>
+              <p class="card-intro">{{ description }}</p>
+                <a href="{{ post.url }}" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+          </div>
 </article>
