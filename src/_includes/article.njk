@@ -1,10 +1,12 @@
 ---
 layout: 'base.njk'
 ---
-<!-- Article Header -->
-  <header class="article-header">
+
+
+  <!-- Blog Post Hero -->
+  <section class="blog-post-hero">
     <div class="container">
-      <!-- Breadcrumb -->
+        <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <div>
       <ol class="breadcrumb-list">
@@ -12,64 +14,61 @@ layout: 'base.njk'
         <li><a href="/#blog">Blog</a></li>
         <li aria-current="page">{{ title }}</li>
       </ol>
-      <div class="article-image">
+  </nav>
+      <div class="blog-post-content">
+        <!-- Category -->
+        <div class="post-category">
+          <span class="category-badge">  
+            {% for tag in tags %}
+              {% if tag != 'post' and tag != 'featured' %}
+                {{ tag }}
+              {% endif %}
+            {% endfor %}</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="post-title">{{ title }}</h1>
+
+        <!-- Intro Text -->
+        <p class="post-intro"> {{ description }} </p>
+
+        <!-- Meta Information -->
+        <div class="post-meta">
+          <div class="author-section">
+            <img src="/assets/KaraLorynPhotography_04162022_johnlillyheadshots-0013.jpg" alt="John Lilly" class="author-avatar">
+            <div class="author-details">
+              <span class="author-name">{{ author }}</span>
+            </div>
+          </div>
+          
+          <div class="post-stats">
+            <div class="stat-item">
+              <i data-lucide="calendar"></i>
+              <time datetime="{{ date }}">{{ date | postDate }}</time>
+            </div>
+            <div class="stat-item">
+              <i data-lucide="clock"></i>
+              <span>{{ content | emojiReadTime }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="post-image-container">
           <figure>
             <img src="/assets{{ image }}" alt="{{ imageAlt }}">
-          </figure>
-        </div>
-    </div>
-  </nav>
-      <div class="article-meta">
-        <span>
-          <i data-lucide="calendar"></i>
-          {{ date | postDate }}
-        </span>
-        <span>
-          <i data-lucide="clock"></i>
-          {{ content | emojiReadTime }}
-        </span>
-      </div>
-      <h1 class="article-title"> {{ title }}</h1>
-      <p class="article-subtitle">{{ description }}</p>
-      <div class="article-tags">
-        {% for tag in tags %}
-        {% if tag != 'post' and tag != 'featured' %}
-          <span class="tag">{{ tag }}</span>
-        {% endif %}
-      {% endfor %}
-      </div>
-      <div class="author-info">
-        <img src="/assets/KaraLorynPhotography_04162022_johnlillyheadshots-0013.jpg" alt="John Lilly" class="author-avatar">
-        <div class="author-details">
-          <span class="author-name">{{ author }}</span>
-          <span class="author-title">Software Engineer</span>
-        </div>
+          </figure>        
+          
       </div>
     </div>
-  </header>
+  </section>
+  
    <!-- Article Content -->
     <div class="article-content container">
       <article class="prose">
         {{ content | safe }}
-        <div class="article-footer">
-          <div class="article-share">
-            <h4>Share this article</h4>
-            <div class="share-buttons">
-              <a href="#" class="share-button twitter" aria-label="Share on Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="share-button linkedin" aria-label="Share on LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="#" class="share-button facebook" aria-label="Share on Facebook">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <button class="share-button copy" aria-label="Copy link">
-                <i class="fas fa-link"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        {% cloneWarsQuote %}
       </article>
     </div>
     <!-- Related Articles -->
@@ -88,7 +87,6 @@ layout: 'base.njk'
     </div>
   </section>
 </div>
-{% cloneWarsQuote %}
 </div>
 <script>
  // Copy link functionality
