@@ -88,20 +88,3 @@ layout: 'base.njk'
   </section>
 </div>
 </div>
-<script>
- // Copy link functionality
-    const copyButton = document.querySelector('.share-button.copy');
-    if (copyButton) {
-      copyButton.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(window.location.href);
-          copyButton.innerHTML = '<i class="fas fa-check"></i>';
-          setTimeout(() => {
-            copyButton.innerHTML = '<i class="fas fa-link"></i>';
-          }, 2000);
-        } catch (err) {
-          console.error('Failed to copy link:', err);
-        }
-      });
-    }
-</script>
