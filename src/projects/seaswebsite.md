@@ -1,6 +1,6 @@
 ---
 title: Catholic Church Website Redesign
-description: A complete redesign and overhaul of back-end systems in WordPress for improved UI and admin usage.
+description: Supported St. Elizabeth Ann Seton parish by redesigning their website to make information more accessible, improve the online experience for parishioners, and simplify updates for staff.
 tags:
   - WordPress
   - Elementor

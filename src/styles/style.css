@@ -528,6 +528,8 @@ body.menu-open {
 
 .project-card-btn {
   margin-top: auto;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
 }
 
 /* About Section */

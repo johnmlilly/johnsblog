@@ -1,6 +1,7 @@
 ---
 title: Podcast Website Launch
-description: Custom website built with 11ty, Decap CMS, and Netlify. Features responsive design, fast static performance, and a fully tailored layout based on a professional design.
+description: Supported the launch of a new podcast by providing a tailored online platform that showcased content clearly, enabled easy updates, and helped grow the audience from day one.
+
 tags:
   - 11ty
   - Decap CMS
@@ -8,7 +9,7 @@ tags:
   - Responsive Design
   - Custom CSS
   - JavaScript
-  - Web Design
+  - Performance
   - Content Management
   - project
   - homepage
