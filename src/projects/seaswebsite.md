@@ -11,4 +11,5 @@ tags:
   - homepage
 link: https://setonlakeridge.org/
 image: seaswebsite.png
+date: 2025-10-01
 ---
