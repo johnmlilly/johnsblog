@@ -259,12 +259,7 @@
 
 /* Related Articles */
 .related-articles {
-    padding: 5rem 0;
     background-color: var(--color-secondary);
-    border-radius: var(--border-radius);
-    margin: 0 1.5rem;
-    position: relative;
-    overflow: hidden;
 }
 
 .related-articles::before {
@@ -495,12 +490,10 @@
 
 /* Title */
 .post-title {
+    color: var(--color-primary);
     font-size: 3rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     max-width: 800px;
 }
 
