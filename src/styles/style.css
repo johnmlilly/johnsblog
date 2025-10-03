@@ -431,13 +431,6 @@ body.menu-open {
   z-index: 1;
 }
 
-.view-all {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-}
-
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr;
