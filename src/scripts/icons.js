@@ -1,5 +1,5 @@
 // Recommended way, to include only the icons you need.
-import { createIcons, Copy , CircleCheck, Mail, Code, Server, PencilRuler, Palette, Lightbulb, Calendar, Clock, BookOpenCheck, CircleX, SquareArrowOutUpRight } from 'lucide';
+import { createIcons, Copy , CircleCheck, Mail, Code, Server, PencilRuler, Palette, Lightbulb, Calendar, Clock, BookOpenCheck, CircleX, SquareArrowOutUpRight, ChevronRight } from 'lucide';
 
 createIcons({
   icons: {
@@ -15,6 +15,7 @@ createIcons({
     Clock,
     BookOpenCheck,
     SquareArrowOutUpRight,
-    CircleX
+    CircleX,
+    ChevronRight
   }
 });
