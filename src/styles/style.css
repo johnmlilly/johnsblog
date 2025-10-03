@@ -730,16 +730,15 @@ body.menu-open {
   max-width: 800px;
   margin: 4rem auto;
   padding: 2rem;
-  background: var(--color-card-bg);
+  background: var(--gradient-1);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .contact-section h2 {
   margin-bottom: 1.5rem;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   color: var(--color-primary);
-  text-align: center;
 }
 
 .contact-form .form-group {
