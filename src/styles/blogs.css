@@ -712,12 +712,12 @@
 }
 
 .card-meta svg {
-    width: 20px;
+    width: 16px;
 }
 
-.card-meta i {
-    color: var(--color-primary);
-    margin-right: 0.25rem;
+.card-post a {
+    display: flex;
+    align-items: center;
 }
 
 .card-image {
