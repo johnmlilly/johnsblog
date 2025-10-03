@@ -8,6 +8,7 @@ tags:
   - Custom CSS
   - Hosting & Backups
   - project
+  - homepage
 link: https://setonlakeridge.org/
 image: seaswebsite.png
 ---

@@ -11,6 +11,7 @@ tags:
   - Web Design
   - Content Management
   - project
+  - homepage
 link: https://karalorynlilly.com
 image: karalorynlilly.png
 ---
