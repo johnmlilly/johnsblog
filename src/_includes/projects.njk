@@ -10,7 +10,7 @@
         <p>{{ project.data.description }}</p>
         <div class="project-tags">
             {%- for tag in project.data.tags -%}
-            {%- if tag != "post" and tag != "homepage" and tag != "project" -%}
+            {%- if tag != "homepage" and tag != "project" -%}
               <span class="card-category gradient-2">{{ tag }}</span>
             {%- endif -%}
           {%- endfor -%}
