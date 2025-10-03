@@ -672,7 +672,6 @@
     border-radius: var(--border-radius);
     overflow: hidden;
     border: 1px solid var(--color-border);
-    max-width: 400px;
     transition: all var(--transition-speed);
 }
 
@@ -691,20 +690,26 @@
 }
 
 .card-category {
-    background: var(--gradient-3);
+    background: var(--gradient-1);
     color: white;
     padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+    border-radius: 0.75rem;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: capitalize;
 }
 
+.card-category.gradient-2 {
+    background: var(--gradient-2);
+}
+
 .card-meta {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.75rem;
     color: var(--color-text-muted);
+    text-transform: capitalize;
 }
 
 .card-meta span {
