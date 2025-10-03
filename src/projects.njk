@@ -1,0 +1,13 @@
+---
+title: My Projects | John Lilly
+layout: 'base.njk' 
+---
+  
+<section class="container snippet-container">
+  <h1>Projects</h1>
+  <div class="projects-grid">
+  {%- for project in collections.project | reverse -%}
+     {% include 'projects.njk' %}
+  {%- endfor -%}
+  </div>
+</section>
