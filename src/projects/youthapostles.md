@@ -1,6 +1,6 @@
 ---
-title: Youth Apostles Website UI/UX Refresh
-description: A refreshed website experience for youthapostles.org, focused on modernizing the design, improving navigation, and reorganizing content for clarity.
+title: Non-Profit Website UI/UX Refresh
+description: Helped Youth Apostles better share their mission by refreshing their website’s design, improving navigation, and reorganizing content so visitors could easily learn, connect, and support the community.
 tags:
   - Squarespace
   - UI/UX Design
