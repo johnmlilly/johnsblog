@@ -10,7 +10,17 @@ description: Welcome to John Lilly's blog
   <form netlify
     name="contact" 
     method="POST" 
-    class="contact-form">
+    netlify-honeypot="extra-details"
+    data-netlify="true"
+    class="contact-form"
+    >
+
+  <!-- Honeypot field -->
+  <div class="contact-form-hidden">
+    <label>Extra details field: 
+        <input name="extra-details" aria-hidden="true" type="hidden" />
+    </label>
+  </div>
 
     <div class="form-group">
       <label for="full-name">Full Name</label>

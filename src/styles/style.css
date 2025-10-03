@@ -887,7 +887,6 @@ body.menu-open {
   transition: border var(--transition-speed), var(--transition-speed);
 }
 
-
 .contact-form textarea {
   min-height: 6lh;
 }
@@ -895,6 +894,10 @@ body.menu-open {
   border-color: var(--color-primary);
   outline: none;
   background: var(--color-background-alt);
+}
+
+.contact-form-hidden {
+  display: none;
 }
 
 .star-wars-quote {
