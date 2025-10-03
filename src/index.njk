@@ -30,11 +30,11 @@ description: Welcome to John Lilly's blog
   <section id="blog" class="blog-section">
     <div class="container">
       <div class="section-header">
-        <h2>Latest Articles</h2>
-        <a href="/blog" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        <h2>Latest Blog Posts</h2>
+        <a href="/blog">View All </a>
       </div>
       <div class="blog-grid">
-        {%- for post in collections.post | reverse -%}
+        {%- for post in collections.featured.slice(0, 6) | reverse -%}
           {% include 'article-snippet.njk' %}
         {%- endfor -%}
       </div>
@@ -44,13 +44,15 @@ description: Welcome to John Lilly's blog
   <!-- Projects Section -->
   <section id="projects" class="alternate-section">
     <div class="container">
-      <h2>Featured Projects</h2>
+      <div class="section-header">
+         <h2>Featured Projects</h2>
+        <a href="/projects">View All </a>
+      </div>
       <div class="projects-grid">
         
-        {%- for project in collections.project | reverse -%}
+        {%- for project in collections.homepage.slice(0, 4) | reverse -%}
           {% include 'projects.njk' %}
         {%- endfor -%}
-            
   
       </div>
     </div>
