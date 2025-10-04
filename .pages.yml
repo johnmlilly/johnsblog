@@ -1,6 +1,6 @@
 media:
   input: public/assets
-  output: /assets/blog
+  output: /src/assets
 
 
 content:
