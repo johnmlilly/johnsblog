@@ -19,6 +19,7 @@ content:
         label: Tag
         type: select
         options:
+          multiple: true
           values: [ Post, Featured, Web Development, JavaScript, CSS, C# ]
         
       - { label: "Featured Image", name: "image", type: "image" }
