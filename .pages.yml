@@ -37,7 +37,7 @@ content:
       - { label: "Project Name", name: "title", type: "string" }
       - { label: "Project Date", name: "date", type: "date" }
       - { label: "Project Description", name: "description", type: "text" }
-      - name: tag
+      - name: tags
         label: Tags
         type: select
         options:
