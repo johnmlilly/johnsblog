@@ -2,7 +2,6 @@ media:
   input: src/assets
   output: /public/assets
 
-
 content:
   - name: blog
     label: Blog
@@ -12,9 +11,9 @@ content:
     view:
       fields: [ title, date ]
     fields:
-      - { label: "Title", name: "title", type: "text" }
+      - { label: "Title", name: "title", type: "string" }
       - { label: "Description", name: "description", type: "text" }
-      - { label: "Author", name: "author", type: "text" }
+      - { label: "Author", name: "author", type: "string" }
       - { label: "Date", name: "date", type: "date" }
       - name: tag
         label: Tag
@@ -25,4 +24,25 @@ content:
       - { label: "Featured Image", name: "image", type: "image" }
       - { label: "Image Caption", name: "imageAlt", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/projects
+    filename: "{primary}.md"
+    view: 
+      fields: [title, tags, date]
+    fields:
+      - { label: "Project Name", name: "title", type: "string" }
+      - { label: "Project Description", name: "description", type: "text" }
+      - name: tag
+        label: Tags
+        type: select
+        options:
+          values: [ WordPress, UX/UI, Mobile Responsiveness ]
+      -  { label: "Project Link", name: "link", type: "text" }
+      - { label: "Project Date", name: "date", type: "date" }
+
+
+        
 
