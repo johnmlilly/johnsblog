@@ -30,11 +30,11 @@ description: Welcome to John Lilly's blog
   <section id="blog" class="blog-section">
     <div class="container">
       <div class="section-header">
-        <h2>Latest Articles</h2>
-        <a href="/blog" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        <h2>Latest Blog Posts</h2>
+        <a href="/blog">View All </a>
       </div>
       <div class="blog-grid">
-        {%- for post in collections.post | reverse -%}
+        {%- for post in collections.featured.slice(0, 6) | reverse -%}
           {% include 'article-snippet.njk' %}
         {%- endfor -%}
       </div>
@@ -42,15 +42,17 @@ description: Welcome to John Lilly's blog
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects-section">
+  <section id="projects" class="alternate-section">
     <div class="container">
-      <h2>Featured Projects</h2>
+      <div class="section-header">
+         <h2>Featured Projects</h2>
+        <a href="/projects">View All </a>
+      </div>
       <div class="projects-grid">
         
-        {%- for project in collections.project | reverse -%}
+        {%- for project in collections.homepage.slice(0, 4) | reverse -%}
           {% include 'projects.njk' %}
         {%- endfor -%}
-            
   
       </div>
     </div>
@@ -73,7 +75,7 @@ description: Welcome to John Lilly's blog
           </div>
           <div class="about-buttons">
             <a href="/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
-            <a href="/contact.html" class="btn btn-outline">Contact Me</a>
+            <a href="/contact" class="btn btn-outline">Contact Me</a>
           </div>
         </div>
       </div>
@@ -81,7 +83,7 @@ description: Welcome to John Lilly's blog
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="skills-section">
+  <section id="skills" class="alternate-section">
     <div class="container">
       <h2>Skills & Expertise</h2>
       <div class="skills-grid">
@@ -91,14 +93,14 @@ description: Welcome to John Lilly's blog
             <h3>Frontend Development</h3>
           </div>
           <ul class="skill-list">
-            <li>React</li>
-            <li>Next.js</li>
-            <li>TypeScript</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
-            <li>Tailwind CSS</li>
-            <li>Redux</li>
-            <li>React Query</li>
+             <li>HTML/CSS</li>
+             <li>JavaScript</li>
+             <li>React</li>
+             <li>Bootstrap</li>
+             <li>Tailwind CSS</li>
+             <li>jQuery</li>
+             <li>Responsive Web Design</li>
+             <li>Accessibility (a11y)</li>
           </ul>
         </div>
         <div class="skill-card">
@@ -107,31 +109,29 @@ description: Welcome to John Lilly's blog
             <h3>Backend Development</h3>
           </div>
           <ul class="skill-list">
+            <li>.NET/.NET Core</li>
+            <li>C#</li>
+            <li>REST APIs</li>
+            <li>SQL Databases</li>
+            <li>Entity Framework Core</li>
             <li>Node.js</li>
             <li>Express</li>
-            <li>GraphQL</li>
-            <li>REST APIs</li>
-            <li>MongoDB</li>
-            <li>PostgreSQL</li>
-            <li>Firebase</li>
-            <li>AWS</li>
           </ul>
         </div>
         <div class="skill-card">
           <div class="skill-header">
-            <i data-lucide="pencil-ruler"></i>
-            <h3>Tools & Methodologies</h3>
+            <i data-lucide="database"></i>
+            <h3>Cloud & DevOps</h3>
           </div>
-          <ul class="skill-list">
-            <li>Git</li>
-            <li>GitHub Actions</li>
-            <li>Docker</li>
-            <li>Jest</li>
-            <li>Testing Library</li>
-            <li>Agile</li>
-            <li>CI/CD</li>
-            <li>Performance Optimization</li>
-          </ul>
+            <ul class="skill-list">
+              <li>Azure App Services</li>
+              <li>Azure Functions</li>
+              <li>Azure SQL Database</li>
+              <li>Azure Storage (Blob, Queue, Table)</li>
+              <li>Application Insights</li>
+              <li>Git</li>
+              <li>CI/CD</li>
+            </ul>
         </div>
         <div class="skill-card">
           <div class="skill-header">
@@ -143,8 +143,6 @@ description: Welcome to John Lilly's blog
             <li>UI/UX Design</li>
             <li>Responsive Design</li>
             <li>Accessibility</li>
-            <li>Animation</li>
-            <li>Design Systems</li>
           </ul>
         </div>
         <div class="skill-card">
@@ -158,20 +156,18 @@ description: Welcome to John Lilly's blog
             <li>Analytics</li>
             <li>Performance Monitoring</li>
             <li>A/B Testing</li>
-            <li>Mentoring</li>
           </ul>
         </div>
         <div class="skill-card">
           <div class="skill-header">
-            <i class="fas fa-graduation-cap skill-icon"></i>
+            <i data-lucide="book-open-check"></i>
             <h3>Currently Learning</h3>
           </div>
           <ul class="skill-list">
-            <li>Rust</li>
-            <li>WebAssembly</li>
-            <li>Three.js</li>
-            <li>Machine Learning</li>
-            <li>Web3 Technologies</li>
+            <li>React</li>
+            <li>Redux</li>
+            <li>React Query</li>
+            <li>TypeScript</li>
           </ul>
         </div>
       </div>
@@ -184,7 +180,7 @@ description: Welcome to John Lilly's blog
       <div class="contact-cta-content">
         <h2>Let's Work Together</h2>
         <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
-        <a href="/contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
       </div>
     </div>
   </section>

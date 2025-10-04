@@ -3,9 +3,9 @@ title: My Blog | John Lilly
 layout: 'base.njk' 
 ---
   
-<section class="container">
+<section class="container snippet-container">
   <h1>Recent posts</h1>
-  <div class="grid grid-3">
+  <div class="blog-grid">
   {%- for post in collections.post | reverse -%}
     {% include 'article-snippet.njk' %}
   {%- endfor -%}

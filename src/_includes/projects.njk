@@ -1,21 +1,23 @@
 
 
 <article class="project-card">
+  <div class="project-card-flex-fill">
     <div class="project-image">
-    <img src="/images/{{ image }}" alt="Project Alpha">
+        <img src="/assets/projects/{{ project.data.image }}" alt="{{ project.data.title }}">
+        </div>
+        <div class="project-content">
+        <h3>{{ project.data.title }}</h3>
+        <p>{{ project.data.description }}</p>
+        <div class="project-tags">
+            {%- for tag in project.data.tags -%}
+            {%- if tag != "homepage" and tag != "project" -%}
+              <span class="card-category gradient-2">{{ tag }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        <a href="{{ project.data.link }}" class="btn btn-primary project-card-btn" target="_blank" rel="noopener noreferrer">
+            View Project <i data-lucide="square-arrow-out-up-right"></i>
+        </a>
     </div>
-    <div class="project-content">
-    <h3>{{ project.data.title }}</h3>
-    <p>{{ project.data.description }}</p>
-    <div class="project-tags">
-        {%- for tag in project.data.tags -%}
-        {%- if tag != "post" and tag != "featured" and tag != "projects" -%}
-          <span class="tag">{{ tag }}</span>
-        {%- endif -%}
-      {%- endfor -%}
-    </div>
-    <a href="{{ project.data.link }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-        View Project <i class="fas fa-external-link-alt"></i>
-    </a>
-    </div>
+  </div>
 </article>
