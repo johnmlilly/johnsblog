@@ -4,8 +4,8 @@ description: My journey to web development.
 author: John Lilly
 date: 2025-10-04
 tag:
-  - Post
-  - Featured
+  - post
+  - featured
   - Web Development
 image: /public/assets/howibecameawebdev.jpg
 ---
