@@ -1,0 +1,28 @@
+media:
+  input: public/assets/blog
+  output: /assets/blog
+
+
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/blog
+    filename: "{primary}.md"
+    view:
+      fields: [ title, date ]
+    fields:
+      - { label: "Title", name: "title", type: "text" }
+      - { label: "Description", name: "description", type: "text" }
+      - { label: "Author", name: "author", type: "text" }
+      - { label: "Date", name: "date", type: "date" }
+      - name: tag
+        label: Tag
+        type: select
+        options:
+          values: [ JavaScript, CSS, C# ]
+        
+      - { label: "Featured Image", name: "image", type: "image" }
+      - { label: "Image Caption", name: "imageAlt", type: "string" }
+      - { label: "Body", name: "body", type: "rich-text" }
+
