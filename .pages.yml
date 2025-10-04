@@ -15,7 +15,7 @@ content:
       - { label: "Description", name: "description", type: "text" }
       - { label: "Author", name: "author", type: "string" }
       - { label: "Date", name: "date", type: "date" }
-      - name: tag
+      - name: tags
         label: Tag
         type: select
         options:
