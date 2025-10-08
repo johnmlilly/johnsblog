@@ -28,17 +28,77 @@ description: Welcome to John Lilly's blog
     </div>
   </section>
 
-<!-- Blog Section -->
-  <section id="blog" class="blog-section">
+
+  <!-- About Me Section -->
+  <section id="about" class="about-section">
     <div class="container">
-      <div class="section-header">
-        <h2>Latest Blog Posts</h2>
-        <a href="/blog">View All </a>
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="/assets/johnabout.jpeg" alt="John Lilly">
+        </div>
+        <div class="about-content">
+          <h2>Who I Am</h2>
+          <div class="about-text">
+            <p>Hi there! I’m John Lilly, a self-taught developer with a background in communications who found a sustainable way to support my growing family through web development. </p>
+            <p>Relationships mean everything to me — from my wife and kids to my extended family, my brothers in Youth Apostles, and my coworkers at Apple FCU. </p>
+            <p>With experience in CMS development, front-end design, SEO, and accessibility, I’m ready to take on any project that helps people connect and create something meaningful online.</p>
+          </div>
+          <div>
+            <a href="/contact" class="btn btn-primary">Contact Me</a>
+          </div>
+        </div>
       </div>
-      <div class="blog-grid">
-        {%- for post in collections.featured.slice(0, 6) | reverse -%}
-          {% include 'article-snippet.njk' %}
-        {%- endfor -%}
+    </div>
+  </section>
+
+<!-- Skills Section -->
+  <section id="services">
+    <div class="container">
+      <h2>What I Do</h2>
+      <p>Here are the core services that I offer.</p>
+      <div class="services-grid">
+        <div class="services-card">
+          <div class="services-header">
+            <i data-lucide="layout"></i>
+            <h3>Front-End Development</h3>
+          </div>
+          <p>Building fast, responsive, and accessible interfaces using modern web technologies like React and Next.js.</p>
+        </div>
+        <div class="services-card">
+          <div class="services-header">
+            <i data-lucide="database"></i>
+            <h3>Content Management Systems</h3>
+          </div>
+          <p>Customizing and integrating CMS platforms like WordPress, Umbraco, and Decap to make content updates simple and scalable.</p>
+        </div>
+        <div class="services-card">
+          <div class="services-header">
+            <i data-lucide="search-check"></i>
+            <h3>SEO & Accessibility</h3>
+          </div>
+          <p>Optimizing websites for search engines and ensuring every visitor enjoys a seamless, inclusive experience.</p>
+        </div>
+        <div class="services-card">
+          <div class="services-header">
+            <i data-lucide="list-checks"></i>
+            <h3>Website Auditing</h3>
+          </div>
+          <p>Reviewing your site’s performance, usability, and structure to uncover opportunities for improvement and growth.</p>
+        </div>
+        <div class="services-card">
+          <div class="services-header">
+            <i data-lucide="pen-tool"></i>
+            <h3>UX / UI Prototyping</h3>
+          </div>
+          <p>Designing and testing user flows and interfaces that make your digital experience intuitive and visually engaging.</p>
+        </div>
+        <div class="services-card">
+          <div class="services-header">
+            <i data-lucide="server-cog"></i>
+            <h3>Back-End Development</h3>
+          </div>
+          <p>Building and maintaining the systems behind the scenes that power secure, reliable, and efficient web applications.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -47,39 +107,28 @@ description: Welcome to John Lilly's blog
   <section id="projects" class="alternate-section">
     <div class="container">
       <div class="section-header">
-         <h2>Featured Projects</h2>
+         <h2>Work I've Done</h2>
         <a href="/projects">View All </a>
       </div>
       <div class="projects-grid">
-        
         {%- for project in collections.homepage.slice(0, 4) | reverse -%}
           {% include 'projects.njk' %}
         {%- endfor -%}
-  
       </div>
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="about-section">
+<!-- Blog Section -->
+  <section id="blog" class="blog-section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="/assets/KaraLorynPhotography_04162022_johnlillyheadshots-0011.jpg" alt="John Lilly">
-        </div>
-        <div class="about-content">
-          <h2>About Me</h2>
-          <div class="about-text">
-            <p>Hi there! I'm John Lilly, a software engineer with over 8 years of experience building web applications and digital experiences.</p>
-            <p>I specialize in frontend development with React and Next.js, but I'm also comfortable working across the full stack. I'm passionate about creating intuitive, accessible, and performant user interfaces.</p>
-            <p>When I'm not coding, you can find me writing technical articles, contributing to open source projects, or exploring the outdoors. I believe in continuous learning and sharing knowledge with the developer community.</p>
-            <p>Currently, I'm working as a Senior Software Engineer at TechCorp, where I lead frontend development for our flagship product.</p>
-          </div>
-          <div class="about-buttons">
-            <a href="/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
-            <a href="/contact" class="btn btn-outline">Contact Me</a>
-          </div>
-        </div>
+      <div class="section-header">
+        <h2>Writing</h2>
+        <a href="/blog">View All </a>
+      </div>
+      <div class="blog-grid">
+        {%- for post in collections.featured.slice(0, 6) | reverse -%}
+          {% include 'article-snippet.njk' %}
+        {%- endfor -%}
       </div>
     </div>
   </section>

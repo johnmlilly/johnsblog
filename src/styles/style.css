@@ -464,7 +464,7 @@ body.menu-open {
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   background-color: var(--color-card-bg-hover);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -498,7 +498,7 @@ body.menu-open {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -515,7 +515,7 @@ body.menu-open {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .project-content {
@@ -546,7 +546,7 @@ body.menu-open {
 
 /* About Section */
 .about-section {
-  background-color: var(--color-background);
+  background-color: var(--color-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -577,10 +577,47 @@ body.menu-open {
   margin-bottom: 2rem;
 }
 
-.about-buttons {
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.services-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-speed);
+  justify-content: center;
+}
+
+.services-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.services-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.services-card svg {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-card h3 {
+  margin-block: 0.5rem 0;
+  text-align: center;
 }
 
 /* Alternating Background Color Section */
@@ -593,8 +630,6 @@ body.menu-open {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  position: relative;
-  z-index: 1;
 }
 
 .skill-card {
@@ -708,11 +743,7 @@ body.menu-open {
     display: none;
   }
 
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .skills-grid {
+  .skills-grid, .services-grid, .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -728,13 +759,10 @@ body.menu-open {
 }
 
 @media (min-width: 1024px) {
-  .blog-grid {
+  .blog-grid, .skills-grid, .services-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .contact-section {
