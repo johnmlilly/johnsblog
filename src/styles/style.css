@@ -16,6 +16,7 @@
   /* Amber accent */
   --color-border: #334155;
   --color-card-bg: #111827;
+  --color-card-bg-alt: var(--color-secondary);
   --color-card-bg-hover: #1e2837;
   --color-tag-bg: #1e293b;
   --color-tag-text: #e2e8f0;
@@ -584,7 +585,7 @@ body.menu-open {
 }
 
 .services-card {
-  background-color: var(--color-card-bg);
+  background-color: var(--color-card-bg-alt);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   border: 1px solid var(--color-border);
