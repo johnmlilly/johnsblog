@@ -44,3 +44,14 @@ async function copyCode(block, button) {
     button.innerHTML = copyButtonIcon;
   }, 1000);
 }
+
+// Typed JS Animation: https://github.com/mattboldt/typed.js
+
+    var typed = new Typed('#hero-text', {
+      strings: ['full-stack developer.', 'web designer.', 'technical writer.', 'Star Wars nerd.'],
+      typeSpeed: 75,       // slightly slower = more human typing
+      backSpeed: 50,       // smoother and less abrupt
+      backDelay: 1500,     // gives time to read before deleting
+      startDelay: 500,     // small pause before starting
+      loop: true,           // continuous loop for engagement
+    });
