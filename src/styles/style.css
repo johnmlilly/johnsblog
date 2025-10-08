@@ -208,7 +208,7 @@ iframe {
 /* Header Styles */
 .site-header {
   width: 100%;
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background);
   padding: 1rem 0;
   backdrop-filter: blur(10px);
 }
@@ -383,8 +383,20 @@ body.menu-open {
 }
 
 .hero h1 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   color: var(--color-primary);
+}
+
+.hero-content h2::after {
+  position: relative;
 }
 
 .hero p {
