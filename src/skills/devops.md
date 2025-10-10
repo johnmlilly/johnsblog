@@ -1,6 +1,7 @@
 ---
 title: "Cloud & DevOps"
 tags: skills
+order: 4
 skills:
   - Azure App Services
   - Azure Functions

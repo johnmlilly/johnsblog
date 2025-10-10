@@ -51,7 +51,8 @@ content:
     path: src/skills
     filename: "{primary}.md"
     view:
-        fields: [title]
+        fields: [title, order]
     fields:
+      - { label: "Order", name: "order", type: "number"
       - { label: "Skill Name", name: "title", type: "string" }
       - { label: "Skills", name: "skills", type: "string", list: true }

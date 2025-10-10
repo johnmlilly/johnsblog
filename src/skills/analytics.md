@@ -1,6 +1,7 @@
 ---
 title: "Analytics & Optimization"
 tags: skills
+order: 6
 skills:
   - Technical Writing
   - Analytics
