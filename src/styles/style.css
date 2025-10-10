@@ -403,13 +403,19 @@ body.menu-open {
 .hero p {
   font-size: 1.25rem;
   color: var(--color-text-muted);
-  margin-bottom: 2rem;
+}
+
+#hero-text {
+  color: var(--color-accent-3);
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .hero-image {
