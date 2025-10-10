@@ -14,6 +14,11 @@ export default function(eleventyConfig) {
   // Code syntax highlighting plugin
   eleventyConfig.addPlugin(syntaxHighlight);
 
+eleventyConfig.addCollection("skills", function(collectionApi) {
+  return collectionApi.getFilteredByTag("skills")
+    .sort((a, b) => a.data.order - b.data.order); // ascending order by `order`
+});
+
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {
     emoji: "",

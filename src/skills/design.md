@@ -1,6 +1,7 @@
 ---
 title: "Design & UX"
 tags: skills
+order: 5
 skills:
   - Figma
   - Adobe XD
