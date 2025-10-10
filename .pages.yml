@@ -49,18 +49,14 @@ content:
     path: src/skills-snippet
     filename: "{primary}.md"
     view:
-    fields: 
-      - { label: "Category", name: "title", type: "string" }
-  fields:
+        fields: [title]
+    fields:
     - label: "Category"
       name: "title"
       type: "string"
       required: true
     - label: "Skills"
       name: "skills"
-      type: list
-      required: true
-      field:
-        label: "Skill"
-        name: "skill"
-        type: string
+      type: string
+      list: true
+     
