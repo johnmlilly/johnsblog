@@ -51,12 +51,5 @@ content:
     view:
         fields: [title]
     fields:
-    - label: "Category"
-      name: "title"
-      type: "string"
-      required: true
-    - label: "Skills"
-      name: "skills"
-      type: "string"
-      list: true
-     
+      - { label: "Skill Name", name: "title", type: "string" }
+      - { label: "Skills", name: "skills", type: "string", list: true }
