@@ -1,5 +1,5 @@
 media:
-  input: src/assets
+  input: assets
   output: /public/assets
 
 content:
@@ -37,6 +37,7 @@ content:
       - { label: "Project Name", name: "title", type: "string" }
       - { label: "Project Date", name: "date", type: "date" }
       - { label: "Project Description", name: "description", type: "text" }
+      - { label: "Project Image", name: "image", type: "image" }
       - name: tags
         label: Tags
         type: select
