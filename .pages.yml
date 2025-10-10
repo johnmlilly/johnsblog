@@ -46,7 +46,7 @@ content:
   - name: skills
     label: Skills
     type: collection
-    path: src/skills-snippet
+    path: src/skills
     filename: "{primary}.md"
     view:
         fields: [title]
