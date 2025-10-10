@@ -19,9 +19,9 @@ content:
         label: Tag
         type: select
         options:
+          creatable: true
           multiple: true
           values: [ post, featured, Web Development, JavaScript, CSS, C# ]
-        
       - { label: "Featured Image", name: "image", type: "image" }
       - { label: "Image Caption", name: "imageAlt", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
@@ -41,29 +41,18 @@ content:
         label: Tags
         type: select
         options:
+          creatable: true
+          multiple: true
           values: [ WordPress, UX/UI, Mobile Responsiveness ]
-      - { label: "Project Link", name: "link", type: "text" }
+      - { label: "Project Link", name: "link", type: "string" }
   - name: skills
     label: Skills
     type: collection
-    path: src/skills-snippet
+    path: src/skills
     filename: "{primary}.md"
     view:
-    fields: 
-      - { label: "Category", name: "title", type: "string" }
-  fields:
-    - label: "Category"
-      name: "title"
-      type: "string"
-      required: true
-    - label: "Order"
-      name: "order"
-      type: number
-    - label: "Skills"
-      name: "skills"
-      type: list
-      required: true
-      field:
-        label: "Skill"
-        name: "skill"
-        type: string
+        fields: [title, order]
+    fields:
+      - { label: "Order", name: "order", type: "number"
+      - { label: "Skill Name", name: "title", type: "string" }
+      - { label: "Skills", name: "skills", type: "string", list: true }
