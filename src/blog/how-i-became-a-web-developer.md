@@ -1,7 +1,6 @@
 ---
 title: How I Became a Web Developer
 description: My journey to web development.
-author: John Lilly
 date: 2025-10-04
 tags:
   - post
