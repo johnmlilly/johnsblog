@@ -53,6 +53,6 @@ content:
     view:
         fields: [title, order]
     fields:
-      - { label: "Order", name: "order", type: "number" }
       - { label: "Skill Name", name: "title", type: "string" }
+      - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
