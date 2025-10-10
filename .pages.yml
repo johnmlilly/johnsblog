@@ -57,6 +57,6 @@ content:
       required: true
     - label: "Skills"
       name: "skills"
-      type: string
+      type: "string"
       list: true
      
