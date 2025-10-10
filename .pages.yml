@@ -41,8 +41,10 @@ content:
         label: Tags
         type: select
         options:
+          creatable: true
+          multiple: true
           values: [ WordPress, UX/UI, Mobile Responsiveness ]
-      - { label: "Project Link", name: "link", type: "text" }
+      - { label: "Project Link", name: "link", type: "string" }
   - name: skills
     label: Skills
     type: collection
