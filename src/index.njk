@@ -137,86 +137,10 @@ description: Welcome to John Lilly's blog
   <section id="skills" class="alternate-section">
     <div class="container">
       <h2>Skills & Expertise</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-header">
-            <h3>Frontend Development</h3>
-          </div>
-          <ul class="skill-list">
-             <li>HTML/CSS</li>
-             <li>JavaScript</li>
-             <li>React</li>
-             <li>Bootstrap</li>
-             <li>SEO</li>
-             <li>jQuery</li>
-             <li>Responsive Web Design</li>
-             <li>Accessibility (a11y)</li>
-          </ul>
-        </div>
-         <div class="skill-card">
-          <div class="skill-header">
-            <h3>Content Management Systems (CMS)</h3>
-          </div>
-            <ul class="skill-list">
-              <li>WordPress</li>
-              <li>Umbraco</li>
-              <li>SquareSpace</li>
-              <li>Drupal</li>
-              <li>Webflow</li>
-            </ul>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <h3>Backend Development</h3>
-          </div>
-          <ul class="skill-list">
-            <li>C#</li>
-            <li>.NET / .NET Core</li>
-            <li>Entity Framework Core</li>
-            <li>SQL Server</li>
-            <li>REST APIs</li>
-            <li>Node.js</li>
-            <li>Express</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <h3>Cloud & DevOps</h3>
-          </div>
-            <ul class="skill-list">
-              <li>Azure App Services</li>
-                <li>Azure Functions</li>
-                <li>Azure SQL Database</li>
-                <li>Azure Storage</li>
-                <li>Application Insights</li>
-                <li>CI/CD</li>
-                <li>Azure DevOps (Repos, Pipelines, Boards)</li>
-            </ul>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <h3>Design & UX</h3>
-          </div>
-          <ul class="skill-list">
-            <li>Figma</li>
-            <li>Adobe XD</li>
-            <li>UI/UX Design</li>
-            <li>Wireframing & Prototyping</li>
-            <li>Responsive Design</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header">
-            <h3>Analytics & Optimization</h3>
-          </div>
-          <ul class="skill-list">
-           <li>Technical Writing</li>
-           <li>Analytics</li>
-           <li>Performance Monitoring</li>
-           <li>A/B Testing</li>
-           <li>SEO Optimization</li>
-           <li>Site Auditing</li>
-          </ul>
+        <div class="skills-grid">
+          {% for skill in collections.skills %}
+            {% include 'skills-snippet.njk' %}
+          {% endfor %}
         </div>
       </div>
     </div>
