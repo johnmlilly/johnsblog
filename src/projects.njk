@@ -7,7 +7,7 @@ layout: 'base.njk'
   <h1>Projects</h1>
   <div class="projects-grid">
   {%- for project in collections.project | reverse -%}
-     {% include 'projects.njk' %}
+     {% include 'projects-snippet.njk' %}
   {%- endfor -%}
   </div>
 </section>

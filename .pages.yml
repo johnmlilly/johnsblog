@@ -43,7 +43,24 @@ content:
         options:
           values: [ WordPress, UX/UI, Mobile Responsiveness ]
       - { label: "Project Link", name: "link", type: "text" }
-
-
-        
-
+  - name: skills
+    label: Skills
+    type: collection
+    path: src/skills-snippet
+    filename: "{primary}.md"
+    view:
+    fields: 
+      - { label: "Category", name: "title", type: "string" }
+  fields:
+    - label: "Category"
+      name: "title"
+      type: "string"
+      required: true
+    - label: "Skills"
+      name: "skills"
+      type: list
+      required: true
+      field:
+        label: "Skill"
+        name: "skill"
+        type: string

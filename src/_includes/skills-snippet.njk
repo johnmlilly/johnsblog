@@ -1,0 +1,10 @@
+<div class="skill-card">
+  <div class="skill-header">
+    <h3>{{ skill.data.title }}</h3>
+  </div>
+  <ul class="skill-list">
+    {% for item in skill.data.skills %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</div>

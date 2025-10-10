@@ -16,6 +16,7 @@
   /* Amber accent */
   --color-border: #334155;
   --color-card-bg: #111827;
+  --color-card-bg-alt: var(--color-secondary);
   --color-card-bg-hover: #1e2837;
   --color-tag-bg: #1e293b;
   --color-tag-text: #e2e8f0;
@@ -208,7 +209,7 @@ iframe {
 /* Header Styles */
 .site-header {
   width: 100%;
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background);
   padding: 1rem 0;
   backdrop-filter: blur(10px);
 }
@@ -383,20 +384,38 @@ body.menu-open {
 }
 
 .hero h1 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   color: var(--color-primary);
+}
+
+.hero-content h2::after {
+  position: relative;
 }
 
 .hero p {
   font-size: 1.25rem;
   color: var(--color-text-muted);
-  margin-bottom: 2rem;
+}
+
+#hero-text {
+  color: var(--color-accent-3);
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .hero-image {
@@ -452,7 +471,7 @@ body.menu-open {
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   background-color: var(--color-card-bg-hover);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -486,7 +505,7 @@ body.menu-open {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -503,7 +522,7 @@ body.menu-open {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .project-content {
@@ -534,7 +553,7 @@ body.menu-open {
 
 /* About Section */
 .about-section {
-  background-color: var(--color-background);
+  background-color: var(--color-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -565,10 +584,47 @@ body.menu-open {
   margin-bottom: 2rem;
 }
 
-.about-buttons {
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.services-card {
+  background-color: var(--color-card-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-speed);
+  justify-content: center;
+}
+
+.services-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.services-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.services-card svg {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-card h3 {
+  margin-block: 0.5rem 0;
+  text-align: center;
 }
 
 /* Alternating Background Color Section */
@@ -581,8 +637,6 @@ body.menu-open {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  position: relative;
-  z-index: 1;
 }
 
 .skill-card {
@@ -600,30 +654,24 @@ body.menu-open {
   margin-bottom: 1.5rem;
 }
 
-.skill-icon {
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: white;
-}
-
 .skill-card h3 {
   margin-bottom: 0;
 }
 
 .skill-list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
+  list-style-type: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .skill-list li {
-  margin-bottom: 0.5rem;
-  color: var(--color-text-muted);
+    background: var(--gradient-2);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 /* Contact CTA Section */
@@ -696,11 +744,7 @@ body.menu-open {
     display: none;
   }
 
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .skills-grid {
+  .skills-grid, .services-grid, .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -716,13 +760,10 @@ body.menu-open {
 }
 
 @media (min-width: 1024px) {
-  .blog-grid {
+  .blog-grid, .skills-grid, .services-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .contact-section {

@@ -7,7 +7,7 @@ tags:
   - post
   - featured
   - Web Development
-image: /public/assets/blog/howibecameawebdev.jpg
+image: howibecameawebdev.jpg
 imageAlt: Storm trooper crossing the sand
 ---
 As a kid, I was obsessed with building and creating things. My go-to? Legos. I’d spend hours snapping together Star Wars sets—X-Wings, TIE Fighters, even my own custom start fighter. For me, it wasn’t just play; it was figuring out how pieces fit, how to make something cool from a pile of bricks. That knack for building things stuck with me. In college, I studied communication, but my real passion was messing with websites—tweaking designs, digging into how they worked. I loved the puzzle of it, like rebuilding a Lego set in digital form.
