@@ -288,6 +288,9 @@ iframe {
   transform: translateY(-2px);
 }
 
+.hide-on-mobile {
+  display: none;
+}
 
 .mobile-menu-toggle {
   display: flex;
@@ -364,19 +367,13 @@ body.menu-open {
 
 /* Hero Section */
 .hero {
-  padding-top: 8rem;
-  padding-bottom: 5rem;
   background-color: var(--color-background);
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  position: relative;
-  z-index: 1;
+  gap: 2rem;
 }
 
 .hero-content {
@@ -732,6 +729,10 @@ body.menu-open {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+
+  .hide-on-mobile {
+    display: flex;
   }
   
 }

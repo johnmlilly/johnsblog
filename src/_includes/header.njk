@@ -6,9 +6,15 @@
         <a href="/" class="site-title">John Lilly</a>
       </div>
       <nav class="main-nav">
+        {% set socialClass = "hide-on-mobile" %}
         {% include 'components/navigation.njk' %}
       </nav>
       {% include 'components/sociallinks.njk' %}
+       <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
   </header>
   <!-- Mobile Menu -->
   <div class="mobile-menu">
@@ -16,7 +22,7 @@
       <div class="mobile-menu-header">
         <a href="/" class="site-title">John Lilly</a>
         <button class="mobile-menu-close" aria-label="Close menu">
-          <i data-lucide="circle-x"></i>
+          <i data-lucide="x"></i>
         </button>
       </div>
       <nav>
@@ -24,3 +30,4 @@
       </nav>
     </div>
   </div>
+  
