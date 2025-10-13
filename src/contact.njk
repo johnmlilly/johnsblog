@@ -4,67 +4,69 @@ layout: 'base.njk'
 description: Welcome to John Lilly's blog
 ---
 
-<section class="contact-section">
-  <h2>Get in Touch</h2>
-  <p>Fill out the form below to get in touch!</p>
-  <form netlify
-    name="contact" 
-    method="POST" 
-    netlify-honeypot="extra-details"
-    data-netlify="true"
-    class="contact-form"
-    >
+<section class="container">
+  <div class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Fill out the form below to get in touch!</p>
+    <form netlify
+      name="contact" 
+      method="POST" 
+      netlify-honeypot="extra-details"
+      data-netlify="true"
+      class="contact-form"
+      >
 
-  <!-- Honeypot field -->
-  <div class="contact-form-hidden">
-    <label>Extra details field: 
-        <input name="extra-details" aria-hidden="true" type="hidden" />
-    </label>
+    <!-- Honeypot field -->
+    <div class="contact-form-hidden">
+      <label>Extra details field: 
+          <input name="extra-details" aria-hidden="true" type="hidden" />
+      </label>
+    </div>
+
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <div class="form-group">
+        <label for="project-type">Type of Project</label>
+        <select id="project-type" name="project-type" required>
+          <option value="">-- Select --</option>
+          <option value="website-redesign">Website Redesign</option>
+          <option value="consultation">Consultation</option>
+          <option value="new-website">New Website Build</option>
+          <option value="performance-optimization">Performance Optimization</option>
+          <option value="seo-strategy">SEO / Content Strategy</option>
+          <option value="maintenance-support">Ongoing Maintenance & Support</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Estimated Budget</label>
+        <input type="text" id="budget" name="budget" placeholder="$5,000–$10,000" />
+      </div>
+
+      <div class="form-group">
+        <label for="timeline">Estimated Timeline</label>
+        <input type="text" id="timeline" name="timeline" placeholder="2–3 months" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Project Details</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell me more about your project..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
   </div>
-
-    <div class="form-group">
-      <label for="full-name">Full Name</label>
-      <input type="text" id="full-name" name="full-name" required />
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
-    </div>
-
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" />
-    </div>
-
-    <div class="form-group">
-      <label for="project-type">Type of Project</label>
-      <select id="project-type" name="project-type" required>
-        <option value="">-- Select --</option>
-        <option value="website-redesign">Website Redesign</option>
-        <option value="consultation">Consultation</option>
-        <option value="new-website">New Website Build</option>
-        <option value="performance-optimization">Performance Optimization</option>
-        <option value="seo-strategy">SEO / Content Strategy</option>
-        <option value="maintenance-support">Ongoing Maintenance & Support</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="budget">Estimated Budget</label>
-      <input type="text" id="budget" name="budget" placeholder="$5,000–$10,000" />
-    </div>
-
-    <div class="form-group">
-      <label for="timeline">Estimated Timeline</label>
-      <input type="text" id="timeline" name="timeline" placeholder="2–3 months" />
-    </div>
-
-    <div class="form-group">
-      <label for="message">Project Details</label>
-      <textarea id="message" name="message" rows="5" placeholder="Tell me more about your project..."></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Send Message</button>
-  </form>
 </section>
