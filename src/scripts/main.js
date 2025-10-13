@@ -1,4 +1,28 @@
 
+  // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+      document.body.classList.add('menu-open');
+    });
+    
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
 // **** Copy and paste code from code elements
 // Reference: https://www.roboleary.net/demos/iNGpDikU/preview/?tab=code
 
