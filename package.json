@@ -24,13 +24,11 @@
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
-    "@tinacms/cli": "^1.11.0",
     "@types/node": "^24.7.2",
     "eleventy-plugin-metagen": "^1.8.3",
     "luxon": "^3.5.0"
   },
   "dependencies": {
-    "lucide": "^0.515.0",
-    "tinacms": "^2.9.0"
+    "lucide": "^0.515.0"
   }
 }
