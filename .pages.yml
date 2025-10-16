@@ -13,7 +13,7 @@ content:
     fields:
       - { label: "Title", name: "title", type: "string" }
       - { label: "Description", name: "description", type: "text" }
-      - { label: "Author", name: "author", type: "string" }
+      - { label: "Draft", name: "draft", type: "boolean", default: true }
       - { label: "Date", name: "date", type: "date" }
       - name: tags
         label: Tag
@@ -25,7 +25,6 @@ content:
       - { label: "Featured Image", name: "image", type: "image" }
       - { label: "Image Caption", name: "imageAlt", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
-      - { label: "Draft", name: "draft", type: "boolean", default: true }
   - name: projects
     label: Projects
     type: collection
