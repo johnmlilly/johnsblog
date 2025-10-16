@@ -52,6 +52,6 @@ That stuck with me. I love the puzzle of coding, the way it clicks when a soluti
 
 ## Where I’m At Now
 
-Today, I’m working as a web developer at Apple Federal Credit Union, building projects that make websites and apps more user-friendly and accessible. I’m constantly learning and growing in this ever-evolving field. Lately, I’ve revisited WordPress development and just wrapped up a site for my home parish, [St. Elizabeth Ann Seton](https://setonlakeridge.org/).. I’ve also been diving into the [Jamstack](https://jamstack.org/) ecosystem and exploring the many benefits it offers—more on that in an upcoming post!
+Today, I’m working as a web developer at Apple Federal Credit Union, building projects that make websites and apps more user-friendly and accessible. I’m constantly learning and growing in this ever-evolving field. Lately, I’ve revisited WordPress development and just wrapped up a site for my home parish, [St. Elizabeth Ann Seton](https://setonlakeridge.org/). I’ve also been diving into the [Jamstack](https://jamstack.org/) ecosystem and exploring the many benefits it offers—more on that in an upcoming post!
 
 This blog is my space to document what I’m learning, reflect on my journey, and hopefully help others who are just getting started. If I can code my way to a better life, so can you. Stick around, and let’s build something awesome together!I
