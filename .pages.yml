@@ -25,7 +25,7 @@ content:
       - { label: "Featured Image", name: "image", type: "image" }
       - { label: "Image Caption", name: "imageAlt", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
-
+      - { label: "Draft", name: "draft", type: "boolean", default: true }
   - name: projects
     label: Projects
     type: collection
