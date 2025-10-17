@@ -20,11 +20,15 @@ export default function(eleventyConfig) {
   });
 
   //Hide blog posts that are not published
-   eleventyConfig.addCollection("blog", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
-      return post.data.published !== false;
-    });
-  });
+ eleventyConfig.addCollection("featured", function(collectionApi) {
+  return collectionApi.getFilteredByGlob("./src/blog/*.md")
+    .filter(post => {
+      const pub = post.data.published;
+      return !(pub === false || pub === "false") && post.data.tags?.includes("featured");
+    })
+    .sort((a, b) => b.date - a.date);
+});
+
   
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {
