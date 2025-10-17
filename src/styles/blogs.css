@@ -1,10 +1,5 @@
 /* Blog Post Specific Styles */
 
-.article-hero.container {
-    max-width: 1000px;
-    padding: 5rem 1.5rem;
-}
-
 /* Breadcrumb */
 .breadcrumb {
     margin-bottom: 1rem;
@@ -134,27 +129,19 @@
     color: var(--color-text-muted);
 }
 
-/* Article Content */
-.article-content {
-    padding: 1.5rem 1rem;
-    background-color: var(--color-background);
-}
-
 .article-content.container {
     max-width: 1000px;
+    padding: 5rem 1.5rem;
 }
 
 /* Prose Styles */
-.prose {
-    color: var(--color-text);
-    line-height: 1.8;
-}
 
 .prose {
     font-size: 1.25rem;
-    color: var(--color-text-muted);
+    line-height: 1.8;
     margin-bottom: 2rem;
     font-weight: 400;
+    padding-block: 1.5rem 1rem;
 }
 
 .prose h2 {

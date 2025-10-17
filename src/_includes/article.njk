@@ -4,7 +4,7 @@ layout: 'base.njk'
 
 
   <!-- Blog Post Hero -->
-  <section class="article-hero container">
+  <section class="article-content container">
     <div>
         <!-- Breadcrumb -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -50,15 +50,13 @@ layout: 'base.njk'
           
       </div>
     </div>
-  </section>
-  
-   <!-- Article Content -->
-    <div class="article-content container">
-      <article class="prose">
+    <!-- Article Content -->
+    <article class="prose">
         {{ content | safe }}
         {% cloneWarsQuote %}
       </article>
-    </div>
+  </section>
+  
     <!-- Related Articles -->
   <section class="related-articles">
     <div class="container">
