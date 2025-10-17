@@ -6,7 +6,6 @@ tags:
   - UI/UX Design
   - Content Strategy
   - Mobile Responsive
-  - project
 link: https://www.youthapostles.org/
 image: youthapostles.png
 date: 2024-09-01

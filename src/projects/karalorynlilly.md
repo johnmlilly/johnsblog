@@ -11,7 +11,6 @@ tags:
   - JavaScript
   - Performance
   - Content Management
-  - project
   - homepage
 link: https://karalorynlilly.com
 image: karalorynlilly.png

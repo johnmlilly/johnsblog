@@ -14,10 +14,18 @@ export default function(eleventyConfig) {
   // Code syntax highlighting plugin
   eleventyConfig.addPlugin(syntaxHighlight);
 
+ // ------------------------
+  // SKILL COLLECTIONS
+  // ------------------------
+
   eleventyConfig.addCollection("skills", function(collectionApi) {
     return collectionApi.getFilteredByTag("skills")
       .sort((a, b) => a.data.order - b.data.order); // ascending order by `order`
   });
+
+   // ------------------------
+  // BLOG COLLECTIONS
+  // ------------------------
 
   // All published posts
   eleventyConfig.addCollection("blog", function (collectionApi) {
@@ -35,7 +43,19 @@ export default function(eleventyConfig) {
     });
   });
 
-  
+  // ------------------------
+  // PROJECT COLLECTIONS
+  // ------------------------
+  eleventyConfig.addCollection("projects", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/projects/*.md");
+  });
+
+  eleventyConfig.addCollection("homepageProjects", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(project =>
+      project.data.tags?.includes("homepage")
+    );
+  });
+
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {
     emoji: "",

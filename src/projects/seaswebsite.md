@@ -11,7 +11,6 @@ tags:
   - Mobile Responsive
   - Custom CSS
   - Hosting & Backups
-  - project
   - homepage
 link: https://setonlakeridge.org/
 ---
