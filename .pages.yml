@@ -21,7 +21,7 @@ content:
         options:
           creatable: true
           multiple: true
-          values: [ post, featured, Web Development, JavaScript, CSS, C# ]
+          values: [ featured, Web Development, JavaScript, CSS, C# ]
       - { label: "Featured Image", name: "image", type: "image" }
       - { label: "Image Caption", name: "imageAlt", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
