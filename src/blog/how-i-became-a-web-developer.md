@@ -6,6 +6,7 @@ description: From childhood Lego sets to coding websites, my journey into web
 date: 2025-10-04
 tags:
   - featured
+  - Career Path
   - Web Development
 image: /blog/howibecameawebdev.jpg
 imageAlt: Storm trooper crossing the sand
