@@ -30,15 +30,13 @@ My initial research led me into the world of **static site generators (SSGs)** �
 
 While Astro was appealing for its React compatibility and Jekyll had strong roots in the developer community, **11ty (Eleventy)** stood out for its simplicity, flexibility, and supportive open-source community. The documentation was excellent, the learning curve was gentle, and it allowed me to use plain HTML and template languages like Nunjucks — perfect for someone who enjoys tinkering with the front end.
 
-### /Getting Started
+## Getting Started
 
 Once I decided on 11ty, I dove into the documentation and began following tutorials to understand the structure and workflow. One tutorial that really helped was from **Kevin Powell**, the “King of CSS,” whose content I’ve followed for years. His video on building a JAMstack blog using 11ty, Netlify, and a custom CMS clicked immediately.
 
 It showed me that I could have everything I wanted: a modern, fast, and completely customizable site — without needing to manage servers or pay for hosting.
 
-* * *
-
-### Building the Site
+## Building the Site
 
 The initial build came together surprisingly quickly. I set up my **11ty project**, connected it to **Netlify** for deployment, and began experimenting with collections for my projects and blog posts.
 
@@ -46,17 +44,13 @@ Styling was done entirely with **custom CSS**, focusing on clean, responsive lay
 
 I originally integrated **Decap CMS** (formerly Netlify CMS) to make content editing easier, but after a bit of testing, I switched to **PagesCMS**. It offered a simpler user interface and smoother integration with my 11ty setup — a much better overall experience for managing my blog posts and projects.
 
-* * *
-
-### Review and Iteration
+## Review and Iteration
 
 Once the main structure was up, I spent time refining the layout, improving accessibility, and optimizing performance. Each round of feedback — from peers and my own testing — helped shape the final version.
 
 I focused on scalability from the start, ensuring that adding new pages, posts, or features would be as seamless as possible. The static architecture makes it easy to maintain, and the modular 11ty structure means I can add new components or sections down the road without rebuilding the whole thing.
 
-* * *
-
-### The Final Stack
+## The Final Stack
 
 Here’s what the final tech stack looks like:
 
@@ -75,9 +69,7 @@ Here’s what the final tech stack looks like:
 
 The end result is exactly what I set out to build — a site that’s **simple, fast, scalable, and low-cost**, while still showcasing my skills and giving me a space to share my thoughts through my blog.
 
-* * *
-
-### Final Thoughts
+## Final Thoughts
 
 Building this site reminded me why I love front-end development: the mix of creativity and problem-solving, the freedom to experiment, and the satisfaction of creating something from the ground up.
 
