@@ -1,5 +1,10 @@
 /* Blog Post Specific Styles */
 
+.article-hero.container {
+    max-width: 1000px;
+    padding: 5rem 1.5rem;
+}
+
 /* Breadcrumb */
 .breadcrumb {
     margin-bottom: 1rem;
@@ -372,11 +377,6 @@
     margin-bottom: 2rem;
 }
 
-/* Category */
-.post-category {
-    margin-bottom: 1.5rem;
-}
-
 .category-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -395,15 +395,14 @@
     font-size: 3rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    max-width: 800px;
 }
 
 /* Intro Text */
 .post-intro {
     font-size: 1.25rem;
     line-height: 1.6;
+    color: var(--color-text-muted);
     margin-bottom: 2rem;
-    max-width: 800px;
 }
 
 /* Meta Information */
@@ -418,6 +417,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: var(--color-text-muted);
     font-size: 0.875rem;
 }
 
