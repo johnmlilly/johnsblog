@@ -8,7 +8,7 @@ description: Insights and resources from a Catholic freelance web developer in N
 <section class="container snippet-container">
   <h1>Recent posts</h1>
   <div class="blog-grid">
-  {%- for post in collections.blog | reverse -%}
+  {%- for post in collections.post | reverse -%}
     {% include 'article-snippet.njk' %}
   {%- endfor -%}
   </div>

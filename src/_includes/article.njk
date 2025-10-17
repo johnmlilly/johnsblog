@@ -4,26 +4,36 @@ layout: 'base.njk'
 
 
   <!-- Blog Post Hero -->
-  <section class="blog-post-hero">
-    <div class="container">
-        <!-- Breadcrumb -->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="article-content container">
     <div>
-      <ol class="breadcrumb-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li aria-current="page">{{ title }}</li>
-      </ol>
-  </nav>
+        <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div>
+          <ol class="breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li aria-current="page">{{ title }}</li>
+          </ol>
+      </nav>
       <div class="blog-post-content">
-        <!-- Category -->
-        <div class="post-category">
+        <!-- Meta Information -->
+        <div class="post-meta">
           <span class="category-badge">  
             {% for tag in tags %}
               {% if tag != 'post' and tag != 'featured' %}
                 {{ tag }}
               {% endif %}
-            {% endfor %}</span>
+            {% endfor %}
+          </span>
+          <div class="stat-item">
+              <i data-lucide="calendar"></i>
+              <time datetime="{{ date }}">{{ date | postDate }}</time>
+            </div>
+            <div class="stat-item">
+              <i data-lucide="clock"></i>
+              <span>{{ content | emojiReadTime }}</span>
+            </div>
+          </div>
         </div>
 
         <!-- Title -->
@@ -31,20 +41,6 @@ layout: 'base.njk'
 
         <!-- Intro Text -->
         <p class="post-intro"> {{ description }} </p>
-
-        <!-- Meta Information -->
-        <div class="post-meta">
-          
-            <div class="stat-item">
-              <i data-lucide="calendar"></i>
-              <time datetime="{{ date }}">{{ date | postDate }}</time>
-            </div>
-            <div class="stat-item">
-              <i data-lucide="clock"></i>
-              <span>{{ content | emojiReadTime }}</span>
-          </div>
-        </div>
-      </div>
 
       <!-- Featured Image -->
       <div class="post-image-container">
@@ -54,15 +50,13 @@ layout: 'base.njk'
           
       </div>
     </div>
-  </section>
-  
-   <!-- Article Content -->
-    <div class="article-content container">
-      <article class="prose">
+    <!-- Article Content -->
+    <article class="prose">
         {{ content | safe }}
         {% cloneWarsQuote %}
       </article>
-    </div>
+  </section>
+  
     <!-- Related Articles -->
   <section class="related-articles">
     <div class="container">
