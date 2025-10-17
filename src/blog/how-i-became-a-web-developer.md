@@ -5,7 +5,6 @@ description: From childhood Lego sets to coding websites, my journey into web
   development was fueled by a passion for creating and problem-solving.
 date: 2025-10-04
 tags:
-  - post
   - featured
   - Web Development
 image: /blog/howibecameawebdev.jpg

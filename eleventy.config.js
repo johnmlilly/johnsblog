@@ -19,15 +19,21 @@ export default function(eleventyConfig) {
       .sort((a, b) => a.data.order - b.data.order); // ascending order by `order`
   });
 
-  //Hide blog posts that are not published
- eleventyConfig.addCollection("featured", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("./src/blog/*.md")
-    .filter(post => {
+  // All published posts
+  eleventyConfig.addCollection("blog", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
+      const pub = post.data.published;
+      return !(pub === false || pub === "false");
+    });
+  });
+
+  // Featured posts only
+  eleventyConfig.addCollection("featured", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
       const pub = post.data.published;
       return !(pub === false || pub === "false") && post.data.tags?.includes("featured");
-    })
-    .sort((a, b) => b.date - a.date);
-});
+    });
+  });
 
   
   // Display reading time for blog posts
