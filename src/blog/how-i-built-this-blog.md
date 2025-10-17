@@ -6,7 +6,7 @@ description: Building this site was a chance to combine creativity and code — 
 date: 2025-10-17
 tags:
   - featured
-  - 11ty
+  - Frontend Development
 image: /blog/howibuildthisblog.jpg
 imageAlt: Laptop, coffee mug and paper pad on a desk
 ---
