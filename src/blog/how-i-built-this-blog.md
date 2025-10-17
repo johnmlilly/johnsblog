@@ -7,7 +7,6 @@ date: 2025-10-17
 tags:
   - featured
   - 11ty
-  - SSG
 image: /blog/howibuildthisblog.jpg
 imageAlt: Laptop, coffee mug and paper pad on a desk
 ---
