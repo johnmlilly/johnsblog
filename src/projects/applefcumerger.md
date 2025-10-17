@@ -8,7 +8,6 @@ tags:
   - UX/UI
   - Front-End Development
   - Data Visualization
-  - project
   - homepage
 link: https://www.applefcu.org/merger
 image: applefcumerger.png

@@ -7,7 +7,6 @@ tags:
   - E-Commerce
   - UI/UX Design
   - Responsive Design
-  - project
   - homepage
 link: https://www.fiatgardens.com/
 image: fiatgardens.jpg

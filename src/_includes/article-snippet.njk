@@ -2,7 +2,7 @@
     <div class="card-header">
       <span class="card-category">
         {%- for tag in post.data.tags -%}
-          {%- if tag != "post" and tag != "featured" -%}
+          {%- if tag != "featured" -%}
             {{ tag }}
           {%- endif -%}
         {%- endfor -%}

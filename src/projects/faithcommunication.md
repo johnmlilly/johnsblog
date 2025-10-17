@@ -6,7 +6,6 @@ tags:
   - Interactive Design
   - UX/UI
   - Visual Storytelling
-  - project
 link: https://faith-communication-program-timeline.webflow.io
 image: faithcommunication.jpeg
 date: 2022-02-22

@@ -8,7 +8,7 @@ description: Explore my web design projects for nonprofit and Catholic clients i
 <section class="container snippet-container">
   <h1>Projects</h1>
   <div class="projects-grid">
-  {%- for project in collections.project | reverse -%}
+  {%- for project in collections.projects | reverse -%}
      {% include 'projects-snippet.njk' %}
   {%- endfor -%}
   </div>

@@ -3,9 +3,9 @@ published: false
 title: How I Built This Blog
 tags:
   - featured
-  - post
   - 11ty
   - SSG
+image: /blog/howibuildthisblog.jpg
 ---
 ### Research
 
