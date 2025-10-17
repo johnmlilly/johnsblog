@@ -11,7 +11,7 @@ content:
     view:
       fields: [ title, date ]
     fields:
-      - { label: "Published", name: "Published", type: "boolean", default: false }
+      - { label: "Published", name: "published", type: "boolean", default: false }
       - { label: "Title", name: "title", type: "string" }
       - { label: "Description", name: "description", type: "text" }
       - { label: "Date", name: "date", type: "date" }
