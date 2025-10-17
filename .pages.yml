@@ -9,7 +9,7 @@ content:
     path: src/blog
     filename: "{primary}.md"
     view:
-      fields: [ title, date ]
+      fields: [ title, date, published ]
     fields:
       - { label: "Published", name: "published", type: "boolean", default: false }
       - { label: "Title", name: "title", type: "string" }
