@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: How I Became a Web Developer
 description: From childhood Lego sets to coding websites, my journey into web
   development was fueled by a passion for creating and problem-solving.
