@@ -1,6 +1,6 @@
 ---
 published: true
-title: How I Built My Portfolio Site (and Why I Chose 11ty)
+title: How I Built This Site (and Why I Chose 11ty)
 description: Building this site was a chance to combine creativity and code — to
   design something simple, fast, and fully my own.
 date: 2025-10-17
