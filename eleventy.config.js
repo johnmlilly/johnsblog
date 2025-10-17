@@ -14,11 +14,18 @@ export default function(eleventyConfig) {
   // Code syntax highlighting plugin
   eleventyConfig.addPlugin(syntaxHighlight);
 
-eleventyConfig.addCollection("skills", function(collectionApi) {
-  return collectionApi.getFilteredByTag("skills")
-    .sort((a, b) => a.data.order - b.data.order); // ascending order by `order`
-});
+  eleventyConfig.addCollection("skills", function(collectionApi) {
+    return collectionApi.getFilteredByTag("skills")
+      .sort((a, b) => a.data.order - b.data.order); // ascending order by `order`
+  });
 
+  //Hide blog posts that are not published
+   eleventyConfig.addCollection("blog", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
+      return post.data.published !== false;
+    });
+  });
+  
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {
     emoji: "",

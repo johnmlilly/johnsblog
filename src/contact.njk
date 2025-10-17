@@ -7,14 +7,17 @@ image: '/logo/Social-Media-Cover.png'
 
 <section class="container">
   <div class="contact-section">
-    <h1>Get in Touch</h1>
-    <p>Fill out the form below to get in touch!</p>
-    <form netlify
-      name="contact" 
+    <div id="form-header">
+      <h1>Get in Touch</h1>
+      <p>Fill out the form below to get in touch!</p>
+    </div>
+    <form
+      name="Main Contact Form" 
       method="POST" 
       netlify-honeypot="extra-details"
       data-netlify="true"
       class="contact-form"
+      id="contact-form"
       >
 
     <!-- Honeypot field -->
@@ -69,5 +72,48 @@ image: '/logo/Social-Media-Cover.png'
 
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
+    <div id="success-message" hidden>
+      <h2>Thank you!</h2>
+      <p>Your message has been sent successfully. I'll be in touch with you as soon as I can.</p>
+      <p>You will be redirected back to the homepage in <span id="countdown">5</span>...</p>
+    </div>
   </div>
 </section>
+<script>
+  const form = document.getElementById('contact-form');
+  const formHeader = document.getElementById('form-header');
+  const success = document.getElementById('success-message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const response = await fetch('/', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      formHeader.style.display = 'none';
+      success.hidden = false;
+
+      // Countdown timer logic
+      let timeLeft = 5; // number of seconds
+      const countdownEl = document.getElementById("countdown");
+      countdownEl.textContent = timeLeft;
+
+      const timer = setInterval(() => {
+        timeLeft--;
+        countdownEl.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          window.location.href = '/';
+        }
+      }, 1000);
+      
+    } else {
+      alert('Something went wrong. Please try again.');
+    }x
+  });
+</script>

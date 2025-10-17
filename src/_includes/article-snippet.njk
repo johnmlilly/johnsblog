@@ -13,11 +13,11 @@
             </div>
           </div>
           <div class="card-image">
-            <img src="/assets/blog/{{ post.data.image }}" alt="{{ post.data.imageAlt }}">
+            <img src="/assets/{{ post.data.image }}" alt="{{ post.data.imageAlt }}">
           </div>
           <div class="card-content">
               <a href="{{ post.url }}"><h3>{{ post.data.title }}</h3></a>
-              <p class="card-intro">{{ description }}</p>
-                <a href="{{ post.url }}">Read More <i data-lucide="chevron-right"></i></a>
+              <p class="card-intro">{{ post.data.description }}</p>
+                <a aria-label="Read more about {{ post.data.title }}" href="{{ post.url }}">Read More <i data-lucide="chevron-right"></i></a>
           </div>
 </article>

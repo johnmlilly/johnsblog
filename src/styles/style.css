@@ -369,15 +369,20 @@ body.menu-open {
 /* Hero Section */
 .hero {
   background-color: var(--color-background);
+  padding: 2.5rem 0;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas:
+      "hero-image"
+      "hero-content";
   gap: 2rem;
 }
 
 .hero-content {
+  grid-area: hero-content;
   max-width: 800px;
 }
 
@@ -420,6 +425,7 @@ body.menu-open {
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-area: hero-image;
 }
 
 .profile-image-container {
@@ -730,6 +736,12 @@ body.menu-open {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    grid-template-areas:
+        "hero-content hero-image";
+  }
+
+  .hero {
+      padding: 5rem 0;
   }
 
   .hide-on-mobile {
