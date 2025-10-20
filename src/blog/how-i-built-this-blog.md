@@ -35,6 +35,8 @@ Once I decided on 11ty, I dove into the documentation and began following tutori
 
 One tutorial that really helped was from [**Kevin Powell**,](https://www.kevinpowell.co/) commonly know as the “King of CSS,” whose content I’ve followed for years. His tutorials and courses have helped me tremendously in my career growth and trajectory with CSS and JavaScript. His video on [building a Jamstack blog using 11ty](https://www.youtube.com/watch?v=4wD00RT6d-g&t=3133s&pp=ygUVa2V2aW4gcG93ZWxsIGphbXN0YWNr), Netlify, and custom CMS immediately clicked for me. I knew this would be the path for me!
 
+<iframe src="[https://www.youtube.com/embed/4wD00RT6d-g?si=wgEgHgrtyCNgMrnd](https://www.youtube.com/embed/4wD00RT6d-g?si=wgEgHgrtyCNgMrnd)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> /
+
 ## Building the Site
 
 To my surprise, the initial build quickly came together. I set up my 11ty project, connected it to Netlify for deployment, and began experimenting with collections for my projects and blog posts.
