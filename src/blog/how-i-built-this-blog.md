@@ -1,7 +1,7 @@
 ---
 published: true
 title: How I Built This Site (and Why I Chose 11ty)
-description: Building this site was a chance to combine creativity and code — to
+description: Building this site was a chance to combine creativity and code to
   design something simple, fast, and fully my own.
 date: 2025-10-17
 tags:
@@ -21,7 +21,7 @@ When I set out to build my personal website, I had a few simple goals:
 *   **Incorporate a blog** to share insights, best practices, and my own reflections as a developer.
     
 
-I knew that I didn’t want to go the WordPress or Squarespace route. They’re great tools and I've used them for several side [projects](/projects) over the years, but I wanted something that gave me more control over the code, performance, and overall experience — both for visitors and for myself.
+I knew that I didn’t want to go the WordPress or Squarespace route. They’re great tools and I've used them for several side [projects](/projects) over the years, but I wanted something that gave me more control over the code, performance, and overall experience, both for visitors and for myself.
 
 ## Research and Choosing a Tech Stack
 
@@ -66,7 +66,7 @@ Here’s what the final tech stack looks like:
 *   **Version Control:** [GitHub](https://github.com/)
     
 
-The end result is exactly what I set out to do — create a site that’s **simple, scalable, and cost-friendly**, while still showcasing my skills and giving me a space to share my thoughts.
+The end result is exactly what I set out to do: create a site that’s **simple, scalable, and cost-friendly**, while still showcasing my skills and giving me a space to share my thoughts.
 
 ## Final Thoughts
 
