@@ -27,15 +27,13 @@ I knew that I didn’t want to go the WordPress or Squarespace route. They’re 
 
 My initial research led me into the world of [static site generators](https://jamstack.org/generators/) (SSGs) and the broader [Jamstack](https://jamstack.org/) approach, which is a modern architecture that combines static files with APIs and JavaScript for speed, security, and scalability. I explored a few popular options like [Astro](https://astro.build/), [Jekyll](https://jekyllrb.com/), and [11ty](https://www.11ty.dev/) to find the right balance between flexibility, simplicity, and long-term maintainability.
 
-While Astro was appealing for its React compatibility and Jekyll had strong roots in the developer community, 11ty (Eleventy**)** stood out for its simplicity, flexibility, and supportive open-source community. The documentation was excellent, the learning curve was easy to pick up, and it allowed me to use plain HTML and template languages like [Nunjucks](https://mozilla.github.io/nunjucks/). This was perfect for me who enjoys tinkering with the front end while also having control over custom back-end functionality.
+While Astro was appealing for its React compatibility and Jekyll had strong roots in the developer community, 11ty (Eleventy\*\*)\*\* stood out for its simplicity, flexibility, and supportive open-source community. The documentation was excellent, the learning curve was easy to pick up, and it allowed me to use plain HTML and template languages like [Nunjucks](https://mozilla.github.io/nunjucks/). This was perfect for me who enjoys tinkering with the front end while also having control over custom back-end functionality.
 
 ## Getting Started
 
 Once I decided on 11ty, I dove into the documentation and began following tutorials to understand the structure and workflow.
 
 One tutorial that really helped was from [Kevin Powell,](https://www.kevinpowell.co/) commonly know as the “King of CSS,” whose content I’ve followed for years. His tutorials and courses have helped me tremendously in my career growth and trajectory with CSS and JavaScript. His video on [building a Jamstack blog using 11ty](https://www.youtube.com/watch?v=4wD00RT6d-g&t=3133s&pp=ygUVa2V2aW4gcG93ZWxsIGphbXN0YWNr), Netlify, and custom CMS immediately clicked for me. I knew this would be the path for me!
-
-`<iframe src="https://www.youtube.com/embed/4wD00RT6d-g?si=wgEgHgrtyCNgMrnd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
 ## Building the Site
 
