@@ -25,7 +25,7 @@ With those targets locked in, I set off to learn coding and web development.
 
 I created a [Notion](https://www.notion.com/) folder to track everything: daily progress, notes, useful links, even chats with developers already in the field. It was my mission control. Every morning before work, I’d tackle coding challenges on sites like [Codewars](https://www.codewars.com/) and [LeetCode](https://leetcode.com/). After a while, I switched to [freeCodeCamp’s Responsive Web Design](https://www.freecodecamp.org/learn/2022/responsive-web-design/) certification to focus in on the fundamentals of [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Styles Sheets).
 
-After several months of honing my skills, I took on the five projects needed for the certification. Building those felt like constructing my own star fighter—challenging, but I could see it coming together. Once I finished, I started applying for jobs in the field. Rejection emails from recruiters kept piling up, but I kept pushing, knowing and trusting that my opportunity would eventually come around.
+After several months of honing my skills, I took on the five projects needed for the certification. Building those felt like constructing my own star fighter. Once I finished, I started applying for jobs in the field. Rejection emails from recruiters kept piling up, but I kept pushing, knowing and trusting that my opportunity would eventually come around.
 
 I applied for an entry-level developer role at [Apple Federal Credit Union](https://www.applefcu.org/), a place I’d applied to before a couple of years ago but didn’t get the role.. Having a connection there gave me a leg up in the recruiting process (shout out to Rebecca and Melissa!) and fast-tracked me to the developer role. After a few rounds of interviews, I was thrilled to receive an offer! All those months of early mornings spent coding and late nights working on personal projects finally paid off. Since then, I’ve remained committed to continuous learning, always seeking to seize every opportunity that comes my way. I’ve embraced every challenge as a chance to grow and viewed each setback as motivation to sharpen my skills and improve my craft.
 
@@ -35,11 +35,11 @@ Coding has been part of me since my Lego days. As a kid, I’d spend hours tinke
 
 Here’s why it fits me:
 
-1.  **It’s a Growing Path**: There’s always more to learn—JavaScript, frameworks, new tools. Every challenge is a chance to get better and improve your skillset.
+1.  **It’s a Growing Path**: There’s always more to learn. Every challenge is a chance to get better and improve your skillset.
     
 2.  **I’m in Control**: I’m choosing this career path and shaping it to fit my life, not the other way around. My family comes first and having a flexible work-life balance in this field is the perfect fit for me.
     
-3.  **It Matches Me**: I’m a builder at heart—Legos, websites, apps—and I thrive on solving tough problems. I love digging into a challenge. I’m not a designer by trade, but I’ve improved by learning CSS and crafting simple, minimalistic designs. It’s like building a Lego model: every piece has to fit just right to create a great experience.
+3.  **It Matches Me**: I’m a builder at heart and I thrive on solving tough problems. I love digging into a challenge. I’m not a designer by trade, but I’ve improved by learning CSS and crafting simple, minimalistic designs. It’s like building a Lego model: every piece has to fit just right to create a great experience.
     
 
 ## Best Advice I Got
