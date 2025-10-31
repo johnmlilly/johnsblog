@@ -1,13 +1,11 @@
 ---
-title: "Cloud & DevOps"
-tags: skills
+title: Cloud & DevOps
 order: 4
 skills:
   - Azure App Services
   - Azure Functions
   - Azure SQL Database
   - Azure Storage
-  - Application Insights
+  - DevOps
   - CI/CD
-  - Azure DevOps (Repos, Pipelines, Boards)
 ---
