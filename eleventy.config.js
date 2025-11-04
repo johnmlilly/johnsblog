@@ -18,10 +18,12 @@ export default function(eleventyConfig) {
   // SKILL COLLECTIONS
   // ------------------------
 
-  eleventyConfig.addCollection("skills", function(collectionApi) {
-    return collectionApi.getFilteredByTag("skills")
-      .sort((a, b) => a.data.order - b.data.order); // ascending order by `order`
+  eleventyConfig.addCollection("skills", function (collectionApi) {
+  return collectionApi.getFilteredByGlob("./src/skills/*.md").sort((a, b) => {
+    return a.data.order - b.data.order;
   });
+});
+
 
    // ------------------------
   // BLOG COLLECTIONS

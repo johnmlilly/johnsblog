@@ -1,6 +1,5 @@
 ---
 title: "Frontend Development"
-tags: skills
 order: 1
 skills:
   - HTML/CSS
