@@ -75,7 +75,10 @@ content:
     type: "file"
     fields:
       - { label: "Heading", name: "heading", type: "string" }
-      - { label: "Description", name: "description", type: "text" }
+      - name: "description"
+        label: "Description"
+        type: "string"
+        list: true      
       - { label: "Image", name: "image", type: "image" }
       - { label: "CTA Text", name: "ctaText", type: "string" }
       - { label: "CTA URL", name: "ctaUrl", type: "string" }
