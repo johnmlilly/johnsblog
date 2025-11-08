@@ -86,6 +86,16 @@ content:
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
+  - name: project_meta
+    label: Project Page - Meta Data
+    path: src/projects.njk
+    type: file
+    format: "yaml-frontmatter"
+    fields:
+      - { label: layout, name: "layout", type: string, hidden: true, default: base.njk }
+      - { label: "Page Title", name: "title", type: "string" }
+      - { label: "Meta Description", name: "description", type: "text" }
+      - { label: "Social Image", name: "image", type: "image" }
   - name: "hero"
     label: Home - Hero Section
     path: src/_data/hero.json
