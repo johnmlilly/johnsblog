@@ -56,3 +56,43 @@ content:
       - { label: "Skill Name", name: "title", type: "string" }
       - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
+  - name: "hero"
+    label: "Hero Section"
+    path: "_data/hero.json"
+    type: "file"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Greeting", name: "greeting", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "First CTA Text", name: "firstCtaText", widget: "string" }
+      - { label: "First CTA URL", name: "firstCtaUrl", widget: "string" }
+      - { label: "Second CTA Text", name: "secondCtaText", widget: "string" }
+      - { label: "Second CTA URL", name: "secondCtaUrl", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+  - name: "about"
+    label: "About Section"
+    path: "_data/about.json"
+    type: "file"
+    fields:
+      - { label: "Heading", name: "heading", widget: "string" }
+      - label: "Description"
+        name: "description"
+        widget: "list"
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "CTA Text", name: "ctaText", widget: "string" }
+      - { label: "CTA URL", name: "ctaUrl", widget: "string" }
+  - name: "services"
+    label: "Services Section"
+    path: "_data/services.json"
+    type: "file"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - label: "Service Cards"
+        name: "cards"
+        widget: "list"
+        fields:
+          - { label: "Icon (Lucide name)", name: "icon", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }

@@ -1,0 +1,36 @@
+{
+  "title": "Services",
+  "subtitle": "Here are the core services that I offer.",
+  "cards": [
+    {
+      "icon": "layout",
+      "title": "Front-End Development",
+      "description": "Building fast, responsive, and accessible interfaces using modern web technologies like React and Next.js."
+    },
+    {
+      "icon": "database",
+      "title": "Content Management Systems",
+      "description": "Customizing and integrating CMS platforms like WordPress, Umbraco, and Decap to make content updates simple and scalable."
+    },
+    {
+      "icon": "search-check",
+      "title": "SEO & Accessibility",
+      "description": "Optimizing websites for search engines and ensuring every visitor enjoys a seamless, inclusive experience."
+    },
+    {
+      "icon": "list-checks",
+      "title": "Website Auditing",
+      "description": "Reviewing your site’s performance, usability, and structure to uncover opportunities for improvement and growth."
+    },
+    {
+      "icon": "pen-tool",
+      "title": "UX / UI Prototyping",
+      "description": "Designing and testing user flows and interfaces that make your digital experience intuitive and visually engaging."
+    },
+    {
+      "icon": "server-cog",
+      "title": "Back-End Development",
+      "description": "Building and maintaining the systems behind the scenes that power secure, reliable, and efficient web applications."
+    }
+  ]
+}

@@ -10,18 +10,18 @@ description: Full stack freelance web developer in Northern Virginia helping non
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>John Lilly</h1>
-          <h2>Hello there!</h2>
-          <p>I'm a full-stack developer, web designer, writer, and Star Wars nerd.</p>
+          <h1>{{ hero.name }}</h1>
+          <h2>{{ hero.greeting }}</h2>
+          <p>{{ hero.description }}</p>
           <p>I help <strong><span id="hero-text"></span></strong> create websites that work — and look — great.</p>
           <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#about" class="btn btn-outline">About Me</a>
+            <a href="{{ hero.firstCtaUrl }}" class="btn btn-primary">{{ hero.firstCtaText }}</a>
+            <a href="{{ hero.secondCtaUrl }}" class="btn btn-outline">{{ hero.secondCtaText }}</a>
           </div>
         </div>
         <div class="hero-image">
           <div class="profile-image-container">
-            <img src="/assets/johnlilly_headshot-2.jpg" alt="John Lilly" class="profile-image">
+            <img src="{{ hero.image }}" alt="John Lilly" class="profile-image">
           </div>
         </div>
       </div>
@@ -34,17 +34,17 @@ description: Full stack freelance web developer in Northern Virginia helping non
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img src="/assets/johnabout.jpeg" alt="John Lilly">
+          <img src="{{ about.image }}" alt="John Lilly">
         </div>
         <div class="about-content">
-          <h2>About Me</h2>
+          <h2>{{ about.heading }}</h2>
           <div class="about-text">
-            <p>Hi there! I’m John Lilly, a self-taught developer with a background in communications who found a sustainable way to support my growing family through web development. </p>
-            <p>Relationships mean everything to me — from my wife and kids to my extended family, my brothers in Youth Apostles, and my coworkers at Apple FCU. </p>
-            <p>With experience in CMS development, front-end design, SEO, and accessibility, I’m ready to take on any project that helps people connect and create something meaningful online.</p>
+            {% for p in about.description %}
+              <p>{{ p }}</p>
+            {% endfor %}
           </div>
           <div>
-            <a href="/contact" class="btn btn-primary">Contact Me</a>
+            <a href="{{ about.ctaUrl }}" class="btn btn-primary">{{ about.ctaText }}</a>
           </div>
         </div>
       </div>
@@ -52,56 +52,25 @@ description: Full stack freelance web developer in Northern Virginia helping non
   </section>
 
 <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <h2>Services</h2>
-      <p>Here are the core services that I offer.</p>
-      <div class="services-grid">
+ <section id="services">
+  <div class="container">
+    <h2>{{ services.title }}</h2>
+    <p>{{ services.subtitle }}</p>
+
+    <div class="services-grid">
+      {% for card in services.cards %}
         <div class="services-card">
           <div class="services-header">
-            <i data-lucide="layout"></i>
-            <h3>Front-End Development</h3>
+            <i data-lucide="{{ card.icon }}"></i>
+            <h3>{{ card.title }}</h3>
           </div>
-          <p>Building fast, responsive, and accessible interfaces using modern web technologies like React and Next.js.</p>
+          <p>{{ card.description }}</p>
         </div>
-        <div class="services-card">
-          <div class="services-header">
-            <i data-lucide="database"></i>
-            <h3>Content Management Systems</h3>
-          </div>
-          <p>Customizing and integrating CMS platforms like WordPress, Umbraco, and Decap to make content updates simple and scalable.</p>
-        </div>
-        <div class="services-card">
-          <div class="services-header">
-            <i data-lucide="search-check"></i>
-            <h3>SEO & Accessibility</h3>
-          </div>
-          <p>Optimizing websites for search engines and ensuring every visitor enjoys a seamless, inclusive experience.</p>
-        </div>
-        <div class="services-card">
-          <div class="services-header">
-            <i data-lucide="list-checks"></i>
-            <h3>Website Auditing</h3>
-          </div>
-          <p>Reviewing your site’s performance, usability, and structure to uncover opportunities for improvement and growth.</p>
-        </div>
-        <div class="services-card">
-          <div class="services-header">
-            <i data-lucide="pen-tool"></i>
-            <h3>UX / UI Prototyping</h3>
-          </div>
-          <p>Designing and testing user flows and interfaces that make your digital experience intuitive and visually engaging.</p>
-        </div>
-        <div class="services-card">
-          <div class="services-header">
-            <i data-lucide="server-cog"></i>
-            <h3>Back-End Development</h3>
-          </div>
-          <p>Building and maintaining the systems behind the scenes that power secure, reliable, and efficient web applications.</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Projects Section -->
   <section id="projects" class="alternate-section">
