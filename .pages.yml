@@ -79,15 +79,17 @@ content:
       - { label: "Image", name: "image", type: "image" }
       - { label: "CTA Text", name: "ctaText", type: "string" }
       - { label: "CTA URL", name: "ctaUrl", type: "string" }
-  - name: "services"
+  - name: services
     label: "Services Section"
     path: "src/_data/services.json"
     type: "file"
     fields:
       - { label: "Title", name: "title", type: "string" }
       - { label: "Subtitle", name: "subtitle", type: "string" }
-      - label: "Service Cards"
-        name: "cards"
+      - name: "cards"
+        label: "Service Cards"
+        type: "object"
+        list: true             # makes `cards` an array of objects
         fields:
           - { label: "Icon (Lucide name)", name: "icon", type: "string" }
           - { label: "Title", name: "title", type: "string" }
