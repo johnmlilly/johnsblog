@@ -56,27 +56,31 @@ content:
       - { label: "Skill Name", name: "title", type: "string" }
       - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
-  - name: Home_Page_Meta_Data
+  - name: index_meta
     label: Home Page - Meta Data
     path: src/index.njk
     type: file
+    format: "json-frontmatter"
     fields:
+      - { label: layout, name: "layout", type: string, hidden: true, default: base.njk }
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
-  - name: Contact_Page_Meta_Data
+  - name: contact_meta
     label: Contact Page - Meta Data
     path: src/contact.njk
     type: file
     fields:
+      - { label: layout, name: "layout", type: string, hidden: true, default: base.njk }
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
-  - name: Blog_Page_Meta_Data
+  - name: blog_meta
     label: Blog Page - Meta Data
     path: src/blog.njk
     type: file
     fields:
+      - { label: layout, name: "layout", type: string, hidden: true, default: base.njk }
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
@@ -124,3 +128,7 @@ content:
           - { label: "Icon (Lucide name)", name: "icon", type: "string" }
           - { label: "Title", name: "title", type: "string" }
           - { label: "Description", name: "description", type: "text" }
+
+settings:
+      content:
+        merge: true
