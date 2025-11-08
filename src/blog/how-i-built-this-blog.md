@@ -7,7 +7,7 @@ date: 2025-10-17
 tags:
   - featured
   - Frontend Development
-image: /blog/howibuildthisblog.jpg
+image: /assets/blog/howibuildthisblog.jpg
 imageAlt: Laptop, coffee mug and paper pad on a desk
 ---
 When I set out to build my personal website, I had a few simple goals:
