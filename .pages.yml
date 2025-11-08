@@ -92,7 +92,7 @@ content:
         list: 
           collapsible:
             collapsed: true # Default collapsed state
-            summary: "{title} ({title})" # Template string using field values and {index}
+            summary: "{Title} ({index})" # Template string using field values and {index}
         fields:
           - { label: "Icon (Lucide name)", name: "icon", type: "string" }
           - { label: "Title", name: "title", type: "string" }
