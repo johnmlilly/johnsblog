@@ -1,6 +1,8 @@
 {
   "heading": "About Me",
-  "description": "Hi there! I’m John Lilly, a self-taught developer with a background in communications who found a sustainable way to support my growing family through web development.,Relationships mean everything to me — from my wife and kids to my extended family, my brothers in Youth Apostles, and my coworkers at Apple FCU.,With experience in CMS development, front-end design, SEO, and accessibility, I’m ready to take on any project that helps people connect and create something meaningful.",
+  "description": [
+    "Hi there! I’m John Lilly, a self-taught developer with a background in communications who found a sustainable way to support my growing family through web development."
+  ],
   "image": "/assets/johnabout.jpeg",
   "ctaText": "Contact Me",
   "ctaUrl": "/contact"
