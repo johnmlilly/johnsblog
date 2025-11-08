@@ -56,10 +56,34 @@ content:
       - { label: "Skill Name", name: "title", type: "string" }
       - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
+  - name: Home_Page_Meta_Data
+    label: Home Page Meta Data
+    path: src/index.njk
+    type: file
+    fields:
+      - { label: "Page Title", name: "title", type: "string" }
+      - { label: "Meta Description", name: "description", type: "text" }
+      - { label: "Social Image", name: "image", type: "image" }
+  - name: Contact_Page_Meta_Data
+    label: Contact Page Meta Data
+    path: src/contact.njk
+    type: file
+    fields:
+      - { label: "Page Title", name: "title", type: "string" }
+      - { label: "Meta Description", name: "description", type: "text" }
+      - { label: "Social Image", name: "image", type: "image" }
+  - name: Blog_Page_Meta_Data
+    label: Blog Page Meta Data
+    path: src/blog.njk
+    type: file
+    fields:
+      - { label: "Page Title", name: "title", type: "string" }
+      - { label: "Meta Description", name: "description", type: "text" }
+      - { label: "Social Image", name: "image", type: "image" }
   - name: "hero"
-    label: "Hero Section"
-    path: "src/_data/hero.json"
-    type: "file"
+    label: Home Page - Hero Section
+    path: src/_data/hero.json
+    type: file
     fields:
       - { label: "Name", name: "name", type: "string" }
       - { label: "Greeting", name: "greeting", type: "string" }
@@ -69,10 +93,10 @@ content:
       - { label: "Second CTA Text", name: "secondCtaText", type: "string" }
       - { label: "Second CTA URL", name: "secondCtaUrl", type: "string" }
       - { label: "Image", name: "image", type: "image" }
-  - name: "about"
-    label: "About Section"
-    path: "src/_data/about.json"
-    type: "file"
+  - name: about
+    label: Home Page - About Section
+    path: src/_data/about.json
+    type: file
     fields:
       - { label: "Heading", name: "heading", type: "string" }
       - name: "description"
@@ -83,9 +107,9 @@ content:
       - { label: "CTA Text", name: "ctaText", type: "string" }
       - { label: "CTA URL", name: "ctaUrl", type: "string" }
   - name: services
-    label: "Services Section"
-    path: "src/_data/services.json"
-    type: "file"
+    label: Home Page - Services Section
+    path: src/_data/services.json
+    type: file
     fields:
       - { label: "Title", name: "title", type: "string" }
       - { label: "Subtitle", name: "subtitle", type: "string" }
