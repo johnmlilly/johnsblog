@@ -56,7 +56,7 @@ content:
       - { label: "Skill Name", name: "title", type: "string" }
       - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
-  - name: home_meta
+  - name: Home_Page_Meta_Data
     label: Home Page - Meta Data
     path: src/index.njk
     type: file
@@ -64,7 +64,7 @@ content:
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
-  - name: contact_meta
+  - name: Contact_Page_Meta_Data
     label: Contact Page - Meta Data
     path: src/contact.njk
     type: file
@@ -72,7 +72,7 @@ content:
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
-  - name: blog_meta
+  - name: Blog_Page_Meta_Data
     label: Blog Page - Meta Data
     path: src/blog.njk
     type: file
