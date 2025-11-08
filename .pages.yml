@@ -58,7 +58,7 @@ content:
       - { label: "Skills", name: "skills", type: "string", list: true }
   - name: "hero"
     label: "Hero Section"
-    path: "_data/hero.json"
+    path: "src/_data/hero.json"
     type: "file"
     fields:
       - { label: "Name", name: "name", widget: "string" }
@@ -71,7 +71,7 @@ content:
       - { label: "Image", name: "image", widget: "image" }
   - name: "about"
     label: "About Section"
-    path: "_data/about.json"
+    path: "src/_data/about.json"
     type: "file"
     fields:
       - { label: "Heading", name: "heading", widget: "string" }
@@ -84,7 +84,7 @@ content:
       - { label: "CTA URL", name: "ctaUrl", widget: "string" }
   - name: "services"
     label: "Services Section"
-    path: "_data/services.json"
+    path: "src/_data/services.json"
     type: "file"
     fields:
       - { label: "Title", name: "title", widget: "string" }
