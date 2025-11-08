@@ -1,0 +1,10 @@
+{
+  "name": "John Lilly",
+  "greeting": "Hello there!",
+  "description": "I'm a full-stack developer, web designer, writer, and Star Wars nerd.",
+  "firstCtaText": "View My Work",
+  "firstCtaUrl": "#projects",
+  "secondCtaText": "About Me",
+  "secondCtaUrl": "#about",
+  "image": "/assets/johnlilly_headshot-2.jpg"
+}
