@@ -56,24 +56,24 @@ content:
       - { label: "Skill Name", name: "title", type: "string" }
       - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
-  - name: Home_Page_Meta_Data
-    label: Home Page Meta Data
+  - name: home_meta
+    label: Home Page - Meta Data
     path: src/index.njk
     type: file
     fields:
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
-  - name: Contact_Page_Meta_Data
-    label: Contact Page Meta Data
+  - name: contact_meta
+    label: Contact Page - Meta Data
     path: src/contact.njk
     type: file
     fields:
       - { label: "Page Title", name: "title", type: "string" }
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
-  - name: Blog_Page_Meta_Data
-    label: Blog Page Meta Data
+  - name: blog_meta
+    label: Blog Page - Meta Data
     path: src/blog.njk
     type: file
     fields:
@@ -81,7 +81,7 @@ content:
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
   - name: "hero"
-    label: Home Page - Hero Section
+    label: Home - Hero Section
     path: src/_data/hero.json
     type: file
     fields:
@@ -94,7 +94,7 @@ content:
       - { label: "Second CTA URL", name: "secondCtaUrl", type: "string" }
       - { label: "Image", name: "image", type: "image" }
   - name: about
-    label: Home Page - About Section
+    label: Home - About Section
     path: src/_data/about.json
     type: file
     fields:
@@ -107,7 +107,7 @@ content:
       - { label: "CTA Text", name: "ctaText", type: "string" }
       - { label: "CTA URL", name: "ctaUrl", type: "string" }
   - name: services
-    label: Home Page - Services Section
+    label: Home - Services Section
     path: src/_data/services.json
     type: file
     fields:
