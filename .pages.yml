@@ -89,7 +89,10 @@ content:
       - name: "cards"
         label: "Service Cards"
         type: "object"
-        list: true             # makes `cards` an array of objects
+        list: 
+          collapsible:
+            collapsed: true # Default collapsed state
+            summary: "{title} ({index})" # Template string using field values and {index}
         fields:
           - { label: "Icon (Lucide name)", name: "icon", type: "string" }
           - { label: "Title", name: "title", type: "string" }
