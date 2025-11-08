@@ -61,38 +61,34 @@ content:
     path: "src/_data/hero.json"
     type: "file"
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Greeting", name: "greeting", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "First CTA Text", name: "firstCtaText", widget: "string" }
-      - { label: "First CTA URL", name: "firstCtaUrl", widget: "string" }
-      - { label: "Second CTA Text", name: "secondCtaText", widget: "string" }
-      - { label: "Second CTA URL", name: "secondCtaUrl", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Name", name: "name", type: "string" }
+      - { label: "Greeting", name: "greeting", type: "string" }
+      - { label: "Description", name: "description", type: "text" }
+      - { label: "First CTA Text", name: "firstCtaText", type: "string" }
+      - { label: "First CTA URL", name: "firstCtaUrl", type: "string" }
+      - { label: "Second CTA Text", name: "secondCtaText", type: "string" }
+      - { label: "Second CTA URL", name: "secondCtaUrl", type: "string" }
+      - { label: "Image", name: "image", type: "image" }
   - name: "about"
     label: "About Section"
     path: "src/_data/about.json"
     type: "file"
     fields:
-      - { label: "Heading", name: "heading", widget: "string" }
-      - label: "Description"
-        name: "description"
-        widget: "list"
-        field: { label: "Paragraph", name: "paragraph", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "CTA Text", name: "ctaText", widget: "string" }
-      - { label: "CTA URL", name: "ctaUrl", widget: "string" }
+      - { label: "Heading", name: "heading", type: "string" }
+      - { label: "Description", name: "description", type: "text" }
+      - { label: "Image", name: "image", type: "image" }
+      - { label: "CTA Text", name: "ctaText", type: "string" }
+      - { label: "CTA URL", name: "ctaUrl", type: "string" }
   - name: "services"
     label: "Services Section"
     path: "src/_data/services.json"
     type: "file"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Title", name: "title", type: "string" }
+      - { label: "Subtitle", name: "subtitle", type: "string" }
       - label: "Service Cards"
         name: "cards"
-        widget: "list"
         fields:
-          - { label: "Icon (Lucide name)", name: "icon", widget: "string" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Icon (Lucide name)", name: "icon", type: "string" }
+          - { label: "Title", name: "title", type: "string" }
+          - { label: "Description", name: "description", type: "text" }
