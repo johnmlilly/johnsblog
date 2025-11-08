@@ -60,7 +60,7 @@ content:
     label: Home Page - Meta Data
     path: src/index.njk
     type: file
-    format: "json-frontmatter"
+    format: "yaml-frontmatter"
     fields:
       - { label: layout, name: "layout", type: string, hidden: true, default: base.njk }
       - { label: "Page Title", name: "title", type: "string" }
@@ -79,6 +79,7 @@ content:
     label: Blog Page - Meta Data
     path: src/blog.njk
     type: file
+    format: "yaml-frontmatter"
     fields:
       - { label: layout, name: "layout", type: string, hidden: true, default: base.njk }
       - { label: "Page Title", name: "title", type: "string" }
@@ -88,6 +89,7 @@ content:
     label: Home - Hero Section
     path: src/_data/hero.json
     type: file
+    format: "yaml-frontmatter"
     fields:
       - { label: "Name", name: "name", type: "string" }
       - { label: "Greeting", name: "greeting", type: "string" }
