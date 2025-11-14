@@ -1,8 +1,8 @@
 ---
 published: false
 title: Simple SEO Tips for Local Catholic Businesses
+featured: true
 tags:
-  - featured
   - SEO
 ---
 If you run a Catholic-owned business, you probably think a lot about how to serve your customers faithfully and with integrity. But if no one can find your business online, you might be missing the chance to serve even more people who need what you offer.
