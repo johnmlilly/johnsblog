@@ -62,7 +62,7 @@ layout: 'base.njk'
     <div class="container">
       <h2>Related Articles</h2>
       <div class="related-grid">
-          {%- for post in collections.featured.slice(0, 3) | reverse -%}
+          {%- for post in collections.blog.slice(0, 3) | reverse -%}
               {% include 'article-snippet.njk' %}
         {%- endfor -%}
       </div>
