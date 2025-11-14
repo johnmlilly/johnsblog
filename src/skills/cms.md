@@ -7,5 +7,5 @@ skills:
   - SquareSpace
   - Drupal
   - Webflow
-  - Git-based (Decap, PagesCMS, Tina CMS)
+  - Git-based CMS
 ---
