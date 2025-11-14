@@ -33,29 +33,20 @@ export default function(eleventyConfig) {
   eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
       const pub = post.data.published;
-      return !(pub === false || pub === "false");
-    });
-  });
-
-  // Featured posts only
-  eleventyConfig.addCollection("featured", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
-      const pub = post.data.published;
-      return !(pub === false || pub === "false") && post.data.tags?.includes("featured");
+      const featured = post.data.featured;
+      return !(pub === false) && !(featured === false);
     });
   });
 
   // ------------------------
   // PROJECT COLLECTIONS
   // ------------------------
-  eleventyConfig.addCollection("projects", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/projects/*.md");
-  });
 
-  eleventyConfig.addCollection("homepageProjects", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(project =>
-      project.data.tags?.includes("homepage")
-    );
+  eleventyConfig.addCollection("projects", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(project => {
+      const featured = project.data.featured;
+      return !(featured === false);
+    });
   });
 
   // Display reading time for blog posts

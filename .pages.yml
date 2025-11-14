@@ -9,21 +9,22 @@ content:
     path: src/blog
     filename: "{primary}.md"
     view:
-      fields: [ title, date, published ]
+      fields: [ title, published, featured, date ]
     fields:
       - { label: "Published", name: "published", type: "boolean", default: false }
       - { label: "Title", name: "title", type: "string" }
-      - { label: "Description", name: "description", type: "text" }
+      - { label: "Short Description", name: "description", type: "text" }
+      - { label: "Featured Image", name: "image", type: "image" }
+      - { label: "Image Caption", name: "imageAlt", type: "string" }
       - { label: "Date", name: "date", type: "date" }
+      - { label: "Featured", name: "featured", type: "boolean", default: false }
       - name: tags
         label: Tag
         type: select
         options:
           creatable: true
           multiple: true
-          values: [ featured, Web Development, JavaScript, CSS, C# ]
-      - { label: "Featured Image", name: "image", type: "image" }
-      - { label: "Image Caption", name: "imageAlt", type: "string" }
+          values: [ Front-end Development, JavaScript, CSS, C#, Career, SEO, Accessibility ]
       - { label: "Body", name: "body", type: "rich-text" }
   - name: projects
     label: Projects
@@ -31,19 +32,20 @@ content:
     path: src/projects
     filename: "{primary}.md"
     view: 
-      fields: [title, tags, date]
+      fields: [title, featured, date]
     fields:
       - { label: "Project Name", name: "title", type: "string" }
-      - { label: "Project Date", name: "date", type: "date" }
-      - { label: "Project Description", name: "description", type: "text" }
+      - { label: "Short Description", name: "description", type: "text" }
       - { label: "Project Image", name: "image", type: "image" }
+      - { label: "Project Date", name: "date", type: "date" }
+      - { label: "Featured", name: "featured", type: "boolean", default: false }
       - name: tags
         label: Tags
         type: select
         options:
           creatable: true
           multiple: true
-          values: [ WordPress, UX/UI, Mobile Responsiveness ]
+          values: [ JavaScript, Custom CSS, Webflow, WordPress, UX/UI, Responsive Design, SQL, Bootstrap, Tailwind ]
       - { label: "Project Link", name: "link", type: "string" }
   - name: skills
     label: Skills
@@ -57,7 +59,7 @@ content:
       - { label: "Order", name: "order", type: "number" }
       - { label: "Skills", name: "skills", type: "string", list: true }
   - name: index_meta
-    label: Home Page - Meta Data
+    label: Home Page
     path: src/index.njk
     type: file
     format: "yaml-frontmatter"
@@ -67,7 +69,7 @@ content:
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
   - name: contact_meta
-    label: Contact Page - Meta Data
+    label: Contact Page
     path: src/contact.njk
     type: file
     format: "yaml-frontmatter"
@@ -77,7 +79,7 @@ content:
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
   - name: blog_meta
-    label: Blog Page - Meta Data
+    label: Blog Page
     path: src/blog.njk
     type: file
     format: "yaml-frontmatter"
@@ -87,7 +89,7 @@ content:
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
   - name: project_meta
-    label: Project Page - Meta Data
+    label: Project Page
     path: src/projects.njk
     type: file
     format: "yaml-frontmatter"
@@ -97,7 +99,7 @@ content:
       - { label: "Meta Description", name: "description", type: "text" }
       - { label: "Social Image", name: "image", type: "image" }
   - name: "hero"
-    label: Home - Hero Section
+    label: Home - Hero
     path: src/_data/hero.json
     type: file
     fields:
@@ -110,7 +112,7 @@ content:
       - { label: "Second CTA URL", name: "secondCtaUrl", type: "string" }
       - { label: "Image", name: "image", type: "image" }
   - name: about
-    label: Home - About Section
+    label: Home - About
     path: src/_data/about.json
     type: file
     fields:
@@ -123,7 +125,7 @@ content:
       - { label: "CTA Text", name: "ctaText", type: "string" }
       - { label: "CTA URL", name: "ctaUrl", type: "string" }
   - name: services
-    label: Home - Services Section
+    label: Home - Services
     path: src/_data/services.json
     type: file
     fields:

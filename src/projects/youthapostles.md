@@ -1,12 +1,13 @@
 ---
 title: Non-Profit Website UI/UX Refresh
 description: Helped Youth Apostles better share their mission by refreshing their website’s design, improving navigation, and reorganizing content so visitors could easily learn, connect, and support the community.
+featured: false
 tags:
   - Squarespace
-  - UI/UX Design
+  - UI/UX
   - Content Strategy
-  - Mobile Responsive
+  - Responsive Design
 link: https://www.youthapostles.org/
-image: youthapostles.png
+image: /assets/projects/youthapostles.png
 date: 2024-09-01
 ---
