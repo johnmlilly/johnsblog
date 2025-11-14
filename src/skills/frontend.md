@@ -8,6 +8,5 @@ skills:
   - Bootstrap
   - Tailwind
   - SEO
-  - Responsive Design
   - Accessibility (a11y)
 ---
