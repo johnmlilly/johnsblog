@@ -41,12 +41,17 @@ export default function(eleventyConfig) {
   // PROJECT COLLECTIONS
   // ------------------------
 
-  eleventyConfig.addCollection("projects", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(project => {
-      const featured = project.data.featured;
-      return !(featured === false);
-    });
+   eleventyConfig.addCollection("projects", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/projects/*.md");
   });
+
+  eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
+  return collectionApi
+    .getFilteredByGlob("./src/projects/*.md")
+    .filter(item => item.data.featured === true)
+    .reverse()
+    .slice(0, 4);
+});
 
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {
