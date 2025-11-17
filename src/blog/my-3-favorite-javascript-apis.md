@@ -8,7 +8,7 @@ description: From data fetching to scroll detection and DOM updates, here are
 image: /assets/blog/coding-8670014_1280.png
 imageAlt: JavaScript API Development
 date: 2025-11-17
-featured: false
+featured: true
 ---
 This post is for all the tech nerds out there. As I’ve continued growing as a developer, I've naturally found myself diving deeper into JavaScript and all the fun that comes with it. After plenty of tutorials and two online certifications (shoutout to freeCodeCamp for their excellent [JavaScript course](https://www.freecodecamp.org/learn/javascript-v9/)), I finally rolled up my sleeves and began building, experimenting, and improving real applications both at work and on my own time.
 
