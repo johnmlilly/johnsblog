@@ -37,6 +37,18 @@ export default function(eleventyConfig) {
     });
   });
 
+  // Featured published posts
+eleventyConfig.addCollection("featuredBlog", function (collectionApi) {
+  return collectionApi
+    .getFilteredByGlob("./src/blog/*.md")
+    .filter(post => {
+      const pub = post.data.published;
+      return !(pub === false) && post.data.featured === true;
+    })
+    .reverse()
+    .slice(0, 6);
+});
+
   // ------------------------
   // PROJECT COLLECTIONS
   // ------------------------
