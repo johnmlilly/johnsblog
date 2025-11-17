@@ -33,8 +33,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
       const pub = post.data.published;
-      const featured = post.data.featured;
-      return !(pub === false) && !(featured === false);
+      return !(pub === false);
     });
   });
 

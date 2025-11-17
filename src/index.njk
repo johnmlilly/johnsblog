@@ -98,7 +98,9 @@ description: Full stack freelance web developer in Northern Virginia helping
       </div>
       <div class="blog-grid">
         {%- for post in collections.blog.slice(0, 6) | reverse -%}
+        {% if post.data.featured %}
           {% include 'article-snippet.njk' %}
+          {% endif %}
         {%- endfor -%}
       </div>
     </div>
