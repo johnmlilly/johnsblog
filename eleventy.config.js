@@ -39,9 +39,7 @@ export default function(eleventyConfig) {
 
   // Featured published posts
 eleventyConfig.addCollection("featuredBlog", function (collectionApi) {
-  return collectionApi
-    .getFilteredByGlob("./src/blog/*.md")
-    .filter(post => {
+  return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
       const pub = post.data.published;
       return !(pub === false) && post.data.featured === true;
     })
@@ -58,9 +56,7 @@ eleventyConfig.addCollection("featuredBlog", function (collectionApi) {
   });
 
   eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
-  return collectionApi
-    .getFilteredByGlob("./src/projects/*.md")
-    .filter(item => item.data.featured === true)
+  return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(item => item.data.featured === true)
     .reverse()
     .slice(0, 4);
 });
