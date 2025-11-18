@@ -1,6 +1,6 @@
 ---
 published: true
-title: My Top 3 JavaScript APIs Every Developer Should Know
+title: Top 3 JavaScript APIs Every Developer Should Know
 tags:
   - JavaScript
 description: From data fetching to scroll detection and DOM updates, here are
