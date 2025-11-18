@@ -1,23 +1,22 @@
  <article class="card-post">
     <div class="card-header">
-      <span class="card-category">
-        {%- for tag in post.data.tags -%}
-          {%- if tag != "featured" -%}
-            {{ tag }}
-          {%- endif -%}
-        {%- endfor -%}
-      </span>            
-      <div class="card-meta">
-        <i data-lucide="calendar"></i>
-        <time datetime="{{ post.data.date }}">{{ post.data.date | postDate }}</time>
-      </div>
+        <span>
+          <i data-lucide="calendar"></i>
+          <time datetime="{{ post.data.date }}">{{ post.data.date | postDate }}</time>
+        </span>
+          <span><i data-lucide="clock"></i> {{ post.templateContent | emojiReadTime }}</span>
     </div>
-    <div class="card-image">
+    <div>
       <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}">
     </div>
     <div class="card-content">
+      <span class="card-category">
+        {%- for tag in post.data.tags -%}
+            {{ tag }}
+        {%- endfor -%}
+      </span>  
         <a href="{{ post.url }}"><h3>{{ post.data.title }}</h3></a>
         <p class="card-intro">{{ post.data.description }}</p>
-          <a aria-label="Read more about {{ post.data.title }}" href="{{ post.url }}">Read More <i data-lucide="chevron-right"></i></a>
+        <a aria-label="Read more about {{ post.data.title }}" href="{{ post.url }}">Read More <i data-lucide="chevron-right"></i></a>
     </div>
 </article>
