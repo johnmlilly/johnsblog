@@ -20,9 +20,7 @@ layout: 'base.njk'
         <div class="post-meta">
           <span class="category-badge">  
             {% for tag in tags %}
-              {% if tag != 'post' and tag != 'featured' %}
                 {{ tag }}
-              {% endif %}
             {% endfor %}
           </span>
           <div class="stat-item">
@@ -62,8 +60,8 @@ layout: 'base.njk'
     <div class="container">
       <h2>Related Articles</h2>
       <div class="related-grid">
-          {%- for post in collections.blog.slice(0, 3) | reverse -%}
-              {% include 'article-snippet.njk' %}
+         {%- for post in collections.featuredBlog -%}
+          {% include 'article-snippet.njk' %}
         {%- endfor -%}
       </div>
     </div>

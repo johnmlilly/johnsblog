@@ -33,21 +33,33 @@ export default function(eleventyConfig) {
   eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
       const pub = post.data.published;
-      const featured = post.data.featured;
-      return !(pub === false) && !(featured === false);
+      return !(pub === false);
     });
   });
+
+  // Featured published posts
+eleventyConfig.addCollection("featuredBlog", function (collectionApi) {
+  return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
+      const pub = post.data.published;
+      return !(pub === false) && post.data.featured === true;
+    })
+    .reverse()
+    .slice(0, 6);
+});
 
   // ------------------------
   // PROJECT COLLECTIONS
   // ------------------------
 
-  eleventyConfig.addCollection("projects", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(project => {
-      const featured = project.data.featured;
-      return !(featured === false);
-    });
+   eleventyConfig.addCollection("projects", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/projects/*.md");
   });
+
+  eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
+  return collectionApi.getFilteredByGlob("./src/projects/*.md").filter(item => item.data.featured === true)
+    .reverse()
+    .slice(0, 4);
+});
 
   // Display reading time for blog posts
   eleventyConfig.addPlugin(emojiReadTime, {

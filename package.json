@@ -1,7 +1,7 @@
 {
   "name": "johnsblog",
   "version": "1.0.0",
-  "description": "John Lilly's personal blog site built using 11ty and Pico CSS.",
+  "description": "John Lilly's personal blog site built using 11ty and Pages CMS",
   "type": "module",
   "main": "index.js",
   "scripts": {

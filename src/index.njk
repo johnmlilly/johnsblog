@@ -82,7 +82,7 @@ description: Full stack freelance web developer in Northern Virginia helping
         <a href="/projects">View All </a>
       </div>
       <div class="projects-grid">
-        {%- for project in collections.projects.slice(0, 4) | reverse -%}
+        {%- for project in collections.featuredProjects -%}
           {% include 'projects-snippet.njk' %}
         {%- endfor -%}
       </div>
@@ -97,7 +97,7 @@ description: Full stack freelance web developer in Northern Virginia helping
         <a href="/blog">View All </a>
       </div>
       <div class="blog-grid">
-        {%- for post in collections.blog.slice(0, 6) | reverse -%}
+        {%- for post in collections.featuredBlog -%}
           {% include 'article-snippet.njk' %}
         {%- endfor -%}
       </div>
