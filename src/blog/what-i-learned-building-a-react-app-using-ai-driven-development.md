@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: What I Learned Building a React App Using AI-Driven Development
 description: A deep dive into building a functional mortgage calculator while
   using Claude AI as a collaborative partner rather than a shortcut to get wrong
