@@ -1,6 +1,6 @@
 ---
 published: true
-title: "Beyond Copy-Paste: Lessons in AI-Driven Development and React Applications"
+title: What I Learned Building a React App Using AI-Driven Development
 description: Using AI to "get to wrong faster." A deep dive into building a
   functional mortgage calculator while using Claude AI as a collaborative
   partner rather than a shortcut.
