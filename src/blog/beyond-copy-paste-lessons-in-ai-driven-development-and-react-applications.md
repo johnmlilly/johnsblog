@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: "Beyond Copy-Paste: Lessons in AI-Driven Development and React Applications"
 description: Using AI to "get to wrong faster." A deep dive into building a
   functional mortgage calculator while using Claude AI as a collaborative
@@ -39,6 +39,6 @@ Ultimately, your code quality should scale with your understanding of the proble
 
 In the end, the code you write today is simply a stepping stone for the code you will write tomorrow. Requirements change, technologies like React and Claude evolve, and better approaches emerge. By using AI as a tool to get to wrong faster, you can learn the necessary lessons to sharpen your skills, ship better products users actually want, and remain ready to pivot when the next six months of innovation arrive.
 
-You can see my finished project in action here: \[Link to Mortgage Calculator App\].
+You can see my finished project in action here: [https://reactmortgagecalculator.netlify.app/](https://reactmortgagecalculator.netlify.app/)
 
 I enjoy solving complex problems and building efficient tools. If you have a project in mind or need help scaling your next application, [reach out to me here](https://johnlilly.dev/contact/).
