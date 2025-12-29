@@ -33,12 +33,14 @@ Even then, AI isn't perfect. It initially provided an outdated [Tailwind CSS](ht
 
 One of the greatest advantages of AI is that it allows you to break things faster. While that sounds counterintuitive, it's actually a feature of modern development. When you run code and it fails, you are forced to focus your refactoring efforts to fix real problems rather than assumed features or enhancements. This process moves you from bad code to working code much faster than traditional methods.
 
-Ultimately, your code quality should scale with your understanding of the problem. AI often ignores edge cases and optimizations unless explicitly prompted, which forces you to think about what is missing or what might break. This prevents premature optimization and keeps the focus on building features that provide actual value.
+Ultimately, your code quality should scale with your understanding of the problem. AI often ignores edge cases and optimizations unless explicitly prompted, which forces you to think about what is missing or what might break. This prevents premature optimization and keeps the focus on building features that provide actual value to users.
 
 ## Don’t Get Too Attached
 
-In the end, the code you write today is simply a stepping stone for the code you will write tomorrow. Requirements change, technologies like React and Claude evolve, and better approaches emerge. By using AI as a tool to get to wrong faster, you can learn the necessary lessons to sharpen your skills, ship better products users actually want, and remain ready to pivot when the next six months of innovation arrive.
+In the end, the code you write today is simply a stepping stone for the code you will write tomorrow. Requirements change, technologies like React and Claude evolve, and better approaches emerge. By using AI as a tool to get wrong faster, you can learn the necessary lessons to sharpen your skills, ship better products users actually want, and remain ready to pivot when the next six months of innovation arrive.
 
 You can see my finished project in action here: [https://reactmortgagecalculator.netlify.app/](https://reactmortgagecalculator.netlify.app/)
 
-I enjoy solving complex problems and building efficient tools. If you have a project in mind or need help scaling your next application, [reach out to me here](https://johnlilly.dev/contact/).
+## Next Steps
+
+I enjoy solving complex problems, building tools that help solve real-world problems, and using the latest technologies. If you have a project in mind or need help scaling your next application, [reach out to me here](https://johnlilly.dev/contact/).
