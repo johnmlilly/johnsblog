@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: How to Use CSS Columns for Simple & Responsive Layouts
 description: While Grid and Flexbox are powerful, sometimes the simplest
   solution is the most effective.
@@ -56,33 +56,17 @@ Let’s say you’re rendering a simple list of features inside a marketing page
 
 \`\`\`html
 
-<section>
+## Platform Features
 
-<h2>Platform Features</h2>
-
-<ul class="feature-list">
-
-<li>Fast load times</li>
-
-<li>Accessible components</li>
-
-<li>SEO-friendly markup</li>
-
-<li>Responsive by default</li>
-
-<li>Modern CSS techniques</li>
-
-<li>Clean semantic structure</li>
-
-<li>Reusable design patterns</li>
-
-<li>Performance optimized</li>
-
-<li>Cross-browser support</li>
-
-</ul>
-
-</section>
+*   Fast load times
+*   Accessible components
+*   SEO-friendly markup
+*   Responsive by default
+*   Modern CSS techniques
+*   Clean semantic structure
+*   Reusable design patterns
+*   Performance optimized
+*   Cross-browser support
 
 \`\`\`
 
