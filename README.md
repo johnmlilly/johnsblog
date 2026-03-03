@@ -3,7 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0da74394-e384-41d2-8b46-5de7586f663d/deploy-status)](https://app.netlify.com/projects/johnmlilly/deploys)
 
 ## Overview
-This is my personal blog site built using the **11ty ([Eleventy](https://www.11ty.dev/)) static site generator**, styled with **[Pico CSS](https://picocss.com/)**, and powered by **[Pages CMS](https://pagescms.org/)** for easy content management. The project is based on the starter files from **Kevin Powell's repository**, originally created for the Codementor DevProjects Challenge: *Create a fast and secure blog using JAMstack.*
+This is my personal blog site built using the **11ty ([Eleventy](https://www.11ty.dev/)) static site generator** and powered by **[Pages CMS](https://pagescms.org/)** for easy content management. The project is based on the starter files from **Kevin Powell's repository**, originally created for the Codementor DevProjects Challenge: *Create a fast and secure blog using JAMstack.*
 
 ## Features
 - **11ty (Eleventy):** A simple and flexible static site generator for fast and efficient builds.
@@ -43,4 +43,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 🚀 Happy coding and may the Force be with you! ✨
+
 
