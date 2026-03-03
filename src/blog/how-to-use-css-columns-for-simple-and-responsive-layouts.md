@@ -29,11 +29,8 @@ Here’s what that looks like in the wild:
 
 ```
 .container {
-
     columns: 200px 3;
-
     gap: 1.5rem;
-
 }
 ```
 
