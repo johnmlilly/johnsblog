@@ -27,7 +27,7 @@ The [columns](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Propert
 
 Here’s what that looks like in the wild:
 
-```
+```css
 .container {
     columns: 200px 3;
     gap: 1.5rem;
@@ -49,7 +49,7 @@ As the parent container shrinks, the columns automatically adjust. When there’
 
 Let’s say you’re rendering a simple list of features inside a marketing page or blog post.
 
-```
+```html
 <section>
   <h2>Platform Features</h2>
   <ul class="feature-list">
@@ -66,7 +66,7 @@ Let’s say you’re rendering a simple list of features inside a marketing page
 </section>
 ```
 
-```
+```css
 .feature-list {
   columns: 200px 3;
   gap: 1.5rem;
