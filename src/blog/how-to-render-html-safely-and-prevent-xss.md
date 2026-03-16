@@ -41,7 +41,7 @@ As browser support improves, this will become the **go-to replacement** for `inn
 
 ## 2\. The Current Industry Standard: DOMPurify
 
-Until the Sanitizer API becomes widely supported, most developers rely on a battle-tested sanitization library. One of the more popular options is [**DOMPurify**](https://www.notion.so/How-to-Render-HTML-Safely-and-Prevent-XSS-325b7554313180ad9f2ce048f8c51dcd?pvs=21)**, which** takes a string of HTML, removes dangerous content, and returns a safe version you can insert into the DOM.
+Until the Sanitizer API becomes widely supported, most developers rely on a battle-tested sanitization library. One of the more popular options is [**DOMPurify**](https://github.com/cure53/DOMPurify)**, which** takes a string of HTML, removes dangerous content, and returns a safe version you can insert into the DOM.
 
 Example:
 
@@ -64,7 +64,7 @@ If you need to render user-generated HTML (for example comments, CMS content, or
 
 Sometimes the safest approach is also the simplest: avoid rendering raw HTML entirely.
 
-Instead of passing a string to the DOM, build the structure using native DOM APIs like `createElement()` and `textContent`. This ensures that user input is treated as plain text rather than executable markup.
+Instead of passing a string to the DOM, build the structure using native [DOM APIs](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API) like `createElement()` and `textContent`. This ensures that user input is treated as plain text rather than executable markup.
 
 Example:
 
