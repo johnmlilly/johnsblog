@@ -46,6 +46,17 @@ eleventyConfig.addCollection("featuredBlog", function (collectionApi) {
     .reverse()
     .slice(0, 6);
 });
+  
+  
+  // Featured published posts
+eleventyConfig.addCollection("mostRecentBlog", function (collectionApi) {
+  return collectionApi.getFilteredByGlob("./src/blog/*.md").filter(post => {
+      const pub = post.data.published;
+      return !(pub === false) && post.data.featured === true;
+    })
+    .reverse()
+    .slice(0, 3);
+});
 
   // ------------------------
   // PROJECT COLLECTIONS
