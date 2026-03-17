@@ -2,9 +2,9 @@
 title: Backend Development
 order: 3
 skills:
-  - C# (.NET / .NET Core)
-  - SQL Server
-  - REST APIs
+  - ASP.NET Core
   - Node.js
+  - REST APIs
+  - SQL Server
   - Express
 ---
