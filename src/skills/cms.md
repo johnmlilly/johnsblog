@@ -4,7 +4,7 @@ order: 2
 skills:
   - WordPress
   - Umbraco
-  - SquareSpace
+  - Squarespace
   - Drupal
   - Webflow
   - Git-based CMS
