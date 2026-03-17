@@ -8,7 +8,6 @@ featured: true
 tags:
   - React
   - Tailwind
-  - Claude
   - Vite
 link: https://reactmortgagecalculator.netlify.app/
 ---
