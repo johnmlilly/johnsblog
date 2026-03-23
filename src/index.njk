@@ -6,27 +6,24 @@ description: Full stack freelance web developer in Northern Virginia helping
   nonprofits and Catholic businesses build modern, mission-driven websites that
   inspire action.
 ---
-{% set hero = home.hero %}
-{% set about = home.about %}
-{% set services = home.services %}
 
 <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>{{ hero.name }}</h1>
-          <h2>{{ hero.greeting }}</h2>
-          <p>{{ hero.description }}</p>
+          <h1>{{ home.hero.name }}</h1>
+          <h2>{{ home.hero.greeting }}</h2>
+          <p>{{ home.hero.description }}</p>
           <p>I help <strong><span id="hero-text"></span></strong> create websites that work — and look — great.</p>
           <div class="hero-buttons">
-            <a href="{{ hero.firstCtaUrl }}" class="btn btn-primary">{{ hero.firstCtaText }}</a>
-            <a href="{{ hero.secondCtaUrl }}" class="btn btn-outline">{{ hero.secondCtaText }}</a>
+            <a href="{{ home.hero.firstCtaUrl }}" class="btn btn-primary">{{ home.hero.firstCtaText }}</a>
+            <a href="{{ home.hero.secondCtaUrl }}" class="btn btn-outline">{{ home.hero.secondCtaText }}</a>
           </div>
         </div>
         <div class="hero-image">
           <div class="profile-image-container">
-            <img loading="eager" fetchpriority="high" src="{{ hero.image }}" alt="John Lilly" class="profile-image">
+            <img loading="eager" fetchpriority="high" src="{{ home.hero.image }}" alt="John Lilly" class="profile-image">
           </div>
         </div>
       </div>
