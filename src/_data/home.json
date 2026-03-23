@@ -55,5 +55,10 @@
         "description": "Building and maintaining the systems behind the scenes that power secure, reliable, and efficient web applications."
       }
     ]
-  }
+  },
+    "contact": {
+    "heading": "Let's Work Together",
+    "description": "Have a project in mind or just want to say hello? I'd love to hear from you!"
+    "cta": "Get in Touch"
+  },
 }
