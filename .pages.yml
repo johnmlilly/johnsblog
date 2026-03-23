@@ -176,54 +176,16 @@ content:
             collapsed: true # Default collapsed state
             summary: "{Title} ({index})" # Template string using field values and {index}
           fields:
-          - { label: "Icon (Lucide name)", name: "icon", type: "string" }
-          - { label: "Title", name: "title", type: "string" }
-          - { label: "Description", name: "description", type: "text" }
-  - name: "hero"
-    label: Home - Hero
-    path: src/_data/hero.json
-    type: file
-    fields:
-      - { label: "Name", name: "name", type: "string" }
-      - { label: "Greeting", name: "greeting", type: "string" }
-      - { label: "Description", name: "description", type: "text" }
-      - { label: "First CTA Text", name: "firstCtaText", type: "string" }
-      - { label: "First CTA URL", name: "firstCtaUrl", type: "string" }
-      - { label: "Second CTA Text", name: "secondCtaText", type: "string" }
-      - { label: "Second CTA URL", name: "secondCtaUrl", type: "string" }
-      - { label: "Image", name: "image", type: "image" }
-  - name: about
-    label: Home - About
-    path: src/_data/about.json
-    type: file
-    fields:
-      - { label: "Heading", name: "heading", type: "string" }
-      - name: "description"
-        label: "Description"
-        type: "string"
-        list: true      
-      - { label: "Image", name: "image", type: "image" }
-      - { label: "CTA Text", name: "ctaText", type: "string" }
-      - { label: "CTA URL", name: "ctaUrl", type: "string" }
-  - name: services
-    label: Home - Services
-    path: src/_data/services.json
-    type: file
-    fields:
-      - { label: "Title", name: "title", type: "string" }
-      - { label: "Subtitle", name: "subtitle", type: "string" }
-      - name: "cards"
-        label: "Service Cards"
-        type: "object"
-        list: 
-          collapsible:
-            collapsed: true # Default collapsed state
-            summary: "{Title} ({index})" # Template string using field values and {index}
-        fields:
-          - { label: "Icon (Lucide name)", name: "icon", type: "string" }
-          - { label: "Title", name: "title", type: "string" }
-          - { label: "Description", name: "description", type: "text" }
-
+            - label: "Icon (Lucide name)"
+              name: "icon"
+              type: "string"
+            - label: "Title"
+              name: "title"
+              type: "string"
+            - label: "Description"
+              name: "description"
+              type: "text"
+ 
 settings:
       content:
         merge: true
