@@ -6,24 +6,24 @@ description: Full stack freelance web developer in Northern Virginia helping
   nonprofits and Catholic businesses build modern, mission-driven websites that
   inspire action.
 ---
- 
+
 <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>{{ hero.name }}</h1>
-          <h2>{{ hero.greeting }}</h2>
-          <p>{{ hero.description }}</p>
+          <h1>{{ home.hero.name }}</h1>
+          <h2>{{ home.hero.greeting }}</h2>
+          <p>{{ home.hero.description }}</p>
           <p>I help <strong><span id="hero-text"></span></strong> create websites that work — and look — great.</p>
           <div class="hero-buttons">
-            <a href="{{ hero.firstCtaUrl }}" class="btn btn-primary">{{ hero.firstCtaText }}</a>
-            <a href="{{ hero.secondCtaUrl }}" class="btn btn-outline">{{ hero.secondCtaText }}</a>
+            <a href="{{ home.hero.firstCtaUrl }}" class="btn btn-primary">{{ home.hero.firstCtaText }}</a>
+            <a href="{{ home.hero.secondCtaUrl }}" class="btn btn-outline">{{ home.hero.secondCtaText }}</a>
           </div>
         </div>
         <div class="hero-image">
           <div class="profile-image-container">
-            <img loading="eager" fetchpriority="high" src="{{ hero.image }}" alt="John Lilly" class="profile-image">
+            <img loading="eager" fetchpriority="high" src="{{ home.hero.image }}" alt="John Lilly" class="profile-image">
           </div>
         </div>
       </div>
@@ -36,17 +36,17 @@ description: Full stack freelance web developer in Northern Virginia helping
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img src="{{ about.image }}" alt="John Lilly">
+          <img src="{{ home.about.image }}" alt="John Lilly">
         </div>
         <div class="about-content">
-          <h2>{{ about.heading }}</h2>
+          <h2>{{ home.about.heading }}</h2>
           <div class="about-text">
-            {% for p in about.description %}
+            {% for p in home.about.description %}
               <p>{{ p }}</p>
             {% endfor %}
           </div>
           <div>
-            <a href="{{ about.ctaUrl }}" class="btn btn-primary">{{ about.ctaText }}</a>
+            <a href="{{ home.about.ctaUrl }}" class="btn btn-primary">{{ home.about.ctaText }}</a>
           </div>
         </div>
       </div>
@@ -56,11 +56,11 @@ description: Full stack freelance web developer in Northern Virginia helping
 <!-- Services Section -->
  <section id="services">
   <div class="container">
-    <h2>{{ services.title }}</h2>
-    <p>{{ services.subtitle }}</p>
+    <h2>{{ home.services.title }}</h2>
+    <p>{{ home.services.subtitle }}</p>
 
     <div class="services-grid">
-      {% for card in services.cards %}
+      {% for card in home.services.cards %}
         <div class="services-card">
           <div class="services-header">
             <i data-lucide="{{ card.icon }}"></i>
@@ -121,9 +121,9 @@ description: Full stack freelance web developer in Northern Virginia helping
   <section class="contact-cta-section">
     <div class="container">
       <div class="contact-cta-content">
-        <h2>Let's Work Together</h2>
-        <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
-        <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+        <h2>{{ home.contact.heading }}</h2>
+        <p>{{ home.contact.description }}</p>
+        <a href="/contact" class="btn btn-primary btn-lg">{{ home.contact.cta }}</a>
       </div>
     </div>
   </section>
