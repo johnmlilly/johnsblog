@@ -6,14 +6,6 @@ description: Full stack freelance web developer in Northern Virginia helping
   nonprofits and Catholic businesses build modern, mission-driven websites that
   inspire action.
 ---
-{% set sections = {} %}
-{% for section in home.sections %}
-  {% set _ = sections.update({ (section.type): section }) %}
-{% endfor %}
-
-{% set hero = sections.hero %}
-{% set about = sections.about %}
-{% set services = sections.services %}
 
 <!-- Hero Section -->
   <section class="hero">
