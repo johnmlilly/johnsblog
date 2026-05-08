@@ -14,10 +14,8 @@ As a kid, I was obsessed with building and creating things. My go-to was Legos a
 
 Fast forward to 2020 when the Covid pandemic hit. I was in a dead-end job and I needed to find a way out. My driving motivation was for my growing family and how I could build a better life for them. I researched growing fields that fit my working style and personality strengths, and I stumbled upon coding and web development. As I dove in further, it felt like a perfect fit and a sustainable way to support my family. I had two goals, which I typed into a Notion folder (and still keep there today):
 
-1.  Support my family with a stable, solid income.
-    
-2.  Find a flexible work-life balance so I could be present to my family.
-    
+1. Support my family with a stable, solid income.
+2. Find a flexible work-life balance so I could be present to my family.
 
 With those targets locked in, I set off to learn coding and web development.
 
@@ -25,7 +23,7 @@ With those targets locked in, I set off to learn coding and web development.
 
 I created a [Notion](https://www.notion.com/) folder to track everything: daily progress, notes, useful links, even chats with developers already in the field. It was my mission control. Every morning before work, I’d tackle coding challenges on sites like [Codewars](https://www.codewars.com/) and [LeetCode](https://leetcode.com/). After a while, I switched to [freeCodeCamp’s Responsive Web Design](https://www.freecodecamp.org/learn/2022/responsive-web-design/) certification to focus in on the fundamentals of [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Styles Sheets).
 
-After several months of honing my skills, I took on the five projects needed for the certification. Building those felt like constructing my own star fighter. Once I finished, I started applying for jobs in the field. Rejection emails from recruiters kept piling up, but I didn't give up I trusted that my opportunity would eventually come around.
+After several months of honing my skills, I took on the five projects needed for the certification. Building those felt like constructing my own star fighter. Once I finished, I started applying for jobs in the field. Rejection emails kept piling up, but I didn't give up. I trusted that my opportunity would eventually come around.
 
 I applied for an entry-level developer role at [Apple Federal Credit Union](https://www.applefcu.org/), a place I’d applied to before a couple of years ago but didn’t get the role. Having a connection there gave me a leg up in the recruiting process (shout out to Rebecca and Melissa!) and fast-tracked me to the job. After a few rounds of interviews, I was thrilled to receive an offer!
 
@@ -37,12 +35,9 @@ Coding has been part of me since my Lego days. As a kid, I’d spend hours tinke
 
 Here’s why it fits me:
 
-1.  **It’s a Growing Path**: There’s always more to learn. Every challenge is a chance to get better and improve your skillset.
-    
-2.  **I’m in Control**: I’m choosing this career path and shaping it to fit my life, not the other way around. My family comes first and having a flexible work-life balance in this field is the perfect fit for me.
-    
-3.  **It Matches Me**: I’m a builder at heart and I thrive on solving tough problems. I love digging into a challenge. I’m not a designer by trade, but I’ve improved by learning CSS and crafting simple, minimalistic designs. It’s like building a Lego model: every piece has to fit just right to create a great experience.
-    
+1. **It’s a Growing Path**: There’s always more to learn. Every challenge is a chance to get better and improve your skillset.
+2. **I’m in Control**: I’m choosing this career path and shaping it to fit my life, not the other way around. My family comes first and having a flexible work-life balance in this field is the perfect fit for me.
+3. **It Matches Me**: I’m a builder at heart and I thrive on solving tough problems. I love digging into a challenge. I’m not a designer by trade, but I’ve improved by learning CSS and crafting simple, minimalistic designs. It’s like building a Lego model: every piece has to fit just right to create a great experience.
 
 ## Best Advice I Got
 
