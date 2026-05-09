@@ -2,10 +2,9 @@
 title: Cloud & DevOps
 order: 4
 skills:
-  - Azure App Services
-  - Azure Functions
-  - Azure SQL Database
-  - Azure Storage
-  - DevOps
+  - Azure DevOps
+  - GitHub Actions
   - CI/CD
+  - Git & Version Control
+  - Docker
 ---
