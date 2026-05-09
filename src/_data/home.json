@@ -35,6 +35,11 @@
         "description": "Customizing and integrating CMS platforms like WordPress, Umbraco, and Squarespace to make content updates simple and scalable."
       },
       {
+        "icon": "server-cog",
+        "title": "Back-End Development",
+        "description": "Building and maintaining the systems behind the scenes that power secure, reliable, and efficient web applications."
+      },
+      {
         "icon": "search-check",
         "title": "SEO & Accessibility",
         "description": "Optimizing websites for search engines and ensuring every visitor enjoys a seamless, inclusive experience."
@@ -48,11 +53,6 @@
         "icon": "pen-tool",
         "title": "UX / UI Prototyping",
         "description": "Designing and testing user flows and interfaces that make your digital experience intuitive and visually engaging."
-      },
-      {
-        "icon": "server-cog",
-        "title": "Back-End Development",
-        "description": "Building and maintaining the systems behind the scenes that power secure, reliable, and efficient web applications."
       }
     ]
   },
