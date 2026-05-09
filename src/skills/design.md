@@ -1,10 +1,9 @@
 ---
-title: "Design & UX"
+title: Frontend & UX
 order: 5
 skills:
-  - Figma
-  - Adobe XD
-  - UI/UX Design
-  - Wireframing & Prototyping
   - Responsive Design
+  - Figma
+  - UI Implementation
+  - Wireframing
 ---
