@@ -2,7 +2,7 @@
   "hero": {
     "name": "John Lilly",
     "greeting": "Hello there!",
-    "description": "I'm a full-stack developer, problem solver, and lifelong learner building modern web experiences, and Star Wars nerd.\n",
+    "description": "I'm a full-stack developer, problem solver, Star Wards nerd, and lifelong learner building modern web experiences.\n",
     "firstCtaText": "View My Work",
     "firstCtaUrl": "#projects",
     "secondCtaText": "About Me",
