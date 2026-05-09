@@ -1,10 +1,10 @@
 ---
-title: Backend Development
+title: Backend & APIs
 order: 3
 skills:
   - ASP.NET Core
-  - Node.js
   - REST APIs
-  - SQL Server
-  - Express
+  - SQL & Relational Databases
+  - Authentication (OAuth, JWT)
+  - API Integration
 ---
