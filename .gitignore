@@ -2,8 +2,11 @@
 node_modules
 
 # build artefacts
-public
-css
+dist
+.astro
+
+# Cloudflare / wrangler local state
+.wrangler
 
 # secrets and errors
 .env
@@ -11,6 +14,3 @@ css
 
 # macOS related files
 .DS_Store
-
-node_modules
-.env

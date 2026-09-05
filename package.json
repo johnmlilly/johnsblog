@@ -1,12 +1,15 @@
 {
   "name": "johnsblog",
   "version": "1.0.0",
-  "description": "John Lilly's personal blog site built using 11ty and Pages CMS",
+  "description": "John Lilly's personal blog site built using Astro and Pages CMS",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve --quiet",
-    "build": "eleventy"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -20,15 +23,20 @@
   },
   "homepage": "https://github.com/johnmlilly/johnsblog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.1",
-    "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
-    "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
+    "@astrojs/check": "^0.9.10",
+    "@cloudflare/workers-types": "^5.20260905.1",
+    "@types/luxon": "^3.7.5",
     "@types/node": "^24.7.2",
-    "eleventy-plugin-metagen": "^1.8.3",
-    "luxon": "^3.5.0"
+    "luxon": "^3.5.0",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
-    "lucide": "^0.515.0"
+    "@astrojs/cloudflare": "^14.3.0",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.1",
+    "astro-seo": "^1.2.0",
+    "lucide": "^0.515.0",
+    "typed.js": "^3.0.0"
   }
 }

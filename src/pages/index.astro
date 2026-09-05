@@ -1,0 +1,147 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import GithubActivity from '../components/GithubActivity.astro';
+import home from '../data/home.json';
+import pageMeta from '../data/pages/home.json';
+
+const allPosts = await getCollection('blog', ({ data }) => data.published !== false);
+const featuredPosts = allPosts
+  .filter((post) => post.data.featured)
+  .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0))
+  .slice(0, 6);
+
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter((project) => project.data.featured)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 4);
+---
+
+<BaseLayout title={pageMeta.title} description={pageMeta.description} image={pageMeta.image}>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>{home.hero.name}</h1>
+          <h2>{home.hero.greeting}</h2>
+          <p>{home.hero.description}</p>
+          <p>I help <strong><span id="hero-text"></span></strong> create websites that work — and look — great.</p>
+          <div class="hero-buttons">
+            <a href={home.hero.firstCtaUrl} class="btn btn-primary">{home.hero.firstCtaText}</a>
+            <a href={home.hero.secondCtaUrl} class="btn btn-outline">{home.hero.secondCtaText}</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-image-container">
+            <img loading="eager" fetchpriority="high" src={home.hero.image} alt="John Lilly" class="profile-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section" data-reveal>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src={home.about.image} alt="John Lilly" loading="lazy" decoding="async" />
+        </div>
+        <div class="about-content">
+          <h2>{home.about.heading}</h2>
+          <div class="about-text">
+            {home.about.description.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <div>
+            <a href={home.about.ctaUrl} class="btn btn-primary">{home.about.ctaText}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" data-reveal>
+    <div class="container">
+      <h2>{home.services.title}</h2>
+      <p>{home.services.subtitle}</p>
+
+      <div class="services-grid">
+        {home.services.cards.map((card) => (
+          <div class="services-card">
+            <div class="services-header">
+              <i data-lucide={card.icon}></i>
+              <h3>{card.title}</h3>
+            </div>
+            <p>{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="alternate-section" data-reveal>
+    <div class="container">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <a href="/projects">View All </a>
+      </div>
+      <div class="projects-grid">
+        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog-section" data-reveal>
+    <div class="container">
+      <div class="section-header">
+        <h2>Blog</h2>
+        <a href="/blog">View All </a>
+      </div>
+      <div class="blog-grid">
+        {featuredPosts.map((post) => <ArticleCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="alternate-section" data-reveal>
+    <div class="container">
+      <h2>Skills & Expertise</h2>
+      <SkillsSection />
+    </div>
+  </section>
+
+  <section id="github-activity" data-reveal>
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent Activity</h2>
+      </div>
+      <GithubActivity />
+    </div>
+  </section>
+
+  <section class="contact-cta-section" data-reveal>
+    <div class="container">
+      <div class="contact-cta-content">
+        <h2>{home.contact.heading}</h2>
+        <p>{home.contact.description}</p>
+        <a href="/contact" class="btn btn-primary btn-lg">{home.contact.cta}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import Typed from 'typed.js';
+
+  new Typed('#hero-text', {
+    strings: ['small businesses', 'churches', 'ministries', 'nonprofits'],
+    typeSpeed: 75,
+    backSpeed: 50,
+    backDelay: 1500,
+    startDelay: 500,
+    loop: true,
+  });
+</script>

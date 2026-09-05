@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+
+const skills = (await getCollection('skills')).sort((a, b) => a.data.order - b.data.order);
+
+function slugify(title: string) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+---
+
+<div class="skills-filter-tabs" role="tablist" aria-label="Filter skills by category">
+  <button class="skills-filter-tab is-active" type="button" data-filter="all" role="tab" aria-selected="true">
+    All
+  </button>
+  {skills.map((skill) => (
+    <button class="skills-filter-tab" type="button" data-filter={slugify(skill.data.title)} role="tab" aria-selected="false">
+      {skill.data.title}
+    </button>
+  ))}
+</div>
+
+<div class="skills-grid">
+  {skills.map((skill) => (
+    <div class="skill-card" data-category={slugify(skill.data.title)}>
+      <div class="skill-header">
+        <h3>{skill.data.title}</h3>
+      </div>
+      <ul class="skill-list">
+        {skill.data.skills.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  ))}
+</div>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.skills-filter-tab');
+  const cards = document.querySelectorAll<HTMLElement>('.skill-card');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const filter = tab.dataset.filter;
+      cards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+</script>
