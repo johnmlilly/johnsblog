@@ -1,41 +1,55 @@
 # My Personal Portfolio Site
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0da74394-e384-41d2-8b46-5de7586f663d/deploy-status)](https://app.netlify.com/projects/johnmlilly/deploys)
-
 ## Overview
-This is my personal blog site built using the **11ty ([Eleventy](https://www.11ty.dev/)) static site generator** and powered by **[Pages CMS](https://pagescms.org/)** for easy content management. The project is based on the starter files from **Kevin Powell's repository**, originally created for the Codementor DevProjects Challenge: *Create a fast and secure blog using JAMstack.*
+This is my personal blog and portfolio site, built with **[Astro](https://astro.build/)** and deployed to **Cloudflare Workers**. Content is managed through **[Pages CMS](https://pagescms.org/)**, a Git-based CMS configured via `.pages.yml`.
 
 ## Features
-- **11ty (Eleventy):** A simple and flexible static site generator for fast and efficient builds.
-- **Pages CMS:** Provides a user-friendly, Git-based content management system for adding and editing content.
-- **Markdown Support:** All content posts are written in Markdown for simplicity and portability.
-- **Custom Components:** Implements reusable components using **Nunjucks (njk) templates**.
-- **Optimized Images:** Uses the 11ty Image Plugin for efficient image loading and performance.
+- **Astro:** Component-based static site generation with server endpoints for the contact form and RSS feed.
+- **Pages CMS:** Git-based content management for blog posts, projects, skills, and page SEO metadata.
+- **Content Collections:** Blog, project, and skills content live in `src/content/` with typed schemas (`src/content.config.ts`).
+- **Contact Form:** Server-side API route (`src/pages/api/contact.ts`) that sends submissions via **[Resend](https://resend.com/)**.
+- **Cloudflare Workers:** Deployed via `wrangler`, serving static assets from `dist/` alongside the server routes.
 - **Responsive Design:** Fully responsive and mobile-friendly layout.
 
 ## Installation & Setup
 ### Prerequisites
-Ensure you have the following installed:
 - **Node.js** (LTS recommended)
-- **npm** or **pnpm/yarn**
+- **npm**
+- A [Resend](https://resend.com/) API key with a verified sending domain (for the contact form)
 
 ### Clone the Repository
 ```sh
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/johnmlilly/johnsblog.git
+cd johnsblog
+npm install
+```
+
+### Local Development
+```sh
+npm run dev
+```
+
+For the contact form to work locally, create a `.dev.vars` file (gitignored) in the project root:
+```
+RESEND_API_KEY=your_resend_api_key
 ```
 
 ## Deployment
-The site can be deployed on any static hosting provider such as:
-- **Netlify**
-- **Vercel**
-- **GitHub Pages**
-- **Cloudflare Pages**
+Deployed to **Cloudflare Workers**. `wrangler.jsonc` points the `assets.directory` at `./dist` (Astro's build output).
 
+```sh
+npm run build    # astro build -> dist/
+npm run deploy   # wrangler deploy
+```
+
+The `RESEND_API_KEY` secret must be set on the Cloudflare Worker (not just locally):
+```sh
+wrangler secret put RESEND_API_KEY
+```
 
 ## Credits
-- **Kevin Powell** - Provided the original starter files for the Codementor challenge.
-- **Eleventy** - The static site generator powering this project.
+- **Kevin Powell** - Provided the original starter files for the Codementor DevProjects challenge this site was based on.
+- **Astro** - The site generator powering this project.
 - **Pages CMS** - For making content management seamless.
 
 ## License
@@ -43,5 +57,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 🚀 Happy coding and may the Force be with you! ✨
-
-
