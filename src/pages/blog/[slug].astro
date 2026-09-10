@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.published !== false);
+
+  const mostRecent = posts
+    .filter((post) => post.data.featured)
+    .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0))
+    .slice(0, 3);
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      relatedPosts: mostRecent.filter((related) => related.id !== post.id).slice(0, 3),
+    },
+  }));
+}
+
+const { post, relatedPosts } = Astro.props;
+---
+
+<ArticleLayout post={post} relatedPosts={relatedPosts} />

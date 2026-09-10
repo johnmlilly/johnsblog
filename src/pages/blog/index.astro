@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import pageMeta from '../../data/pages/blog.json';
+
+const posts = (await getCollection('blog', ({ data }) => data.published !== false)).sort(
+  (a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0)
+);
+---
+
+<BaseLayout title={pageMeta.title} description={pageMeta.description} image={pageMeta.image}>
+  <section class="container snippet-container">
+    <h1>Recent posts</h1>
+    <div class="blog-grid">
+      {posts.map((post) => <ArticleCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,22 @@
+/* Scroll reveal — the hidden state is added by JS (see BaseLayout's reveal
+   script), never by default, so content stays visible if JS fails to load
+   or run. */
+[data-reveal].reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].reveal-init.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal].reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+

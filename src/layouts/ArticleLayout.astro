@@ -1,0 +1,103 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import CloneWarsQuote from '../components/CloneWarsQuote.astro';
+import { formatDate, readingTime } from '../utils/format';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  relatedPosts: CollectionEntry<'blog'>[];
+}
+
+const { post, relatedPosts } = Astro.props;
+const { title, description, image, imageAlt, tags, date } = post.data;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${title} | John Lilly`} description={description ?? ''} image={image} imageAlt={imageAlt}>
+  <section class="article-content container">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li aria-current="page">{title}</li>
+        </ol>
+      </nav>
+      <div class="blog-post-content">
+        <div class="post-meta">
+          <span class="category-badge">{tags.join(', ')}</span>
+          {date && (
+            <div class="stat-item">
+              <i data-lucide="calendar"></i>
+              <time datetime={date.toISOString()}>{formatDate(date)}</time>
+            </div>
+          )}
+          <div class="stat-item">
+            <i data-lucide="clock"></i>
+            <span>{readingTime(post.body ?? '')}</span>
+          </div>
+        </div>
+
+        <h1 class="post-title">{title}</h1>
+        <p class="post-intro">{description}</p>
+
+        {image && (
+          <div class="post-image-container">
+            <figure>
+              <img src={image} alt={imageAlt ?? title} loading="eager" fetchpriority="high" />
+            </figure>
+          </div>
+        )}
+      </div>
+
+      <article class="prose">
+        <Content />
+        <CloneWarsQuote />
+      </article>
+    </div>
+  </section>
+
+  <section class="related-articles">
+    <div class="container">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        {relatedPosts.map((related) => <ArticleCard post={related} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { createIcons, Copy, CircleCheck } from 'lucide';
+
+  const copyIconHtml = '<i data-lucide="copy"></i>&nbsp;Copy';
+
+  document.querySelectorAll<HTMLElement>('.prose pre').forEach((block) => {
+    const codeElement = block.querySelector('code');
+    if (!codeElement) return;
+
+    const language = block.dataset.language || 'Code Snippet';
+
+    const codeHeader = document.createElement('div');
+    codeHeader.innerText = language.toUpperCase();
+    codeHeader.classList.add('code-language-header');
+    block.insertBefore(codeHeader, codeElement);
+
+    const button = document.createElement('button');
+    button.innerHTML = copyIconHtml;
+    codeHeader.appendChild(button);
+    createIcons({ icons: { Copy, CircleCheck } });
+
+    button.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(codeElement.innerText);
+      button.innerHTML = '<i data-lucide="circle-check"></i>&nbsp;Copied!';
+      createIcons({ icons: { Copy, CircleCheck } });
+      setTimeout(() => {
+        button.innerHTML = copyIconHtml;
+        createIcons({ icons: { Copy, CircleCheck } });
+      }, 1000);
+    });
+  });
+</script>
