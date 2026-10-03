@@ -1,30 +1,28 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatDate, readingTime } from '../utils/format';
+import { formatIsoDate, readingMinutes } from '../utils/format';
 
 interface Props {
   post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props;
-const { title, description, image, imageAlt, tags, date } = post.data;
+const { title, description, image, imageAlt, date } = post.data;
 ---
 
 <article class="card-post">
-  <div class="card-header">
-    <span>
-      <i data-lucide="calendar"></i>
-      {date && <time datetime={date.toISOString()}>{formatDate(date)}</time>}
-    </span>
-    <span><i data-lucide="clock"></i> {readingTime(post.body ?? '')}</span>
-  </div>
-  <div>
-    <img src={image} alt={imageAlt ?? title} loading="lazy" decoding="async" />
-  </div>
+  {image && (
+    <div class="frame">
+      <div class="frame-bar">
+        <b>{date ? <time datetime={date.toISOString()}>{formatIsoDate(date)}</time> : post.id}</b>
+        <span>{readingMinutes(post.body ?? '')} min</span>
+      </div>
+      <img src={image} alt={imageAlt ?? title} loading="lazy" decoding="async" />
+    </div>
+  )}
   <div class="card-content">
-    <span class="card-category">{tags.join(', ')}</span>
     <a href={`/blog/${post.id}/`}><h3>{title}</h3></a>
     <p class="card-intro">{description}</p>
-    <a aria-label={`Read more about ${title}`} href={`/blog/${post.id}/`}>Read More <i data-lucide="chevron-right"></i></a>
+    <a class="card-read" aria-label={`Read ${title}`} href={`/blog/${post.id}/`}>cat {post.id}.md →</a>
   </div>
 </article>

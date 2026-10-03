@@ -20,14 +20,14 @@ const { Content } = await render(post);
     <div>
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol class="breadcrumb-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="/">~</a></li>
+          <li><a href="/blog">blog</a></li>
           <li aria-current="page">{title}</li>
         </ol>
       </nav>
       <div class="blog-post-content">
         <div class="post-meta">
-          <span class="category-badge">{tags.join(', ')}</span>
+          {tags.length > 0 && <span class="category-badge">{tags.join(',')}</span>}
           {date && (
             <div class="stat-item">
               <i data-lucide="calendar"></i>
@@ -45,7 +45,8 @@ const { Content } = await render(post);
 
         {image && (
           <div class="post-image-container">
-            <figure>
+            <figure class="frame">
+              <div class="frame-bar"><b>{image.split('/').pop()}</b><span>~/blog</span></div>
               <img src={image} alt={imageAlt ?? title} loading="eager" fetchpriority="high" />
             </figure>
           </div>
@@ -61,9 +62,11 @@ const { Content } = await render(post);
 
   <section class="related-articles">
     <div class="container">
-      <h2>Related Articles</h2>
-      <div class="related-grid">
-        {relatedPosts.map((related) => <ArticleCard post={related} />)}
+      <div class="box">
+        <h2>related/</h2>
+        <div class="related-grid">
+          {relatedPosts.map((related) => <ArticleCard post={related} />)}
+        </div>
       </div>
     </div>
   </section>

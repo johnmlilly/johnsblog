@@ -6,30 +6,24 @@ import SocialLinks from './SocialLinks.astro';
 <header class="site-header">
   <div class="container">
     <div class="logo-container">
-      <img src="/assets/logo/primary-logo.png" alt="John Lilly Logo" class="site-logo" />
-      <a href="/" class="site-title">John Lilly</a>
+      <img src="/assets/logo/primary-logo.png" alt="" class="site-logo" />
+      <a href="/" class="site-title" aria-label="John Lilly, home"><span class="prompt-user">john@lilly</span>:<span class="prompt-path">~</span>$</a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main">
       <Navigation />
     </nav>
     <SocialLinks class="hide-on-mobile" />
-    <button class="mobile-menu-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <button class="mobile-menu-toggle" aria-label="Open menu">menu</button>
   </div>
 </header>
 
 <div class="mobile-menu">
   <div class="container">
     <div class="mobile-menu-header">
-      <a href="/" class="site-title">John Lilly</a>
-      <button class="mobile-menu-close" aria-label="Close menu">
-        <i data-lucide="x"></i>
-      </button>
+      <a href="/" class="site-title" aria-label="John Lilly, home"><span class="prompt-user">john@lilly</span>:<span class="prompt-path">~</span>$</a>
+      <button class="mobile-menu-close" aria-label="Close menu">esc</button>
     </div>
-    <nav>
+    <nav aria-label="Mobile">
       <Navigation />
     </nav>
   </div>
@@ -40,20 +34,23 @@ import SocialLinks from './SocialLinks.astro';
   const mobileMenuClose = document.querySelector('.mobile-menu-close');
   const mobileMenu = document.querySelector('.mobile-menu');
 
+  const closeMenu = () => {
+    mobileMenu?.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  };
+
   mobileMenuToggle?.addEventListener('click', () => {
     mobileMenu?.classList.add('active');
     document.body.classList.add('menu-open');
   });
 
-  mobileMenuClose?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('active');
-    document.body.classList.remove('menu-open');
+  mobileMenuClose?.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
   });
 
   document.querySelectorAll('.mobile-menu a').forEach((link) => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    });
+    link.addEventListener('click', closeMenu);
   });
 </script>

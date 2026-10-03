@@ -17,19 +17,13 @@ const quotes = [
 const quote = quotes[Math.floor(Math.random() * quotes.length)];
 ---
 
-<div class="console">
+<aside class="console" aria-label="Clone Wars quote">
+  <div class="console-bar">wisdom-from-the-outer-rim.txt</div>
   <div class="console-screen">
-    <img
-      src="/assets/starwars/noun-storm-trooper-49992.svg"
-      alt="Storm Trooper Icon"
-      class="star-wars-quote__icon"
-    />
-    <div class="star-wars-quote">
-      <h2>Wisdom from the Outer Rim</h2>
-      <blockquote>
-        <p>"{quote.text}"</p>
-        <span>— The Clone Wars, Season {quote.season}, Episode {quote.episode}</span>
-      </blockquote>
-    </div>
+    <img src="/assets/starwars/noun-storm-trooper-49992.svg" alt="" class="star-wars-quote__icon" />
+    <blockquote>
+      <p>"{quote.text}"</p>
+      <span>// The Clone Wars, S{quote.season}E{quote.episode}</span>
+    </blockquote>
   </div>
-</div>
+</aside>

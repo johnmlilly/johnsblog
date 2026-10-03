@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ArticleCard from '../components/ArticleCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import SkillsSection from '../components/SkillsSection.astro';
 import home from '../data/home.json';
 import pageMeta from '../data/pages/home.json';
+import { formatIsoDate, readingMinutes, slugify } from '../utils/format';
 
 const allPosts = await getCollection('blog', ({ data }) => data.published !== false);
 const featuredPosts = allPosts
@@ -25,36 +25,37 @@ const featuredProjects = allProjects
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>{home.hero.name}</h1>
-          <h2>{home.hero.greeting}</h2>
+          <p class="prompt">whoami</p>
+          <h1>{home.hero.name}<span>_</span></h1>
+          <p class="hero-greeting">{home.hero.greeting}</p>
           <p>{home.hero.description}</p>
-          <p>I help <strong><span id="hero-text"></span></strong> create websites that work — and look — great.</p>
+          <p>I help <span id="hero-text">small businesses</span> create websites that work — and look — great.</p>
           <div class="hero-buttons">
             <a href={home.hero.firstCtaUrl} class="btn btn-primary">{home.hero.firstCtaText}</a>
             <a href={home.hero.secondCtaUrl} class="btn btn-outline">{home.hero.secondCtaText}</a>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="profile-image-container">
-            <img loading="eager" fetchpriority="high" src={home.hero.image} alt="John Lilly" class="profile-image" />
-          </div>
+        <div class="hero-image frame portrait">
+          <div class="frame-bar"><b>headshot.jpg</b><span>~/photos</span></div>
+          <img loading="eager" fetchpriority="high" src={home.hero.image} alt="John Lilly" />
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about-section" data-reveal>
+  <section id="about" data-reveal>
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <img src={home.about.image} alt="John Lilly" loading="lazy" decoding="async" />
-        </div>
-        <div class="about-content">
-          <h2>{home.about.heading}</h2>
-          <div class="about-text">
-            {home.about.description.map((paragraph) => <p>{paragraph}</p>)}
+      <div class="box">
+        <h2>{slugify(home.about.heading)}.md</h2>
+        <div class="about-grid">
+          <div class="frame">
+            <div class="frame-bar"><b>about.jpeg</b><span>~/photos</span></div>
+            <img src={home.about.image} alt="John Lilly" loading="lazy" decoding="async" />
           </div>
           <div>
+            <div class="about-text">
+              {home.about.description.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
             <a href={home.about.ctaUrl} class="btn btn-primary">{home.about.ctaText}</a>
           </div>
         </div>
@@ -64,60 +65,80 @@ const featuredProjects = allProjects
 
   <section id="services" data-reveal>
     <div class="container">
-      <h2>{home.services.title}</h2>
-      <p>{home.services.subtitle}</p>
-
-      <div class="services-grid">
-        {home.services.cards.map((card) => (
-          <div class="services-card">
-            <div class="services-header">
-              <i data-lucide={card.icon}></i>
-              <h3>{card.title}</h3>
-            </div>
-            <p>{card.description}</p>
-          </div>
-        ))}
+      <div class="box">
+        <h2>{slugify(home.services.title)}/</h2>
+        <p class="comment">{home.services.subtitle}</p>
+        <p class="prompt">ls -la services/</p>
+        <div class="ls-wrap">
+          <table class="ls">
+            <tbody>
+              {home.services.cards.map((card) => (
+                <tr>
+                  <td class="perm" aria-hidden="true">drwxr-xr-x</td>
+                  <td class="name">{slugify(card.title)}</td>
+                  <td class="desc">{card.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="alternate-section" data-reveal>
+  <section id="projects" data-reveal>
     <div class="container">
-      <div class="section-header">
-        <h2>Projects</h2>
-        <a href="/projects">View All </a>
-      </div>
-      <div class="projects-grid">
-        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      <div class="box">
+        <h2>projects/</h2>
+        <div class="section-header">
+          <p class="prompt">ls projects/ --featured</p>
+          <a href="/projects">view all →</a>
+        </div>
+        <div class="projects-grid">
+          {featuredProjects.map((project) => <ProjectCard project={project} />)}
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="blog" class="blog-section" data-reveal>
+  <section id="blog" data-reveal>
     <div class="container">
-      <div class="section-header">
-        <h2>Blog</h2>
-        <a href="/blog">View All </a>
-      </div>
-      <div class="blog-grid">
-        {featuredPosts.map((post) => <ArticleCard post={post} />)}
+      <div class="box">
+        <h2>blog.log</h2>
+        <div class="section-header">
+          <p class="prompt">tail blog.log</p>
+          <a href="/blog">view all →</a>
+        </div>
+        <ul class="log">
+          {featuredPosts.map((post) => (
+            <li>
+              {post.data.date ? <time datetime={post.data.date.toISOString()}>{formatIsoDate(post.data.date)}</time> : <span />}
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+              <span class="log-meta">{readingMinutes(post.body ?? '')} min</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="alternate-section" data-reveal>
+  <section id="skills" data-reveal>
     <div class="container">
-      <h2>Skills & Expertise</h2>
-      <SkillsSection />
+      <div class="box">
+        <h2>skills.json</h2>
+        <p class="prompt">cat skills.json</p>
+        <SkillsSection />
+      </div>
     </div>
   </section>
 
   <section class="contact-cta-section" data-reveal>
     <div class="container">
-      <div class="contact-cta-content">
-        <h2>{home.contact.heading}</h2>
+      <div class="box">
+        <h2>contact.sh</h2>
+        <p class="comment">{home.contact.heading}</p>
         <p>{home.contact.description}</p>
-        <a href="/contact" class="btn btn-primary btn-lg">{home.contact.cta}</a>
+        <a href="/contact" class="btn btn-primary btn-lg">{home.contact.cta} <span aria-hidden="true">↵</span></a>
       </div>
     </div>
   </section>
@@ -133,5 +154,6 @@ const featuredProjects = allProjects
     backDelay: 1500,
     startDelay: 500,
     loop: true,
+    cursorChar: ' ',
   });
 </script>
