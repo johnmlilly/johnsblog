@@ -13,7 +13,9 @@ const { title, description, image, tags, link, date } = project.data;
 <article class="project-card">
   <div class="frame">
     <div class="frame-bar"><b>{slugify(title)}</b><span>{formatIsoDate(date).slice(0, 7)}</span></div>
-    <img src={image} alt={title} loading="lazy" decoding="async" />
+    <div class="shot">
+      <img src={image} alt={title} loading="lazy" decoding="async" />
+    </div>
   </div>
   <h3>{title}</h3>
   <p>{description}</p>

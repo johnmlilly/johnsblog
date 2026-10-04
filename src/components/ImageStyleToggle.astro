@@ -1,0 +1,38 @@
+---
+// Temporary: lets us compare project image treatments on the preview site.
+// Remove once a style is picked.
+---
+
+<div class="img-toggle" role="group" aria-label="Project image style">
+  <span class="toggle-label">--image-style=</span>
+  <button type="button" data-style="original" aria-pressed="true">original</button>
+  <button type="button" data-style="muted" aria-pressed="false">muted</button>
+  <button type="button" data-style="tint" aria-pressed="false">blue-tint</button>
+  <button type="button" data-style="scan" aria-pressed="false">scanlines</button>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.img-toggle button');
+
+  const apply = (style: string) => {
+    root.dataset.img = style;
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.style === style)));
+  };
+
+  let saved = 'original';
+  try {
+    saved = localStorage.getItem('img-style') ?? 'original';
+  } catch {}
+  apply(saved);
+
+  buttons.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const style = btn.dataset.style ?? 'original';
+      apply(style);
+      try {
+        localStorage.setItem('img-style', style);
+      } catch {}
+    })
+  );
+</script>

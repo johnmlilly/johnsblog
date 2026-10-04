@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import ImageStyleToggle from '../../components/ImageStyleToggle.astro';
 import pageMeta from '../../data/pages/projects.json';
 
 const projects = (await getCollection('projects')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -11,6 +12,7 @@ const projects = (await getCollection('projects')).sort((a, b) => b.data.date.ge
   <section class="container snippet-container">
     <h1 class="page-title">projects</h1>
     <p class="prompt">ls -t projects/</p>
+    <ImageStyleToggle />
     <div class="projects-grid">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
