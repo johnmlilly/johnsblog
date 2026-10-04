@@ -14,8 +14,12 @@ const blog = defineCollection({
     date: z.coerce.date().optional(),
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
+    // Social/Open Graph preview only; not shown on the page.
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    // Simple Icons slug for the card logo (e.g. "react"). Optional: by
+    // default the first tag with a matching logo is used.
+    logo: z.string().optional(),
   }),
 });
 

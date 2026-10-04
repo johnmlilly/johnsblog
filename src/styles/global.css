@@ -736,6 +736,10 @@ body.menu-open {
 .neofetch-colors span:nth-child(4) { background: var(--color-accent-3); }
 .neofetch-colors span:nth-child(5) { background: var(--color-text-muted); }
 
+.post-neofetch {
+  font-size: var(--step--1);
+}
+
 @media (max-width: 420px) {
   .neofetch {
     flex-direction: column;

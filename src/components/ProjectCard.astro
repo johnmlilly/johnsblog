@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatIsoDate, slugify } from '../utils/format';
+import NeofetchCard from './NeofetchCard.astro';
+import { formatIsoDate, handleFor } from '../utils/format';
 import { terminalLogo } from '../utils/terminalLogo';
 
 interface Props {
@@ -10,31 +11,19 @@ interface Props {
 const { project } = Astro.props;
 const { title, description, tags, link, date, logo } = project.data;
 
-const art = terminalLogo(title, tags, logo);
 const host = new URL(link).hostname.replace(/^www\./, '');
-const handle = slugify(title).split('-').slice(0, 2).join('-');
-const stack = tags.map((tag) => tag.toLowerCase()).join(' · ');
 ---
 
 <article class="project-card">
-  <div class="neofetch">
-    <div class="neofetch-logo" style={`--logo-color: ${art.color}`} aria-hidden="true">
-      <svg viewBox={`0 0 ${art.size} ${art.size}`} shape-rendering="crispEdges"><path d={art.path} /></svg>
-      <span>[ {art.label} ]</span>
-    </div>
-    <dl class="neofetch-info">
-      <div class="neofetch-head">
-        <span class="nf-user">{handle}</span>@<span class="nf-host">johnlilly</span>
-      </div>
-      <div class="neofetch-rule" aria-hidden="true">{'-'.repeat(handle.length + 10)}</div>
-      <div class="nf-row"><dt>stack</dt><dd>{stack}</dd></div>
-      <div class="nf-row"><dt>year</dt><dd>{formatIsoDate(date).slice(0, 4)}</dd></div>
-      <div class="nf-row"><dt>url</dt><dd>{host}</dd></div>
-      <div class="neofetch-colors" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </dl>
-  </div>
+  <NeofetchCard
+    logo={terminalLogo(title, tags, logo)}
+    handle={handleFor(title)}
+    rows={[
+      { label: 'stack', value: tags.map((tag) => tag.toLowerCase()).join(' · ') },
+      { label: 'year', value: formatIsoDate(date).slice(0, 4) },
+      { label: 'url', value: host },
+    ]}
+  />
   <h3>{title}</h3>
   <p>{description}</p>
   <a href={link} class="project-link" target="_blank" rel="noopener noreferrer">

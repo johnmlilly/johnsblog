@@ -14,8 +14,9 @@ content:
       - { label: "Published", name: "published", type: "boolean", default: false }
       - { label: "Title", name: "title", type: "string" }
       - { label: "Short Description", name: "description", type: "text" }
-      - { label: "Featured Image", name: "image", type: "image" }
-      - { label: "Image Caption", name: "imageAlt", type: "string" }
+      - { label: "Social Preview Image", name: "image", type: "image" }
+      - { label: "Social Preview Image Alt Text", name: "imageAlt", type: "string" }
+      - { label: "Logo (optional Simple Icons slug, e.g. react)", name: "logo", type: "string" }
       - { label: "Date", name: "date", type: "date" }
       - { label: "Featured", name: "featured", type: "boolean", default: false }
       - name: tags

@@ -1,25 +1,27 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatIsoDate, readingMinutes } from '../utils/format';
+import NeofetchCard from './NeofetchCard.astro';
+import { formatIsoDate, readingMinutes, handleFor } from '../utils/format';
+import { terminalLogo } from '../utils/terminalLogo';
 
 interface Props {
   post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props;
-const { title, description, image, imageAlt, date } = post.data;
+const { title, description, tags, date, logo } = post.data;
 ---
 
 <article class="card-post">
-  {image && (
-    <div class="frame">
-      <div class="frame-bar">
-        <b>{date ? <time datetime={date.toISOString()}>{formatIsoDate(date)}</time> : 'post'}</b>
-        <span>{readingMinutes(post.body ?? '')} min</span>
-      </div>
-      <img src={image} alt={imageAlt ?? title} loading="lazy" decoding="async" />
-    </div>
-  )}
+  <NeofetchCard
+    logo={terminalLogo(title, tags, logo)}
+    handle={handleFor(title)}
+    rows={[
+      { label: 'tags', value: tags.map((tag) => tag.toLowerCase()).join(' · ') || 'none' },
+      ...(date ? [{ label: 'date', value: formatIsoDate(date), datetime: date.toISOString() }] : []),
+      { label: 'read', value: `${readingMinutes(post.body ?? '')} min` },
+    ]}
+  />
   <div class="card-content">
     <a href={`/blog/${post.id}/`}><h3>{title}</h3></a>
     <p class="card-intro">{description}</p>

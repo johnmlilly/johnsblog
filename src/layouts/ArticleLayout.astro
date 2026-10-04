@@ -3,7 +3,9 @@ import { render, type CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import CloneWarsQuote from '../components/CloneWarsQuote.astro';
-import { formatDate, readingTime } from '../utils/format';
+import NeofetchCard from '../components/NeofetchCard.astro';
+import { formatIsoDate, readingMinutes, handleFor } from '../utils/format';
+import { terminalLogo } from '../utils/terminalLogo';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -11,7 +13,7 @@ interface Props {
 }
 
 const { post, relatedPosts } = Astro.props;
-const { title, description, image, imageAlt, tags, date } = post.data;
+const { title, description, image, imageAlt, tags, date, logo } = post.data;
 const { Content } = await render(post);
 ---
 
@@ -26,31 +28,19 @@ const { Content } = await render(post);
         </ol>
       </nav>
       <div class="blog-post-content">
-        <div class="post-meta">
-          {tags.length > 0 && <span class="category-badge">{tags.join(',')}</span>}
-          {date && (
-            <div class="stat-item">
-              <i data-lucide="calendar"></i>
-              <time datetime={date.toISOString()}>{formatDate(date)}</time>
-            </div>
-          )}
-          <div class="stat-item">
-            <i data-lucide="clock"></i>
-            <span>{readingTime(post.body ?? '')}</span>
-          </div>
-        </div>
-
         <h1 class="post-title">{title}</h1>
         <p class="post-intro">{description}</p>
 
-        {image && (
-          <div class="post-image-container">
-            <figure class="frame">
-              <div class="frame-bar"><b>cover-photo</b><span>~/blog</span></div>
-              <img src={image} alt={imageAlt ?? title} loading="eager" fetchpriority="high" />
-            </figure>
-          </div>
-        )}
+        <NeofetchCard
+          class="post-neofetch"
+          logo={terminalLogo(title, tags, logo)}
+          handle={handleFor(title)}
+          rows={[
+            { label: 'tags', value: tags.map((tag) => tag.toLowerCase()).join(' · ') || 'none' },
+            ...(date ? [{ label: 'date', value: formatIsoDate(date), datetime: date.toISOString() }] : []),
+            { label: 'read', value: `${readingMinutes(post.body ?? '')} min` },
+          ]}
+        />
       </div>
 
       <article class="prose">
