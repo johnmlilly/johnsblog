@@ -16,8 +16,7 @@ interface Props {
 const { title, description, image = '/og/default.png', imageAlt = title } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
-// __OG_ORIGIN__ is set only on preview builds (see astro.config.mjs).
-const socialImage = new URL(image, __OG_ORIGIN__ || Astro.site).toString();
+const socialImage = new URL(image, Astro.site).toString();
 ---
 
 <!doctype html>
