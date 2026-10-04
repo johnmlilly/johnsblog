@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Why My Site Now Looks Like a Terminal
 description: The new design is a nod to the tool I've come to love most, a
   blinking cursor and a place to type what I need.
@@ -7,6 +7,7 @@ date: 2026-10-04
 featured: true
 tags:
   - Terminal
+logo: hyper
 ---
 
 If you've been here before, you probably noticed things look a little different. The whole site now looks like a terminal: monospace text, a blinking cursor, blog posts listed like a log file, and a little status bar at the bottom of the screen.

@@ -25,10 +25,9 @@ export interface TerminalLogo {
 
 const normalize = (text: string) => text.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-// Tags whose wording doesn't match a Simple Icons title or slug. `label`
-// overrides the icon's own name under the logo.
-const TAG_ALIASES: Record<string, { slug: string; label?: string }> = {
-  '11ty': { slug: 'eleventy' },
+// Tags whose wording doesn't match the Simple Icons title or slug.
+const TAG_ALIASES: Record<string, string> = {
+  '11ty': 'eleventy',
 };
 
 const icons = Object.values(simpleIcons as Record<string, unknown>).filter(
@@ -42,42 +41,11 @@ for (const icon of icons) {
   byTitle.set(normalize(icon.title), icon);
 }
 
-function findIcon(name: string): { icon: SimpleIcon; label: string } | undefined {
+function findIcon(name: string): SimpleIcon | undefined {
   const key = normalize(name);
   const alias = TAG_ALIASES[key];
-  const icon = (alias && bySlug.get(alias.slug)) || bySlug.get(key) || byTitle.get(key);
-  return icon && { icon, label: alias?.label ?? icon.title.toLowerCase() };
+  return (alias && bySlug.get(alias)) || bySlug.get(key) || byTitle.get(key);
 }
-
-// Hand-drawn 20×20 logos for tags Simple Icons has nothing clear for.
-const CUSTOM_LOGOS: Record<string, { label: string; color: string; rows: string[] }> = {
-  terminal: {
-    label: 'terminal',
-    color: '#10b981',
-    rows: [
-      '....................',
-      '.##################.',
-      '.##################.',
-      '.##################.',
-      '.##..............##.',
-      '.##..............##.',
-      '.##.##...........##.',
-      '.##..##..........##.',
-      '.##...##.........##.',
-      '.##....##........##.',
-      '.##.....##.......##.',
-      '.##....##........##.',
-      '.##...##.........##.',
-      '.##..##..........##.',
-      '.##.##....######.##.',
-      '.##.......######.##.',
-      '.##..............##.',
-      '.##################.',
-      '.##################.',
-      '....................',
-    ],
-  },
-};
 
 // --- Rasterizing ------------------------------------------------------------
 
@@ -265,17 +233,9 @@ export const SIZE = 20; // pixels per side, i.e. 20 columns × 10 rows of half-b
 const cache = new Map<string, TerminalLogo>();
 
 export function terminalLogo(title: string, tags: string[], logo?: string): TerminalLogo {
-  const customKey = [logo, ...tags].filter(Boolean).map((name) => normalize(name!)).find((key) => key in CUSTOM_LOGOS);
-  if (customKey) {
-    const custom = CUSTOM_LOGOS[customKey];
-    const grid = custom.rows.map((row) => [...row].map((c) => c === '#'));
-    return { size: SIZE, path: toPixelPath(grid), label: custom.label, color: custom.color };
-  }
-
-  const match = [logo, ...tags].filter(Boolean).map((name) => findIcon(name!)).find(Boolean);
-  const icon = match?.icon;
-  const label = match ? match.label : (tags[0]?.toLowerCase() ?? 'project');
-  const key = icon ? `icon:${icon.slug}:${label}` : `pattern:${title}:${label}`;
+  const icon = [logo, ...tags].filter(Boolean).map((name) => findIcon(name!)).find(Boolean);
+  const label = icon ? icon.title.toLowerCase() : (tags[0]?.toLowerCase() ?? 'project');
+  const key = icon ? `icon:${icon.slug}` : `pattern:${title}:${label}`;
 
   let result = cache.get(key);
   if (!result) {

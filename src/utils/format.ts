@@ -22,9 +22,8 @@ export function slugify(text: string): string {
 }
 
 const HANDLE_STOPWORDS = new Set([
-  'a', 'an', 'and', 'are', 'every', 'for', 'how', 'i', 'in', 'is', 'like', 'looks',
-  'my', 'now', 'of', 'on', 'should', 'the', 'this', 'to', 'top', 'use', 'what',
-  'why', 'with',
+  'a', 'an', 'and', 'are', 'every', 'for', 'how', 'i', 'in', 'is', 'my', 'of',
+  'on', 'should', 'the', 'this', 'to', 'top', 'use', 'what', 'why', 'with',
 ]);
 
 // Short neofetch-style name from a title: the first two meaningful words,
