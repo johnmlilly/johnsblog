@@ -99,12 +99,12 @@ function chrome(section: string): string[] {
   ];
 }
 
-/** tmux-style status bar. The only place the domain appears. */
+/** tmux-style status bar, matching the one on the site. */
 function statusBar(section: string): string[] {
   return [
     `<rect x="0" y="${H - 44}" width="${W}" height="44" fill="${COLORS.primary}"/>`,
     text(40, H - 15, 22, COLORS.panel, `[jl]  ${esc(section || 'home')}*`, 'font-weight="800"'),
-    text(W - 40, H - 15, 22, COLORS.panel, 'johnlilly.dev · NoVA', 'text-anchor="end" font-weight="800"'),
+    text(W - 40, H - 15, 22, COLORS.panel, 'full stack developer', 'text-anchor="end" font-weight="800"'),
   ];
 }
 
