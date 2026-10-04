@@ -23,7 +23,7 @@ content:
         options:
           creatable: true
           multiple: true
-          values: [ Front-end Development, JavaScript, CSS, C#, Career, SEO, Accessibility ]
+          values: [ Front-end Development, JavaScript, CSS, C#, Career, SEO, Accessibility, Terminal ]
       - { label: "Body", name: "body", type: "rich-text" }
   - name: projects
     label: Projects
