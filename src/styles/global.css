@@ -321,21 +321,43 @@ iframe {
   border-bottom: 1px solid var(--color-border);
 }
 
-.logo-container {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.site-logo {
-  width: 28px;
-  height: 28px;
-  display: flex;
-}
-
+/* Site title as a mini terminal window: blue title bar with three
+   window buttons, then the prompt and a blinking cursor. */
 .site-title {
+  display: inline-flex;
+  flex-direction: column;
+  border: 2px solid var(--color-primary);
+  background: var(--color-background-alt);
   font-weight: 800;
   color: var(--color-text);
+}
+
+.site-title-bar {
+  display: flex;
+  gap: 3px;
+  height: 8px;
+  padding: 2px 4px;
+  background: var(--color-primary);
+}
+
+.site-title-bar i {
+  width: 4px;
+  height: 4px;
+  background: var(--color-background-alt);
+}
+
+.site-title-body {
+  padding: 0.2rem 0.6rem;
+}
+
+.prompt-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  margin-left: 0.25ch;
+  vertical-align: text-bottom;
+  background: var(--color-primary);
+  animation: blink 1s steps(1) infinite;
 }
 
 .site-title:hover {
@@ -1071,7 +1093,8 @@ pre.json {
   }
 
   .cursor,
-  .typed-cursor {
+  .typed-cursor,
+  .prompt-cursor {
     animation: none;
   }
 }
