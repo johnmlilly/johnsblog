@@ -1,12 +1,14 @@
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import { FolderCode, Mail, NotebookPen } from 'lucide';
-import { lucideLogo, ogPng, ogReady, type OgCard } from '../../utils/ogImage';
+import { lucideLogo, ogPng, ogProfilePng, ogReady, type OgCard, type OgProfile } from '../../utils/ogImage';
+import home from '../../data/home.json';
 import { postCard } from '../../utils/postCard';
 import { formatIsoDate } from '../../utils/format';
 
 // Social preview images, generated at build time. The home page keeps its
-// own hand-made image; everything else points here.
+// own hand-made image; everything else points here, and /og/default.png is
+// the fallback for pages without their own.
 export const getStaticPaths = (async () => {
   await ogReady;
   const posts = (await getCollection('blog', ({ data }) => data.published !== false)).sort(
@@ -65,19 +67,34 @@ export const getStaticPaths = (async () => {
         title: "Let's work together",
         section: 'contact',
         rows: [
-          { label: 'email', value: 'hello@johnlilly.dev' },
           { label: 'based', value: 'Northern Virginia' },
-          { label: 'form', value: 'johnlilly.dev/contact' },
+          { label: 'for', value: 'small businesses · churches · nonprofits' },
+          { label: 'form', value: '/contact' },
         ],
       },
     },
   ];
 
-  return cards.map(({ slug, card }) => ({ params: { slug }, props: { card } }));
+  const profile: OgProfile = {
+    name: home.hero.name,
+    title: 'Full Stack Web Developer',
+    rows: [
+      { label: 'based', value: 'Northern Virginia' },
+      { label: 'helps', value: 'nonprofits · churches · businesses' },
+    ],
+  };
+
+  return [
+    ...cards.map(({ slug, card }) => ({ params: { slug }, props: { card } as OgProps })),
+    { params: { slug: 'default' }, props: { profile } as OgProps },
+  ];
 }) satisfies GetStaticPaths;
+
+type OgProps = { card: OgCard; profile?: never } | { profile: OgProfile; card?: never };
 
 export const GET: APIRoute = async ({ props }) => {
   await ogReady;
-  const png = ogPng((props as { card: OgCard }).card);
+  const { card, profile } = props as OgProps;
+  const png = profile ? ogProfilePng(profile) : ogPng(card!);
   return new Response(png, { headers: { 'Content-Type': 'image/png' } });
 };

@@ -6,6 +6,7 @@ import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm?module';
 import regularFont from '../assets/fonts/JetBrainsMono-Regular.ttf?inline';
 import extraBoldFont from '../assets/fonts/JetBrainsMono-ExtraBold.ttf?inline';
+import avatar from '../assets/og-avatar.jpg?inline';
 import { SIZE, toPixelPath, type TerminalLogo } from './terminalLogo';
 
 /** Decode a Vite `?inline` data URL into bytes. */
@@ -81,16 +82,10 @@ function text(x: number, y: number, size: number, fill: string, content: string,
   return `<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" ${extra}>${content}</text>`;
 }
 
-export function ogSvg(card: OgCard): string {
-  const { logo } = card;
-  const logoColor = logo.color.startsWith('#')
-    ? logo.color
-    : logo.color.includes('primary')
-      ? COLORS.primary
-      : COLORS.text;
-
-  // Panel and title bar
-  const parts: string[] = [
+/** Background, terminal panel, and title bar with a `~/section` prompt. */
+function chrome(section: string): string[] {
+  const path = section ? `~/${esc(section)}` : '~';
+  return [
     `<rect width="${W}" height="${H}" fill="${COLORS.bg}"/>`,
     `<rect x="40" y="36" width="${W - 80}" height="530" fill="${COLORS.panel}" stroke="${COLORS.border}" stroke-width="2"/>`,
     `<line x1="40" y1="88" x2="${W - 40}" y2="88" stroke="${COLORS.border}" stroke-width="2"/>`,
@@ -99,10 +94,62 @@ export function ogSvg(card: OgCard): string {
       72,
       22,
       COLORS.text,
-      `<tspan fill="${COLORS.green}" font-weight="800">john@lilly</tspan>:<tspan fill="${COLORS.primary}">~/${esc(card.section)}</tspan>$`
+      `<tspan fill="${COLORS.green}" font-weight="800">john@lilly</tspan>:<tspan fill="${COLORS.primary}">${path}</tspan>$`
     ),
-    text(W - 68, 72, 22, COLORS.muted, 'johnlilly.dev', 'text-anchor="end"'),
   ];
+}
+
+/** tmux-style status bar. The only place the domain appears. */
+function statusBar(section: string): string[] {
+  return [
+    `<rect x="0" y="${H - 44}" width="${W}" height="44" fill="${COLORS.primary}"/>`,
+    text(40, H - 15, 22, COLORS.panel, `[jl]  ${esc(section || 'home')}*`, 'font-weight="800"'),
+    text(W - 40, H - 15, 22, COLORS.panel, 'johnlilly.dev · NoVA', 'text-anchor="end" font-weight="800"'),
+  ];
+}
+
+/** `label: value` rows starting at baseline y. Returns the next baseline. */
+function rows(parts: string[], items: OgRow[], x: number, y: number, width: number): number {
+  const size = 24;
+  const labelWidth = Math.max(...items.map((row) => row.label.length)) + 2;
+  const valueChars = Math.floor(width / (size * ADVANCE)) - labelWidth;
+  for (const row of items) {
+    parts.push(
+      text(x, y, size, COLORS.amber, `${esc(row.label)}:`),
+      text(x + labelWidth * size * ADVANCE, y, size, COLORS.text, esc(clip(row.value, valueChars)))
+    );
+    y += 36;
+  }
+  return y;
+}
+
+/** The palette swatch row neofetch prints at the end. */
+function swatches(parts: string[], x: number, y: number) {
+  [COLORS.primary, COLORS.purple, COLORS.green, COLORS.amber, COLORS.muted].forEach((fill, i) => {
+    parts.push(`<rect x="${x + i * 48}" y="${y}" width="48" height="22" fill="${fill}"/>`);
+  });
+}
+
+const svgDoc = (parts: string[]) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${FONT}">${parts.join('')}</svg>`;
+
+function render(svg: string): Uint8Array<ArrayBuffer> {
+  const resvg = new Resvg(svg, {
+    font: { fontBuffers, defaultFontFamily: FONT, loadSystemFonts: false },
+    fitTo: { mode: 'width', value: W },
+  });
+  return new Uint8Array(resvg.render().asPng());
+}
+
+export function ogSvg(card: OgCard): string {
+  const { logo } = card;
+  const logoColor = logo.color.startsWith('#')
+    ? logo.color
+    : logo.color.includes('primary')
+      ? COLORS.primary
+      : COLORS.text;
+
+  const parts = chrome(card.section);
 
   // Logo: pixel grid scaled into a 280px square, label underneath
   const logoSize = 280;
@@ -140,47 +187,50 @@ export function ogSvg(card: OgCard): string {
     y += 56;
   }
 
-  const rowSize = 24;
-  const labelWidth = Math.max(...card.rows.map((row) => row.label.length)) + 2;
-  const valueChars = Math.floor(colWidth / (rowSize * ADVANCE)) - labelWidth;
-  y += 10;
-  for (const row of card.rows) {
-    const valueX = colX + labelWidth * rowSize * ADVANCE;
-    parts.push(
-      text(colX, y, rowSize, COLORS.amber, `${esc(row.label)}:`),
-      text(valueX, y, rowSize, COLORS.text, esc(clip(row.value, valueChars)))
-    );
-    y += 36;
-  }
+  y = rows(parts, card.rows, colX, y + 10, colWidth);
+  swatches(parts, colX, y - 6);
+  parts.push(...statusBar(card.section));
 
-  const swatches = [COLORS.primary, COLORS.purple, COLORS.green, COLORS.amber, COLORS.muted];
-  swatches.forEach((fill, i) => {
-    parts.push(`<rect x="${colX + i * 48}" y="${y - 6}" width="48" height="22" fill="${fill}"/>`);
-  });
-
-  // tmux-style status bar
-  parts.push(
-    `<rect x="0" y="${H - 44}" width="${W}" height="44" fill="${COLORS.primary}"/>`,
-    text(
-      40,
-      H - 15,
-      22,
-      COLORS.panel,
-      `[jl]  ${esc(card.section)}*`,
-      'font-weight="800"'
-    ),
-    text(W - 40, H - 15, 22, COLORS.panel, 'johnlilly.dev · NoVA', 'text-anchor="end" font-weight="800"')
-  );
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${FONT}">${parts.join('')}</svg>`;
+  return svgDoc(parts);
 }
 
 export function ogPng(card: OgCard): Uint8Array<ArrayBuffer> {
-  const resvg = new Resvg(ogSvg(card), {
-    font: { fontBuffers, defaultFontFamily: FONT, loadSystemFonts: false },
-    fitTo: { mode: 'width', value: W },
-  });
-  return new Uint8Array(resvg.render().asPng());
+  return render(ogSvg(card));
+}
+
+export interface OgProfile {
+  name: string;
+  title: string;
+  rows: OgRow[];
+}
+
+/** Default image: headshot plus name and title, like the home page hero. */
+export function ogProfilePng(profile: OgProfile): Uint8Array<ArrayBuffer> {
+  const parts = chrome('');
+
+  // Headshot in a window frame with a title bar
+  const photo = { x: 84, y: 156, size: 340 };
+  parts.push(
+    `<rect x="${photo.x - 1}" y="${photo.y - 37}" width="${photo.size + 2}" height="${photo.size + 38}" fill="${COLORS.bg}" stroke="${COLORS.border}" stroke-width="2"/>`,
+    `<line x1="${photo.x}" y1="${photo.y - 1}" x2="${photo.x + photo.size}" y2="${photo.y - 1}" stroke="${COLORS.border}" stroke-width="2"/>`,
+    text(photo.x + 12, photo.y - 12, 18, COLORS.text, 'photo-01'),
+    text(photo.x + photo.size - 12, photo.y - 12, 18, COLORS.muted, '~/photos', 'text-anchor="end"'),
+    `<image href="${avatar}" x="${photo.x}" y="${photo.y}" width="${photo.size}" height="${photo.size}" preserveAspectRatio="xMidYMid slice"/>`
+  );
+
+  // whoami, name with cursor, title, rows
+  const colX = 486;
+  const colWidth = W - 68 - colX;
+  parts.push(
+    text(colX, 176, 26, COLORS.muted, `<tspan fill="${COLORS.green}">$</tspan> whoami`),
+    text(colX, 276, 80, COLORS.text, `${esc(profile.name)}<tspan fill="${COLORS.primary}">_</tspan>`, 'font-weight="800"'),
+    text(colX, 336, 32, COLORS.amber, esc(profile.title))
+  );
+  const y = rows(parts, profile.rows, colX, 410, colWidth);
+  swatches(parts, colX, y - 6);
+  parts.push(...statusBar(''));
+
+  return render(svgDoc(parts));
 }
 
 type IconNode = [string, Record<string, string | number>][];
