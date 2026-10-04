@@ -47,6 +47,7 @@ content:
           multiple: true
           values: [ JavaScript, Custom CSS, Webflow, WordPress, UX/UI, Responsive Design, SQL, Bootstrap, Tailwind ]
       - { label: "Project Link", name: "link", type: "string" }
+      - { label: "Logo (optional Simple Icons slug, e.g. react)", name: "logo", type: "string" }
   - name: skills
     label: Skills
     type: collection

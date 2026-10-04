@@ -29,6 +29,9 @@ const projects = defineCollection({
     tags: z.array(z.string()).default([]),
     image: z.string(),
     link: z.string().url(),
+    // Simple Icons slug for the card logo (e.g. "react"). Optional: by
+    // default the first tag with a matching logo is used.
+    logo: z.string().optional(),
   }),
 });
 
