@@ -9,6 +9,7 @@ tags:
   - Frontend Development
 image: /assets/blog/howibuildthisblog.jpg
 imageAlt: Laptop, coffee mug and paper pad on a desk
+logo: eleventy
 ---
 When I set out to build my personal website, I had a few simple goals:
 
