@@ -36,7 +36,7 @@ content:
     fields:
       - { label: "Project Name", name: "title", type: "string" }
       - { label: "Short Description", name: "description", type: "text" }
-      - { label: "Project Image", name: "image", type: "image" }
+      - { label: "Project Image (optional)", name: "image", type: "image", required: false }
       - { label: "Project Date", name: "date", type: "date" }
       - { label: "Featured", name: "featured", type: "boolean", default: false }
       - name: tags

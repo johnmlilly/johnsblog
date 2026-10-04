@@ -27,7 +27,7 @@ const projects = defineCollection({
     date: z.coerce.date(),
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
-    image: z.string(),
+    image: z.string().optional(),
     link: z.string().url(),
     // Simple Icons slug for the card logo (e.g. "react"). Optional: by
     // default the first tag with a matching logo is used.
