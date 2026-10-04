@@ -7,7 +7,7 @@ date: 2026-10-04
 featured: true
 tags:
   - Terminal
-logo: hyper
+logo: gnometerminal
 ---
 
 If you've been here before, you probably noticed things look a little different. The whole site now looks like a terminal: monospace text, a blinking cursor, blog posts listed like a log file, and a little status bar at the bottom of the screen.
