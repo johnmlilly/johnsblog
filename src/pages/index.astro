@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import SkillsSection from '../components/SkillsSection.astro';
-import ImageStyleToggle from '../components/ImageStyleToggle.astro';
 import home from '../data/home.json';
 import pageMeta from '../data/pages/home.json';
 import { formatIsoDate, readingMinutes, slugify } from '../utils/format';
@@ -95,7 +94,6 @@ const featuredProjects = allProjects
           <p class="prompt">ls projects/ --featured</p>
           <a href="/projects">view all →</a>
         </div>
-        <ImageStyleToggle />
         <div class="projects-grid">
           {featuredProjects.map((project) => <ProjectCard project={project} />)}
         </div>

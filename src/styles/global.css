@@ -689,101 +689,6 @@ body.menu-open {
   align-self: start;
 }
 
-/* Project image treatments. `data-img` is set on <html> by
-   ImageStyleToggle (temporary, for comparing styles). */
-.shot {
-  position: relative;
-  overflow: hidden;
-}
-
-.shot img {
-  transition: filter 0.3s ease;
-}
-
-.shot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-[data-img="muted"] .shot img {
-  filter: grayscale(1) brightness(0.6) contrast(1.05);
-}
-
-[data-img="tint"] .shot img {
-  filter: grayscale(1) contrast(1.1) brightness(0.55);
-}
-
-[data-img="tint"] .shot::after {
-  background: var(--color-primary);
-  mix-blend-mode: multiply;
-  opacity: 0.9;
-}
-
-[data-img="scan"] .shot img {
-  filter: brightness(0.6) saturate(0.75);
-}
-
-[data-img="scan"] .shot::after {
-  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0 1px, transparent 1px 3px);
-  opacity: 1;
-}
-
-[data-img="muted"] .project-card:hover .shot img,
-[data-img="tint"] .project-card:hover .shot img {
-  filter: none;
-}
-
-[data-img="tint"] .project-card:hover .shot::after {
-  opacity: 0;
-}
-
-[data-img="scan"] .project-card:hover .shot img {
-  filter: brightness(0.95);
-}
-
-.img-toggle {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 0.75rem;
-  margin-bottom: 1.25rem;
-  font-size: var(--step--1);
-}
-
-.img-toggle .toggle-label {
-  color: var(--color-text-muted);
-}
-
-.img-toggle button {
-  font: inherit;
-  color: var(--color-primary);
-  background: none;
-  border: 0;
-  padding: 0.1rem 0.3rem;
-  cursor: pointer;
-}
-
-.img-toggle button::before {
-  content: "[";
-  color: var(--color-text-muted);
-}
-
-.img-toggle button::after {
-  content: "]";
-  color: var(--color-text-muted);
-}
-
-.img-toggle button[aria-pressed="true"],
-.img-toggle button[aria-pressed="true"]::before,
-.img-toggle button[aria-pressed="true"]::after {
-  background: var(--color-primary);
-  color: var(--color-background-alt);
-}
-
 /* Blog log list */
 .log li {
   display: grid;
@@ -996,11 +901,6 @@ pre.json {
   .cursor,
   .typed-cursor {
     animation: none;
-  }
-
-  .shot img,
-  .shot::after {
-    transition: none;
   }
 }
 
