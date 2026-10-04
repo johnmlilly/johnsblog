@@ -1,13 +1,14 @@
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import { FolderCode, Mail, NotebookPen } from 'lucide';
-import { lucideLogo, ogPng, type OgCard } from '../../utils/ogImage';
+import { lucideLogo, ogPng, ogReady, type OgCard } from '../../utils/ogImage';
 import { postCard } from '../../utils/postCard';
 import { formatIsoDate } from '../../utils/format';
 
 // Social preview images, generated at build time. The home page keeps its
 // own hand-made image; everything else points here.
 export const getStaticPaths = (async () => {
+  await ogReady;
   const posts = (await getCollection('blog', ({ data }) => data.published !== false)).sort(
     (a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0)
   );
@@ -75,7 +76,8 @@ export const getStaticPaths = (async () => {
   return cards.map(({ slug, card }) => ({ params: { slug }, props: { card } }));
 }) satisfies GetStaticPaths;
 
-export const GET: APIRoute = ({ props }) => {
+export const GET: APIRoute = async ({ props }) => {
+  await ogReady;
   const png = ogPng((props as { card: OgCard }).card);
-  return new Response(new Uint8Array(png), { headers: { 'Content-Type': 'image/png' } });
+  return new Response(png, { headers: { 'Content-Type': 'image/png' } });
 };

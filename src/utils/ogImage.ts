@@ -1,9 +1,20 @@
 // Build-time Open Graph images (1200×630 PNG) in the neofetch card style.
 // Rendered from an SVG we lay out by hand (the font is monospace, so text
-// width is just characters × advance), then rasterized with resvg.
-import { join } from 'node:path';
-import { Resvg } from '@resvg/resvg-js';
+// width is just characters × advance), then rasterized with resvg's
+// WebAssembly build so it runs in Cloudflare's runtime during prerender.
+import { initWasm, Resvg } from '@resvg/resvg-wasm';
+import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm?module';
+import regularFont from '../assets/fonts/JetBrainsMono-Regular.ttf?inline';
+import extraBoldFont from '../assets/fonts/JetBrainsMono-ExtraBold.ttf?inline';
 import { SIZE, toPixelPath, type TerminalLogo } from './terminalLogo';
+
+/** Decode a Vite `?inline` data URL into bytes. */
+const dataUrlBytes = (url: string) => Uint8Array.from(atob(url.slice(url.indexOf(',') + 1)), (c) => c.charCodeAt(0));
+
+const fontBuffers = [dataUrlBytes(regularFont), dataUrlBytes(extraBoldFont)];
+
+/** Resolves once the resvg WebAssembly module is ready. Await before rendering. */
+export const ogReady: Promise<void> = initWasm(resvgWasm);
 
 export interface OgRow {
   label: string;
@@ -36,10 +47,6 @@ const COLORS = {
   green: '#10b981',
   amber: '#f59e0b',
 };
-
-// Runs at build time from the project root.
-const fontDir = join(process.cwd(), 'src/assets/fonts');
-const fontFiles = [join(fontDir, 'JetBrainsMono-Regular.ttf'), join(fontDir, 'JetBrainsMono-ExtraBold.ttf')];
 
 const esc = (text: string) =>
   text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -168,12 +175,12 @@ export function ogSvg(card: OgCard): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${FONT}">${parts.join('')}</svg>`;
 }
 
-export function ogPng(card: OgCard): Buffer {
+export function ogPng(card: OgCard): Uint8Array<ArrayBuffer> {
   const resvg = new Resvg(ogSvg(card), {
-    font: { fontFiles, defaultFontFamily: FONT, loadSystemFonts: false },
+    font: { fontBuffers, defaultFontFamily: FONT, loadSystemFonts: false },
     fitTo: { mode: 'width', value: W },
   });
-  return resvg.render().asPng();
+  return new Uint8Array(resvg.render().asPng());
 }
 
 type IconNode = [string, Record<string, string | number>][];
