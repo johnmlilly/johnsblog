@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatIsoDate } from '../utils/format';
+import { formatIsoDate, slugify } from '../utils/format';
 
 interface Props {
   project: CollectionEntry<'projects'>;
@@ -12,7 +12,7 @@ const { title, description, image, tags, link, date } = project.data;
 
 <article class="project-card">
   <div class="frame">
-    <div class="frame-bar"><b>{project.id}</b><span>{formatIsoDate(date).slice(0, 7)}</span></div>
+    <div class="frame-bar"><b>{slugify(title)}</b><span>{formatIsoDate(date).slice(0, 7)}</span></div>
     <img src={image} alt={title} loading="lazy" decoding="async" />
   </div>
   <h3>{title}</h3>

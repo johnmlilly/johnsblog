@@ -14,7 +14,7 @@ const { title, description, image, imageAlt, date } = post.data;
   {image && (
     <div class="frame">
       <div class="frame-bar">
-        <b>{date ? <time datetime={date.toISOString()}>{formatIsoDate(date)}</time> : post.id}</b>
+        <b>{date ? <time datetime={date.toISOString()}>{formatIsoDate(date)}</time> : 'post'}</b>
         <span>{readingMinutes(post.body ?? '')} min</span>
       </div>
       <img src={image} alt={imageAlt ?? title} loading="lazy" decoding="async" />
@@ -23,6 +23,6 @@ const { title, description, image, imageAlt, date } = post.data;
   <div class="card-content">
     <a href={`/blog/${post.id}/`}><h3>{title}</h3></a>
     <p class="card-intro">{description}</p>
-    <a class="card-read" aria-label={`Read ${title}`} href={`/blog/${post.id}/`}>cat {post.id}.md →</a>
+    <a class="card-read" aria-label={`Read ${title}`} href={`/blog/${post.id}/`}>read more →</a>
   </div>
 </article>

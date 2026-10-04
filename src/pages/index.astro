@@ -36,7 +36,7 @@ const featuredProjects = allProjects
           </div>
         </div>
         <div class="hero-image frame portrait">
-          <div class="frame-bar"><b>avatar.jpg</b><span>~/photos</span></div>
+          <div class="frame-bar"><b>photo-01</b><span>~/photos</span></div>
           <img loading="eager" fetchpriority="high" src={home.hero.image} alt="John Lilly" />
         </div>
       </div>
@@ -46,10 +46,10 @@ const featuredProjects = allProjects
   <section id="about" data-reveal>
     <div class="container">
       <div class="box">
-        <h2>{slugify(home.about.heading)}.md</h2>
+        <h2>{slugify(home.about.heading)}</h2>
         <div class="about-grid">
           <div class="frame">
-            <div class="frame-bar"><b>family.jpg</b><span>~/photos</span></div>
+            <div class="frame-bar"><b>photo-02</b><span>~/photos</span></div>
             <img src={home.about.image} alt="Illustration of John Lilly with his wife and three children" loading="lazy" decoding="async" />
           </div>
           <div>
@@ -104,9 +104,9 @@ const featuredProjects = allProjects
   <section id="blog" data-reveal>
     <div class="container">
       <div class="box">
-        <h2>blog.log</h2>
+        <h2>blog</h2>
         <div class="section-header">
-          <p class="prompt">tail blog.log</p>
+          <p class="prompt">ls -t blog/ | head</p>
           <a href="/blog">view all →</a>
         </div>
         <ul class="log">
@@ -125,8 +125,8 @@ const featuredProjects = allProjects
   <section id="skills" data-reveal>
     <div class="container">
       <div class="box">
-        <h2>skills.json</h2>
-        <p class="prompt">cat skills.json</p>
+        <h2>skills</h2>
+        <p class="prompt">cat skills</p>
         <SkillsSection />
       </div>
     </div>
@@ -135,7 +135,7 @@ const featuredProjects = allProjects
   <section class="contact-cta-section" data-reveal>
     <div class="container">
       <div class="box">
-        <h2>contact.sh</h2>
+        <h2>contact</h2>
         <p class="comment">{home.contact.heading}</p>
         <p>{home.contact.description}</p>
         <a href="/contact" class="btn btn-primary btn-lg">{home.contact.cta} <span aria-hidden="true">↵</span></a>

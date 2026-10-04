@@ -46,7 +46,7 @@ const { Content } = await render(post);
         {image && (
           <div class="post-image-container">
             <figure class="frame">
-              <div class="frame-bar"><b>{image.split('/').pop()}</b><span>~/blog</span></div>
+              <div class="frame-bar"><b>cover-photo</b><span>~/blog</span></div>
               <img src={image} alt={imageAlt ?? title} loading="eager" fetchpriority="high" />
             </figure>
           </div>
