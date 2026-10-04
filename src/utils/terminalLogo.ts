@@ -228,22 +228,21 @@ export const SIZE = 20; // pixels per side, i.e. 20 columns × 10 rows of half-b
  * Logo for a project: an explicit `logo` slug wins, otherwise the first tag
  * that matches a Simple Icons logo. Falls back to a pattern from the title.
  */
+// The same post's logo is drawn for many pages (cards, related posts, post
+// header, social image), so build each one once per build.
+const cache = new Map<string, TerminalLogo>();
+
 export function terminalLogo(title: string, tags: string[], logo?: string): TerminalLogo {
   const icon = [logo, ...tags].filter(Boolean).map((name) => findIcon(name!)).find(Boolean);
+  const label = icon ? icon.title.toLowerCase() : (tags[0]?.toLowerCase() ?? 'project');
+  const key = icon ? `icon:${icon.slug}` : `pattern:${title}:${label}`;
 
-  if (icon) {
-    return {
-      size: SIZE,
-      path: toPixelPath(rasterize(icon.path, SIZE)),
-      label: icon.title.toLowerCase(),
-      color: brandColor(icon.hex),
-    };
+  let result = cache.get(key);
+  if (!result) {
+    result = icon
+      ? { size: SIZE, path: toPixelPath(rasterize(icon.path, SIZE)), label, color: brandColor(icon.hex) }
+      : { size: SIZE, path: toPixelPath(identicon(title, SIZE)), label, color: 'var(--color-primary)' };
+    cache.set(key, result);
   }
-
-  return {
-    size: SIZE,
-    path: toPixelPath(identicon(title, SIZE)),
-    label: tags[0]?.toLowerCase() ?? 'project',
-    color: 'var(--color-primary)',
-  };
+  return result;
 }

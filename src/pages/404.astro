@@ -4,10 +4,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Page Not Found | John Lilly" description="The page you're looking for doesn't exist.">
   <section class="container snippet-container">
-    <p class="prompt">cd {Astro.url.pathname}</p>
+    <p class="prompt">cd <span id="missing-path"></span></p>
     <p class="comment">404: no such file or directory</p>
     <h1 class="page-title">Page not found</h1>
     <p>Sorry, the page you're looking for doesn't exist.</p>
     <a href="/" class="btn btn-primary">Back to Home</a>
   </section>
 </BaseLayout>
+
+<script>
+  // This page is built once, so fill in the path the visitor actually asked for.
+  const missingPath = document.getElementById('missing-path');
+  if (missingPath) missingPath.textContent = window.location.pathname;
+</script>

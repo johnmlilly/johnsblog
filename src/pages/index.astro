@@ -147,6 +147,12 @@ const featuredProjects = allProjects
 <script>
   import Typed from 'typed.js';
 
+  // The span ships with "small businesses" so the sentence reads right
+  // without JS. Clear it first: Typed.js prepends existing text to
+  // `strings`, which would show that phrase twice per loop.
+  const heroText = document.getElementById('hero-text');
+  if (heroText) heroText.textContent = '';
+
   new Typed('#hero-text', {
     strings: ['small businesses', 'churches', 'ministries', 'nonprofits'],
     typeSpeed: 75,

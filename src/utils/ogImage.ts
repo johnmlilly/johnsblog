@@ -53,7 +53,7 @@ const esc = (text: string) =>
   text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /** Greedy word wrap to a character width, capped at maxLines (with "…"). */
-function wrap(text: string, width: number, maxLines: number): string[] {
+export function wrap(text: string, width: number, maxLines: number): string[] {
   const lines: string[] = [];
   let line = '';
   for (const word of text.split(/\s+/)) {
@@ -68,8 +68,10 @@ function wrap(text: string, width: number, maxLines: number): string[] {
   if (line) lines.push(line);
   if (lines.length > maxLines) {
     const kept = lines.slice(0, maxLines);
-    const last = kept[maxLines - 1];
-    kept[maxLines - 1] = `${last.slice(0, width - 1).replace(/\s+\S*$/, '')}…`;
+    let last = kept[maxLines - 1];
+    // Drop whole words only until "…" fits.
+    while (last.length + 1 > width && /\s/.test(last)) last = last.replace(/\s+\S*$/, '');
+    kept[maxLines - 1] = `${last.slice(0, width - 1)}…`;
     return kept;
   }
   return lines;

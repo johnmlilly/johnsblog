@@ -1,3 +1,37 @@
+/* JetBrains Mono (OFL, see /fonts/OFL.txt), self-hosted and subset to
+   Latin, punctuation, arrows, and box/shape characters. */
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/JetBrainsMono-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/JetBrainsMono-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/JetBrainsMono-ExtraBold.woff2") format("woff2");
+}
+
 /* Terminal theme — inspired by terminal.css. Same palette as before, with a
    monospace face, titled section boxes, and flat 1px borders instead of
    rounded cards and shadows. */
@@ -687,6 +721,10 @@ body.menu-open {
   min-width: 0;
   margin: 0;
   line-height: 1.6;
+}
+
+.neofetch-info dl {
+  margin: 0;
 }
 
 .neofetch-info .nf-row {
