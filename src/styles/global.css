@@ -322,7 +322,8 @@ iframe {
 }
 
 /* Site title as a mini terminal window: blue title bar with three
-   window buttons, then the prompt and a blinking cursor. */
+   window buttons, then the prompt and a static cursor (the hero's typing
+   cursor is the only one that blinks). */
 .site-title {
   display: inline-flex;
   flex-direction: column;
@@ -357,7 +358,6 @@ iframe {
   margin-left: 0.25ch;
   vertical-align: text-bottom;
   background: var(--color-primary);
-  animation: blink 1s steps(1) infinite;
 }
 
 .site-title:hover {
@@ -1093,8 +1093,7 @@ pre.json {
   }
 
   .cursor,
-  .typed-cursor,
-  .prompt-cursor {
+  .typed-cursor {
     animation: none;
   }
 }
