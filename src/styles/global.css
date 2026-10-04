@@ -619,6 +619,19 @@ body.menu-open {
   color: var(--color-text-muted);
 }
 
+.ls-icon {
+  display: inline-flex;
+  vertical-align: -0.2em;
+  margin-right: 0.6ch;
+  color: var(--color-accent-3);
+}
+
+.ls-icon svg {
+  width: 1.05em;
+  height: 1.05em;
+  stroke-width: 1.75;
+}
+
 .ls .desc {
   min-width: 24ch;
 }

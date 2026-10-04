@@ -75,7 +75,7 @@ const featuredProjects = allProjects
               {home.services.cards.map((card) => (
                 <tr>
                   <td class="perm" aria-hidden="true">drwxr-xr-x</td>
-                  <td class="name">{slugify(card.title)}</td>
+                  <td class="name"><span class="ls-icon" aria-hidden="true"><i data-lucide={card.icon}></i></span>{slugify(card.title)}</td>
                   <td class="desc">{card.description}</td>
                 </tr>
               ))}
