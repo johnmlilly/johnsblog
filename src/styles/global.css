@@ -361,9 +361,9 @@ iframe {
   align-items: center;
 }
 
+/* Same Lucide line icons and amber as the services list */
 .social-links a {
-  color: var(--color-text);
-  width: 20px;
+  color: var(--color-accent-3);
   display: flex;
 }
 
@@ -372,10 +372,10 @@ iframe {
   color: var(--color-primary);
 }
 
-.social-links svg,
-.social-links img {
+.social-links svg {
   width: 20px;
   height: 20px;
+  stroke-width: 1.75;
 }
 
 .hide-on-mobile {

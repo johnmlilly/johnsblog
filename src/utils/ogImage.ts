@@ -100,11 +100,11 @@ function chrome(section: string): string[] {
 }
 
 /** tmux-style status bar, matching the one on the site. */
-function statusBar(section: string): string[] {
+function statusBar(section: string, right = 'full stack developer'): string[] {
   return [
     `<rect x="0" y="${H - 44}" width="${W}" height="44" fill="${COLORS.primary}"/>`,
     text(40, H - 15, 22, COLORS.panel, `[jl]  ${esc(section || 'home')}*`, 'font-weight="800"'),
-    text(W - 40, H - 15, 22, COLORS.panel, 'full stack developer', 'text-anchor="end" font-weight="800"'),
+    ...(right ? [text(W - 40, H - 15, 22, COLORS.panel, esc(right), 'text-anchor="end" font-weight="800"')] : []),
   ];
 }
 
@@ -228,7 +228,8 @@ export function ogProfilePng(profile: OgProfile): Uint8Array<ArrayBuffer> {
   );
   const y = rows(parts, profile.rows, colX, 410, colWidth);
   swatches(parts, colX, y - 6);
-  parts.push(...statusBar(''));
+  // The title is already under the name, so leave the bar's right side empty.
+  parts.push(...statusBar('', ''));
 
   return render(svgDoc(parts));
 }
