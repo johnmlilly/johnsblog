@@ -166,7 +166,7 @@ function rasterize(d: string, size: number): boolean[][] {
 }
 
 /** One SVG subpath per horizontal run of "on" pixels. */
-function toPixelPath(grid: boolean[][]): string {
+export function toPixelPath(grid: boolean[][]): string {
   const parts: string[] = [];
   grid.forEach((row, y) => {
     let x = 0;
@@ -222,7 +222,7 @@ function brandColor(hex: string): string {
 
 // --- Public -----------------------------------------------------------------
 
-const SIZE = 20; // pixels per side, i.e. 20 columns × 10 rows of half-blocks
+export const SIZE = 20; // pixels per side, i.e. 20 columns × 10 rows of half-blocks
 
 /**
  * Logo for a project: an explicit `logo` slug wins, otherwise the first tag

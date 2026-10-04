@@ -1,27 +1,18 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import NeofetchCard from './NeofetchCard.astro';
-import { formatIsoDate, readingMinutes, handleFor } from '../utils/format';
-import { terminalLogo } from '../utils/terminalLogo';
+import { postCard } from '../utils/postCard';
 
 interface Props {
   post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props;
-const { title, description, tags, date, logo } = post.data;
+const { title, description } = post.data;
 ---
 
 <article class="card-post">
-  <NeofetchCard
-    logo={terminalLogo(title, tags, logo)}
-    handle={handleFor(title)}
-    rows={[
-      { label: 'tags', value: tags.map((tag) => tag.toLowerCase()).join(' · ') || 'none' },
-      ...(date ? [{ label: 'date', value: formatIsoDate(date), datetime: date.toISOString() }] : []),
-      { label: 'read', value: `${readingMinutes(post.body ?? '')} min` },
-    ]}
-  />
+  <NeofetchCard {...postCard(post)} />
   <div class="card-content">
     <a href={`/blog/${post.id}/`}><h3>{title}</h3></a>
     <p class="card-intro">{description}</p>

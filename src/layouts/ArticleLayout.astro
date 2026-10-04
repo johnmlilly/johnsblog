@@ -4,8 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import CloneWarsQuote from '../components/CloneWarsQuote.astro';
 import NeofetchCard from '../components/NeofetchCard.astro';
-import { formatIsoDate, readingMinutes, handleFor } from '../utils/format';
-import { terminalLogo } from '../utils/terminalLogo';
+import { postCard } from '../utils/postCard';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -13,11 +12,16 @@ interface Props {
 }
 
 const { post, relatedPosts } = Astro.props;
-const { title, description, image, imageAlt, tags, date, logo } = post.data;
+const { title, description } = post.data;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={`${title} | John Lilly`} description={description ?? ''} image={image} imageAlt={imageAlt}>
+<BaseLayout
+  title={`${title} | John Lilly`}
+  description={description ?? ''}
+  image={`/og/blog/${post.id}.png`}
+  imageAlt={title}
+>
   <section class="article-content container">
     <div>
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -31,16 +35,7 @@ const { Content } = await render(post);
         <h1 class="post-title">{title}</h1>
         <p class="post-intro">{description}</p>
 
-        <NeofetchCard
-          class="post-neofetch"
-          logo={terminalLogo(title, tags, logo)}
-          handle={handleFor(title)}
-          rows={[
-            { label: 'tags', value: tags.map((tag) => tag.toLowerCase()).join(' · ') || 'none' },
-            ...(date ? [{ label: 'date', value: formatIsoDate(date), datetime: date.toISOString() }] : []),
-            { label: 'read', value: `${readingMinutes(post.body ?? '')} min` },
-          ]}
-        />
+        <NeofetchCard class="post-neofetch" {...postCard(post)} />
       </div>
 
       <article class="prose">

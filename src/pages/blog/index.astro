@@ -9,7 +9,7 @@ const posts = (await getCollection('blog', ({ data }) => data.published !== fals
 );
 ---
 
-<BaseLayout title={pageMeta.title} description={pageMeta.description} image={pageMeta.image}>
+<BaseLayout title={pageMeta.title} description={pageMeta.description} image="/og/blog.png">
   <section class="container snippet-container">
     <h1 class="page-title">blog</h1>
     <p class="prompt">ls -t blog/</p>
