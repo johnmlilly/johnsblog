@@ -539,6 +539,28 @@ body.menu-open {
   max-width: 340px;
 }
 
+/* `fortune` output under the hero buttons */
+.fortune {
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--color-border);
+  font-size: var(--step--1);
+}
+
+.hero .fortune p {
+  margin-bottom: 0.25rem;
+  max-width: 60ch;
+}
+
+.fortune-quote {
+  color: var(--color-accent-2);
+}
+
+.fortune-episode {
+  color: var(--color-text-muted);
+  margin-left: 0.5ch;
+}
+
 /* Window frame around images: title bar + image */
 .frame {
   border: 1px solid var(--color-border);
