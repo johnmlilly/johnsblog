@@ -617,45 +617,6 @@ body.menu-open {
   min-width: 0;
 }
 
-.photo-toggle {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 0.75rem;
-  margin-bottom: 0.75rem;
-  font-size: var(--step--1);
-}
-
-.photo-toggle .toggle-label {
-  color: var(--color-text-muted);
-}
-
-.photo-toggle button {
-  font: inherit;
-  color: var(--color-primary);
-  background: none;
-  border: 0;
-  padding: 0.1rem 0.3rem;
-  cursor: pointer;
-}
-
-.photo-toggle button::before {
-  content: "[";
-  color: var(--color-text-muted);
-}
-
-.photo-toggle button::after {
-  content: "]";
-  color: var(--color-text-muted);
-}
-
-.photo-toggle button[aria-pressed="true"],
-.photo-toggle button[aria-pressed="true"]::before,
-.photo-toggle button[aria-pressed="true"]::after {
-  background: var(--color-primary);
-  color: var(--color-background-alt);
-}
-
 .about-text p {
   max-width: 62ch;
 }

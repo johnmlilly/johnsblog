@@ -48,20 +48,9 @@ const featuredProjects = allProjects
       <div class="box">
         <h2>{slugify(home.about.heading)}</h2>
         <div class="about-grid">
-          <div class="about-photos">
-            <div class="photo-toggle" role="group" aria-label="About photo">
-              <span class="toggle-label">--photo=</span>
-              <button type="button" data-photo="family" aria-pressed="false">family</button>
-              <button type="button" data-photo="workspace" aria-pressed="true">workspace</button>
-            </div>
-            <div class="frame" data-photo-frame="family" hidden>
-              <div class="frame-bar"><b>photo-02</b><span>~/photos</span></div>
-              <img src={home.about.image} alt="Illustration of John Lilly with his wife and three children" loading="lazy" decoding="async" />
-            </div>
-            <div class="frame" data-photo-frame="workspace">
-              <div class="frame-bar"><b>photo-03</b><span>~/photos</span></div>
-              <img src={home.about.workspaceImage} alt="Illustration of John Lilly coding at his desk" loading="lazy" decoding="async" />
-            </div>
+          <div class="frame">
+            <div class="frame-bar"><b>photo-02</b><span>~/photos</span></div>
+            <img src={home.about.image} alt="Illustration of John Lilly coding at his desk" loading="lazy" decoding="async" />
           </div>
           <div>
             <div class="about-text">
@@ -154,20 +143,6 @@ const featuredProjects = allProjects
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  // About photo toggle: workspace (default) / family.
-  const photoButtons = document.querySelectorAll<HTMLButtonElement>('.photo-toggle button');
-  photoButtons.forEach((button) =>
-    button.addEventListener('click', () => {
-      const photo = button.dataset.photo;
-      photoButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
-      document.querySelectorAll<HTMLElement>('[data-photo-frame]').forEach((frame) => {
-        frame.hidden = frame.dataset.photoFrame !== photo;
-      });
-    })
-  );
-</script>
 
 <script>
   import Typed from 'typed.js';
