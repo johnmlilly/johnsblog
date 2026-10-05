@@ -1,32 +1,20 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import NeofetchCard from './NeofetchCard.astro';
-import { formatIsoDate, handleFor } from '../utils/format';
-import { terminalLogo } from '../utils/terminalLogo';
+import { projectCard } from '../utils/projectCard';
 
 interface Props {
   project: CollectionEntry<'projects'>;
 }
 
 const { project } = Astro.props;
-const { title, description, tags, link, date, logo } = project.data;
-
-const host = new URL(link).hostname.replace(/^www\./, '');
+const { title, description } = project.data;
+const href = `/projects/${project.id}/`;
 ---
 
 <article class="project-card">
-  <NeofetchCard
-    logo={terminalLogo(title, tags, logo)}
-    handle={handleFor(title)}
-    rows={[
-      { label: 'stack', value: tags.map((tag) => tag.toLowerCase()).join(' · ') },
-      { label: 'year', value: formatIsoDate(date).slice(0, 4) },
-      { label: 'url', value: host },
-    ]}
-  />
-  <h3>{title}</h3>
+  <NeofetchCard {...projectCard(project)} />
+  <a href={href}><h3>{title}</h3></a>
   <p>{description}</p>
-  <a href={link} class="project-link" target="_blank" rel="noopener noreferrer">
-    open {host} ↗
-  </a>
+  <a href={href} class="project-link" aria-label={`Read the ${title} case study`}>case study →</a>
 </article>

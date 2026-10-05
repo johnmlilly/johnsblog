@@ -777,7 +777,7 @@ body.menu-open {
 
 .neofetch-info dt {
   flex: none;
-  width: 6ch;
+  width: 7ch;
   color: var(--color-accent-3);
 }
 

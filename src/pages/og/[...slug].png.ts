@@ -4,6 +4,7 @@ import { FolderCode, Mail, NotebookPen } from 'lucide';
 import { lucideLogo, ogPng, ogProfilePng, ogReady, type OgCard, type OgProfile } from '../../utils/ogImage';
 import home from '../../data/home.json';
 import { postCard } from '../../utils/postCard';
+import { projectCard } from '../../utils/projectCard';
 import { formatIsoDate } from '../../utils/format';
 
 // Social preview images, generated at build time. The home page keeps its
@@ -27,6 +28,13 @@ export const getStaticPaths = (async () => {
   };
 
   const cards: { slug: string; card: OgCard }[] = [
+    ...projects.map((project) => {
+      const { logo, handle, rows } = projectCard(project, true);
+      return {
+        slug: `projects/${project.id}`,
+        card: { logo, handle, rows: rows.filter((row) => row.label !== 'url'), title: project.data.title, section: 'projects' },
+      };
+    }),
     ...posts.map((post) => {
       const { logo, handle, rows } = postCard(post);
       return { slug: `blog/${post.id}`, card: { logo, handle, rows, title: post.data.title, section: 'blog' } };

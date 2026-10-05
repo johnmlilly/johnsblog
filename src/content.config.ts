@@ -29,7 +29,12 @@ const projects = defineCollection({
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     image: z.string().optional(),
-    link: z.string().url(),
+    // Public site for the project. Optional for private or employer work.
+    link: z.string().url().optional(),
+    // Extra rows on the case study's neofetch card.
+    role: z.string().optional(),
+    status: z.string().optional(),
+    repo: z.string().optional(),
     // Simple Icons slug for the card logo (e.g. "react"). Optional: by
     // default the first tag with a matching logo is used.
     logo: z.string().optional(),

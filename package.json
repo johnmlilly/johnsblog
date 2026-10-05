@@ -39,6 +39,7 @@
     "astro": "^7.3.1",
     "astro-seo": "^1.2.0",
     "lucide": "^0.515.0",
+    "mermaid": "^12.1.0",
     "simple-icons": "^16.34.0",
     "svgpath": "^2.6.0",
     "typed.js": "^3.0.0"

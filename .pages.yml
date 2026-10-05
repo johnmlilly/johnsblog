@@ -45,8 +45,12 @@ content:
           creatable: true
           multiple: true
           values: [ JavaScript, Custom CSS, Webflow, WordPress, UX/UI, Responsive Design, SQL, Bootstrap, Tailwind ]
-      - { label: "Project Link", name: "link", type: "string" }
+      - { label: "Project Link (optional)", name: "link", type: "string" }
       - { label: "Logo (optional Simple Icons slug, e.g. react)", name: "logo", type: "string" }
+      - { label: "Role (optional, e.g. design + build)", name: "role", type: "string" }
+      - { label: "Status (optional, e.g. live)", name: "status", type: "string" }
+      - { label: "Repo (optional, URL or 'private')", name: "repo", type: "string" }
+      - { label: "Case Study", name: "body", type: "rich-text" }
   - name: skills
     label: Skills
     type: collection

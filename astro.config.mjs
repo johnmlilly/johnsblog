@@ -8,4 +8,9 @@ export default defineConfig({
   session: false,
   adapter: cloudflare({ imageService: 'passthrough' }),
   integrations: [sitemap()],
+  markdown: {
+    // Mermaid blocks are left as plain code and drawn in the browser
+    // (see src/pages/projects/[slug].astro).
+    syntaxHighlight: { type: 'shiki', excludeLangs: ['math', 'mermaid'] },
+  },
 });
