@@ -32,7 +32,15 @@ const { logo, handle, rows, class: className } = Astro.props;
       {rows.map((row) => (
         <div class="nf-row">
           <dt>{row.label}</dt>
-          <dd>{row.datetime ? <time datetime={row.datetime}>{row.value}</time> : row.value}</dd>
+          <dd>
+            {row.label === 'status' ? (
+              <span class="nf-status"><span aria-hidden="true">● </span>{row.value}</span>
+            ) : row.datetime ? (
+              <time datetime={row.datetime}>{row.value}</time>
+            ) : (
+              row.value
+            )}
+          </dd>
         </div>
       ))}
     </dl>

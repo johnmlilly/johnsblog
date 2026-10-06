@@ -118,7 +118,9 @@ function rows(parts: string[], items: OgRow[], x: number, y: number, width: numb
   for (const row of items) {
     parts.push(
       text(x, y, size, COLORS.amber, `${esc(row.label)}:`),
-      text(x + labelWidth * size * ADVANCE, y, size, COLORS.text, esc(clip(row.value, valueChars)))
+      row.label === 'status'
+        ? text(x + labelWidth * size * ADVANCE, y, size, COLORS.green, `● ${esc(clip(row.value, valueChars - 2))}`)
+        : text(x + labelWidth * size * ADVANCE, y, size, COLORS.text, esc(clip(row.value, valueChars)))
     );
     y += 36;
   }

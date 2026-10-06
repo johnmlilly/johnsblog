@@ -774,6 +774,10 @@ body.menu-open {
   overflow-wrap: anywhere;
 }
 
+.nf-status {
+  color: var(--color-accent-2);
+}
+
 .neofetch-head .nf-user {
   color: var(--color-accent-2);
 }
