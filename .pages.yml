@@ -51,17 +51,6 @@ content:
       - { label: "Status (optional, e.g. live)", name: "status", type: "string" }
       - { label: "Repo (optional, URL or 'private')", name: "repo", type: "string" }
       - { label: "Case Study", name: "body", type: "rich-text" }
-  - name: skills
-    label: Skills
-    type: collection
-    path: src/content/skills
-    filename: "{primary}.md"
-    view:
-        fields: [title, order]
-    fields:
-      - { label: "Skill Name", name: "title", type: "string" }
-      - { label: "Order", name: "order", type: "number" }
-      - { label: "Skills", name: "skills", type: "string", list: true }
   - name: index_meta
     label: Home Page SEO
     path: src/data/pages/home.json
@@ -109,9 +98,10 @@ content:
         - label: "Greeting"
           name: "greeting"
           type: "string"
-        - label: "Description"
-          name: "description"
-          type: "text"
+        - label: "Roles (typed in order after \"I'm a\")"
+          name: "roles"
+          type: "string"
+          list: true
         - label: "First CTA Text"
           name: "firstCtaText"
           type: "string"
@@ -150,35 +140,43 @@ content:
           name: "ctaUrl"
           type: "string"
 
-    # SERVICES SECTION
-    - name: services
-      label: Services Section
+    # HISTORY SECTION
+    - name: history
+      label: History
       type: object
+      list: true
+      collapsible:
+        collapsed: true
+        summary: "{when}: {title}"
       fields:
+        - label: "When (e.g. summer 2021)"
+          name: "when"
+          type: "string"
         - label: "Title"
           name: "title"
           type: "string"
-        - label: "Subtitle"
-          name: "subtitle"
+        - label: "Detail"
+          name: "detail"
+          type: "text"
+        - label: "Link (optional, e.g. /projects/fiatgardens/)"
+          name: "link"
           type: "string"
-        - label: "Service Cards"
-          name: "cards"
-          type: object
-          list: true
-          collapsible:
-            collapsed: true # Default collapsed state
-            summary: "{Title} ({index})" # Template string using field values and {index}
-          fields:
-            - label: "Icon (Lucide name)"
-              name: "icon"
-              type: "string"
-            - label: "Title"
-              name: "title"
-              type: "string"
-            - label: "Description"
-              name: "description"
-              type: "text"
- 
+
+    # CONTACT SECTION
+    - name: contact
+      label: Contact Section
+      type: object
+      fields:
+        - label: "Heading"
+          name: "heading"
+          type: "string"
+        - label: "Description"
+          name: "description"
+          type: "text"
+        - label: "Button Text"
+          name: "cta"
+          type: "string"
+
 settings:
       content:
         merge: true

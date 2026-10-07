@@ -399,7 +399,7 @@ iframe {
   align-items: center;
 }
 
-/* Same Lucide line icons and amber as the services list */
+/* Lucide line icons in amber */
 .social-links a {
   color: var(--color-accent-3);
   display: flex;
@@ -647,59 +647,6 @@ body.menu-open {
   margin-bottom: 1.5rem;
 }
 
-/* Services as `ls -la` */
-.ls-wrap {
-  overflow-x: auto;
-}
-
-.ls {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.ls td {
-  padding: 0.55rem 0.75rem 0.55rem 0;
-  vertical-align: top;
-  border-bottom: 1px dashed var(--color-border);
-}
-
-.ls tr:last-child td {
-  border-bottom: 0;
-}
-
-.ls .perm {
-  color: var(--color-text-muted);
-  white-space: nowrap;
-}
-
-.ls .name {
-  color: var(--color-primary);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.ls .name::after {
-  content: "/";
-  color: var(--color-text-muted);
-}
-
-.ls-icon {
-  display: inline-flex;
-  vertical-align: -0.2em;
-  margin-right: 0.6ch;
-  color: var(--color-accent-3);
-}
-
-.ls-icon svg {
-  width: 1.05em;
-  height: 1.05em;
-  stroke-width: 1.75;
-}
-
-.ls .desc {
-  min-width: 24ch;
-}
-
 /* Projects */
 .projects-grid {
   display: grid;
@@ -887,24 +834,117 @@ body.menu-open {
   gap: 2rem 1.5rem;
 }
 
-/* Skills as JSON */
-pre.json {
-  background: var(--color-background-alt);
-  padding: 1rem 1.25rem;
-  font-size: var(--step--1);
-  line-height: 1.8;
+/* History as shell history */
+.history li {
+  display: grid;
+  grid-template-columns: 3ch 13ch 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-border);
 }
 
-.json-key {
-  color: var(--color-accent-1);
+.history li:last-child {
+  border-bottom: 0;
 }
 
-.json-str {
-  color: var(--color-accent-2);
-}
-
-.json-punct {
+.history-num {
   color: var(--color-text-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-when {
+  color: var(--color-accent-3);
+  white-space: nowrap;
+}
+
+.history-title {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.history-detail {
+  color: var(--color-text-muted);
+  margin: 0.15rem 0 0;
+  max-width: 62ch;
+}
+
+.history-link {
+  font-size: var(--step--1);
+}
+
+/* GitHub activity */
+/* rtl so a narrow screen starts scrolled to the latest weeks */
+.contrib {
+  overflow-x: auto;
+  direction: rtl;
+  margin-bottom: 0.5rem;
+}
+
+.contrib svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
+.contrib text {
+  fill: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+.contrib .l0, .contrib-legend .l0 { fill: var(--color-background-alt); stroke: var(--color-border); stroke-width: 0.5; }
+.contrib .l1, .contrib-legend .l1 { fill: var(--color-primary); fill-opacity: 0.3; }
+.contrib .l2, .contrib-legend .l2 { fill: var(--color-primary); fill-opacity: 0.5; }
+.contrib .l3, .contrib-legend .l3 { fill: var(--color-primary); fill-opacity: 0.75; }
+.contrib .l4, .contrib-legend .l4 { fill: var(--color-primary); }
+
+.contrib-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+  margin-bottom: 2rem;
+}
+
+.contrib-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.contrib-legend svg {
+  width: 10px;
+  height: 10px;
+}
+
+.gitlog li {
+  display: grid;
+  grid-template-columns: 7ch 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.45rem 0;
+}
+
+.gitlog .sha {
+  color: var(--color-accent-3);
+}
+
+.gitlog .repo {
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+  white-space: nowrap;
+}
+
+.gitlog .msg {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Contact CTA Section */
@@ -1028,31 +1068,22 @@ pre.json {
     padding-inline: 1rem;
   }
 
-  .ls tr {
-    display: grid;
-    padding-block: 0.55rem;
-    border-bottom: 1px dashed var(--color-border);
+  .history li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
   }
 
-  .ls tr:last-child {
-    border-bottom: 0;
-  }
-
-  .ls td {
-    padding: 0;
-    border-bottom: 0;
-  }
-
-  .ls .perm {
+  .history-num {
     display: none;
   }
 
-  .ls .name {
-    white-space: normal;
+  .gitlog li {
+    grid-template-columns: 7ch 1fr;
+    gap: 0 1rem;
   }
 
-  .ls .desc {
-    min-width: 0;
+  .gitlog .repo {
+    grid-column: 2;
   }
 }
 

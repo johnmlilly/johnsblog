@@ -1,0 +1,49 @@
+name: GitHub activity
+
+# Refreshes src/data/github.json for the homepage activity section. The push
+# triggers the normal Cloudflare build.
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+  # Also refresh when the fetcher itself changes.
+  push:
+    paths:
+      - scripts/fetch-github-activity.mjs
+      - .github/workflows/github-activity.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-activity
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch activity
+        run: node scripts/fetch-github-activity.mjs
+        env:
+          # A personal token adds private contributions to the count; the
+          # built-in token only sees public ones.
+          GITHUB_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- src/data/github.json; then
+            echo "No change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/github.json
+          git commit -m "Refresh GitHub activity"
+          git push

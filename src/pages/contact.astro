@@ -9,7 +9,7 @@ import pageMeta from '../data/pages/contact.json';
       <div id="form-header">
         <h1 class="page-title">Get in Touch</h1>
         <p class="prompt">./contact</p>
-        <p>Fill out the form below to get in touch!</p>
+        <p>Questions, ideas, or just want to say hi? Send me a note.</p>
       </div>
       <form class="contact-form" id="contact-form">
         <!-- Honeypot field -->
@@ -30,36 +30,8 @@ import pageMeta from '../data/pages/contact.json';
         </div>
 
         <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" />
-        </div>
-
-        <div class="form-group">
-          <label for="project-type">Type of Project</label>
-          <select id="project-type" name="project-type" required>
-            <option value="">-- Select --</option>
-            <option value="website-redesign">Website Redesign</option>
-            <option value="consultation">Consultation</option>
-            <option value="new-website">New Website Build</option>
-            <option value="performance-optimization">Performance Optimization</option>
-            <option value="seo-strategy">SEO / Content Strategy</option>
-            <option value="maintenance-support">Ongoing Maintenance & Support</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="budget">Estimated Budget</label>
-          <input type="text" id="budget" name="budget" placeholder="$5,000–$10,000" />
-        </div>
-
-        <div class="form-group">
-          <label for="timeline">Estimated Timeline</label>
-          <input type="text" id="timeline" name="timeline" placeholder="2–3 months" />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Project Details</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell me more about your project..."></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Send Message <span aria-hidden="true">↵</span></button>

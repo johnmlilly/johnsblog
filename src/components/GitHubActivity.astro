@@ -1,0 +1,107 @@
+---
+// Contribution grid and recent commits, drawn from src/data/github.json.
+// That file is refreshed daily by .github/workflows/github-activity.yml.
+import github from '../data/github.json';
+
+interface Day {
+  date: string;
+  count: number;
+  level: number;
+}
+
+interface Commit {
+  repo: string;
+  sha: string;
+  message: string;
+  date: string;
+  url: string;
+}
+
+const weeks = github.weeks as Day[][];
+const recent = (github.recent as Commit[]).slice(0, 5);
+const profile = `https://github.com/${github.username}`;
+
+const CELL = 10;
+const GAP = 3;
+const STEP = CELL + GAP;
+const TOP = 14; // room for month labels
+const LEFT = 26; // room for weekday labels
+const width = LEFT + weeks.length * STEP;
+const height = TOP + 7 * STEP;
+
+// Label a month above the first week that starts in it.
+const months: { x: number; label: string }[] = [];
+let lastMonth = -1;
+weeks.forEach((week, i) => {
+  const first = week[0];
+  if (!first) return;
+  const month = new Date(`${first.date}T00:00:00Z`).getUTCMonth();
+  if (month !== lastMonth) {
+    const label = new Date(Date.UTC(2000, month, 1)).toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+    if (i < weeks.length - 2) months.push({ x: LEFT + i * STEP, label: label.toLowerCase() });
+    lastMonth = month;
+  }
+});
+
+const shortDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).toLowerCase();
+---
+
+{weeks.length > 0 ? (
+  <>
+    <p class="prompt">gh contributions --last-year</p>
+    <div class="contrib">
+      <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${github.total} GitHub contributions in the last year`}>
+        {months.map((m) => <text x={m.x} y="9">{m.label}</text>)}
+        <text x="0" y={TOP + 1 * STEP + 8}>mon</text>
+        <text x="0" y={TOP + 3 * STEP + 8}>wed</text>
+        <text x="0" y={TOP + 5 * STEP + 8}>fri</text>
+        {weeks.map((week, x) =>
+          week.map((day) => (
+            <rect
+              class={`l${day.level}`}
+              x={LEFT + x * STEP}
+              y={TOP + new Date(`${day.date}T00:00:00Z`).getUTCDay() * STEP}
+              width={CELL}
+              height={CELL}
+            >
+              <title>{`${day.count} on ${day.date}`}</title>
+            </rect>
+          ))
+        )}
+      </svg>
+    </div>
+    <div class="contrib-meta">
+      <span>{github.total} contributions in the last year</span>
+      <span class="contrib-legend" aria-hidden="true">
+        less
+        {[0, 1, 2, 3, 4].map((level) => (
+          <svg viewBox="0 0 10 10"><rect class={`l${level}`} width="10" height="10" /></svg>
+        ))}
+        more
+      </span>
+    </div>
+  </>
+) : (
+  <>
+    <p class="prompt">gh contributions --last-year</p>
+    <p class="comment">activity loads on the next daily refresh</p>
+  </>
+)}
+
+{recent.length > 0 && (
+  <>
+    <p class="prompt">git log --oneline -n {recent.length}</p>
+    <ul class="gitlog">
+      {recent.map((commit) => (
+        <li>
+          <a class="sha" href={commit.url}>{commit.sha.slice(0, 7)}</a>
+          <span class="msg">{commit.message}</span>
+          <span class="repo">{commit.repo} · {shortDate(commit.date)}</span>
+        </li>
+      ))}
+    </ul>
+  </>
+)}
+
+<p class="contrib-profile"><a href={profile}>github.com/{github.username} →</a></p>

@@ -44,7 +44,7 @@ export const getStaticPaths = (async () => {
       card: {
         logo: lucideLogo(NotebookPen, 'blog'),
         handle: 'blog',
-        title: 'Notes from a freelance web developer',
+        title: 'Notes on code, tools, and the craft',
         section: 'blog',
         rows: [
           { label: 'posts', value: String(posts.length) },
@@ -58,7 +58,7 @@ export const getStaticPaths = (async () => {
       card: {
         logo: lucideLogo(FolderCode, 'projects'),
         handle: 'projects',
-        title: 'Websites and apps for nonprofits and small businesses',
+        title: 'Web apps, APIs, and the pipelines behind them',
         section: 'projects',
         rows: [
           { label: 'projects', value: String(projects.length) },
@@ -72,11 +72,11 @@ export const getStaticPaths = (async () => {
       card: {
         logo: lucideLogo(Mail, 'contact'),
         handle: 'contact',
-        title: "Let's work together",
+        title: "Say hi",
         section: 'contact',
         rows: [
           { label: 'based', value: 'Northern Virginia' },
-          { label: 'for', value: 'small businesses · churches · nonprofits' },
+          { label: 'github', value: 'johnmlilly' },
           { label: 'form', value: '/contact' },
         ],
       },
@@ -88,7 +88,7 @@ export const getStaticPaths = (async () => {
     title: 'Full Stack Web Developer',
     rows: [
       { label: 'based', value: 'Northern Virginia' },
-      { label: 'helps', value: 'nonprofits · churches · businesses' },
+      { label: 'github', value: 'johnmlilly' },
     ],
   };
 
