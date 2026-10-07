@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "fetchedAt": "2026-10-07T20:24:46.211Z",
+  "fetchedAt": "2026-10-07T20:25:16.548Z",
   "total": 835,
   "weeks": [
     [
@@ -1981,10 +1981,10 @@
     },
     {
       "repo": "francisroylilly",
-      "sha": "98a99369da483b57a10ac99e5a0aeef60cf2bd87",
-      "message": "Merge pull request #31 from johnmlilly/claude/fallow-code-quality-9g5b6e",
-      "date": "2026-09-23T14:28:10Z",
-      "url": "https://github.com/johnmlilly/francisroylilly/commit/98a99369da483b57a10ac99e5a0aeef60cf2bd87"
+      "sha": "9cc3ef53c7aa2dc3228196e280cb41f6432ca293",
+      "message": "docs: log the fallow adoption and cleanup",
+      "date": "2026-09-23T14:11:55Z",
+      "url": "https://github.com/johnmlilly/francisroylilly/commit/9cc3ef53c7aa2dc3228196e280cb41f6432ca293"
     }
   ]
 }
