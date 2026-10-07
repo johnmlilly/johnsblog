@@ -1,8 +1,8 @@
 ---
 title: Post Notification Stack
-description: Rebuilt CaringBridge's "email everyone when there's an update" feature for our son Francis's site, without paying for a mailing list platform.
+description: Rebuilt CaringBridge's built-in email feature for our son Francis's site, without paying for a mailing list platform.
 date: 2026-09-18
-featured: false
+featured: true
 tags:
   - Cloudflare
   - Astro
@@ -16,9 +16,9 @@ repo: private
 
 ## Problem
 
-CaringBridge emailed everyone following Francis's updates the moment we posted. When we moved to our own site, that feature didn't come with us.
+Each time we published an update to CaringBridge, it emailed everyone automatically with no extra work on our end. We wanted to move updates to a dedicated site to continue sharing his journey in a new way. However, when we moved to our own site, that post notification feature didn't come with us.
 
-I tried Buttondown first, but every email platform is built for running a mailing list: audiences, campaigns, open tracking. I needed one thing. When a new post goes up, tell the people who asked to know.
+I looked at several different email platforms, such as Buttondown, Constant Contact, and self-hosted options like ListMonk. I tried Buttondown at first because of their low price point ($9/month for up to 1000 subscribers), as well as their superb documentation and developer-friendly first approach. However, after signing up and experimenting with setting up a sign up form, lists, and other features, I determined even their great platform would be overkill for our needs. I opted to build my own notification workflow. It wouldn't be overengineered or have features that I wouldn't use. I needed one thing. When a new post goes up, tell the people who asked to know.
 
 ## Architecture
 
@@ -80,7 +80,7 @@ The same idea runs the sender: given every post and the ones already sent, pick 
 
 ## Config
 
-The workflow only runs for blog changes, never runs twice at once, and can be started by hand.
+The workflow only runs for blog changes, never runs twice at once, and can be started by hand if needed.
 
 ```yaml
 on:
@@ -97,7 +97,7 @@ concurrency:
 ## Lessons
 
 - **Green isn't the same as working.** The job ran before the new post was live, found nothing to send, and reported success. Now it waits until the site is running the exact version that was pushed.
-- **Your own platform can block you.** Two layers of protection rejected the automated trigger, and the script treated that as success. Every call now checks the actual response and fails loudly on anything unexpected.
+- **Your own platform can block you.** Two layers of protection rejected the automated trigger due to Cloudflare's Bot Fight mode and Astro's own CSRF protection. Both blocked the GitHub runner silently before it ever reached the Worker or the secret check. Addressing those two findings now checks the actual response and fails loudly on anything unexpected, allowing the action to run.
 
 ```bash
 code=$(curl -sS -o /dev/null -w '%{http_code}' -X POST "$NOTIFY_URL" \
