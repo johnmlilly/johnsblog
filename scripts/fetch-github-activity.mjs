@@ -36,7 +36,7 @@ const QUERY = `
           defaultBranchRef {
             target {
               ... on Commit {
-                history(first: 5) {
+                history(first: 10) {
                   nodes { oid messageHeadline committedDate url author { user { login } } }
                 }
               }
@@ -82,6 +82,7 @@ const recent = repositories.nodes
   .flatMap((repo) =>
     repo.defaultBranchRef.target.history.nodes
       .filter((commit) => commit.author?.user?.login?.toLowerCase() === USERNAME)
+      .filter((commit) => !commit.messageHeadline.startsWith('Merge '))
       .map((commit) => ({
         repo: repo.name,
         sha: commit.oid,
