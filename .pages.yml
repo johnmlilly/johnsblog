@@ -167,7 +167,7 @@ content:
       label: Contact Section
       type: object
       fields:
-        - label: "Heading"
+        - label: "Prompt (shown as a terminal command, e.g. write john)"
           name: "heading"
           type: "string"
         - label: "Description"
