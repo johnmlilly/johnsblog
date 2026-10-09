@@ -1,24 +1,12 @@
 ---
 // Contribution grid and recent commits, drawn from src/data/github.json.
 // That file is refreshed daily by .github/workflows/github-activity.yml.
-import github from '../data/github.json';
+import data from '../data/github.json';
+import type { GitHubActivity } from '../utils/githubActivity';
 
-interface Day {
-  date: string;
-  count: number;
-  level: number;
-}
-
-interface Commit {
-  repo: string;
-  sha: string;
-  message: string;
-  date: string;
-  url: string;
-}
-
-const weeks = github.weeks as Day[][];
-const recent = (github.recent as Commit[]).slice(0, 5);
+const github = data as GitHubActivity;
+const { weeks } = github;
+const recent = github.recent.slice(0, 5);
 const profile = `https://github.com/${github.username}`;
 
 const CELL = 10;
@@ -26,8 +14,13 @@ const GAP = 3;
 const STEP = CELL + GAP;
 const TOP = 14; // room for month labels
 const LEFT = 26; // room for weekday labels
+const WEEKDAY_LABELS = [[1, 'mon'], [3, 'wed'], [5, 'fri']] as const;
 const width = LEFT + weeks.length * STEP;
 const height = TOP + 7 * STEP;
+
+const utcDate = (day: string) => new Date(`${day}T00:00:00Z`);
+const format = (date: Date, options: Intl.DateTimeFormatOptions) =>
+  date.toLocaleDateString('en-US', { ...options, timeZone: 'UTC' }).toLowerCase();
 
 // Label a month above the first week that starts in it.
 const months: { x: number; label: string }[] = [];
@@ -35,16 +28,16 @@ let lastMonth = -1;
 weeks.forEach((week, i) => {
   const first = week[0];
   if (!first) return;
-  const month = new Date(`${first.date}T00:00:00Z`).getUTCMonth();
+  const date = utcDate(first.date);
+  const month = date.getUTCMonth();
   if (month !== lastMonth) {
-    const label = new Date(Date.UTC(2000, month, 1)).toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
-    if (i < weeks.length - 2) months.push({ x: LEFT + i * STEP, label: label.toLowerCase() });
+    // Skip a label too close to the right edge to fit.
+    if (i < weeks.length - 2) months.push({ x: LEFT + i * STEP, label: format(date, { month: 'short' }) });
     lastMonth = month;
   }
 });
 
-const shortDate = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }).toLowerCase();
+const shortDate = (iso: string) => format(new Date(iso), { month: 'short', day: 'numeric' });
 ---
 
 {weeks.length > 0 ? (
@@ -53,15 +46,13 @@ const shortDate = (iso: string) =>
     <div class="contrib">
       <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${github.total} GitHub contributions in the last year`}>
         {months.map((m) => <text x={m.x} y="9">{m.label}</text>)}
-        <text x="0" y={TOP + 1 * STEP + 8}>mon</text>
-        <text x="0" y={TOP + 3 * STEP + 8}>wed</text>
-        <text x="0" y={TOP + 5 * STEP + 8}>fri</text>
+        {WEEKDAY_LABELS.map(([row, label]) => <text x="0" y={TOP + row * STEP + 8}>{label}</text>)}
         {weeks.map((week, x) =>
           week.map((day) => (
             <rect
               class={`l${day.level}`}
               x={LEFT + x * STEP}
-              y={TOP + new Date(`${day.date}T00:00:00Z`).getUTCDay() * STEP}
+              y={TOP + utcDate(day.date).getUTCDay() * STEP}
               width={CELL}
               height={CELL}
             >

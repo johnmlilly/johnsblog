@@ -9,7 +9,7 @@ on:
   # Also refresh when the fetcher itself changes.
   push:
     paths:
-      - scripts/fetch-github-activity.mjs
+      - scripts/fetch-github-activity.ts
       - .github/workflows/github-activity.yml
 
 permissions:
@@ -30,7 +30,7 @@ jobs:
           node-version: 22
 
       - name: Fetch activity
-        run: node scripts/fetch-github-activity.mjs
+        run: node scripts/fetch-github-activity.ts
         env:
           # A personal token adds private contributions to the count; the
           # built-in token only sees public ones.
