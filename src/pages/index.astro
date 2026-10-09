@@ -1,11 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ArticleCard from '../components/ArticleCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import SkillsSection from '../components/SkillsSection.astro';
+import GitHubActivity from '../components/GitHubActivity.astro';
 import home from '../data/home.json';
 import pageMeta from '../data/pages/home.json';
+import { formatIsoDate, readingMinutes, slugify } from '../utils/format';
+import { randomCloneWarsQuote } from '../data/cloneWarsQuotes';
+
+// Build-time pick so the hero reads right without JS; a script swaps in a
+// new one on every page load.
+const fortune = randomCloneWarsQuote();
 
 const allPosts = await getCollection('blog', ({ data }) => data.published !== false);
 const featuredPosts = allPosts
@@ -25,36 +30,43 @@ const featuredProjects = allProjects
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>{home.hero.name}</h1>
-          <h2>{home.hero.greeting}</h2>
-          <p>{home.hero.description}</p>
-          <p>I help <strong><span id="hero-text"></span></strong> create websites that work — and look — great.</p>
+          <p class="prompt">whoami</p>
+          <h1>{home.hero.name}<span>_</span></h1>
+          <p class="hero-greeting">{home.hero.greeting}</p>
+          <p class="hero-roles">I'm a <span id="hero-text" data-roles={JSON.stringify(home.hero.roles)}>{home.hero.roles[0]}</span></p>
           <div class="hero-buttons">
             <a href={home.hero.firstCtaUrl} class="btn btn-primary">{home.hero.firstCtaText}</a>
-            <a href={home.hero.secondCtaUrl} class="btn btn-outline">{home.hero.secondCtaText}</a>
+            <a href={home.hero.secondCtaUrl} class="btn">{home.hero.secondCtaText}</a>
+          </div>
+          <div class="fortune" aria-label="Clone Wars quote">
+            <p class="prompt">fortune --clone-wars</p>
+            <p class="fortune-quote">
+              <span id="fortune-text">"{fortune.text}"</span>
+              <span id="fortune-episode" class="fortune-episode">S{fortune.season}E{fortune.episode}</span>
+            </p>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="profile-image-container">
-            <img loading="eager" fetchpriority="high" src={home.hero.image} alt="John Lilly" class="profile-image" />
-          </div>
+        <div class="hero-image frame portrait">
+          <div class="frame-bar"><b>photo-01</b><span>~/photos</span></div>
+          <img loading="eager" fetchpriority="high" src={home.hero.image} alt="John Lilly" />
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about-section" data-reveal>
+  <section id="about" data-reveal>
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <img src={home.about.image} alt="John Lilly" loading="lazy" decoding="async" />
-        </div>
-        <div class="about-content">
-          <h2>{home.about.heading}</h2>
-          <div class="about-text">
-            {home.about.description.map((paragraph) => <p>{paragraph}</p>)}
+      <div class="box">
+        <h2>{slugify(home.about.heading)}</h2>
+        <div class="about-grid">
+          <div class="frame">
+            <div class="frame-bar"><b>photo-02</b><span>~/photos</span></div>
+            <img src={home.about.image} alt="Illustration of John Lilly coding at his desk" loading="lazy" decoding="async" width="900" height="720" />
           </div>
           <div>
+            <div class="about-text">
+              {home.about.description.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
             <a href={home.about.ctaUrl} class="btn btn-primary">{home.about.ctaText}</a>
           </div>
         </div>
@@ -62,76 +74,114 @@ const featuredProjects = allProjects
     </div>
   </section>
 
-  <section id="services" data-reveal>
+  <section id="history" data-reveal>
     <div class="container">
-      <h2>{home.services.title}</h2>
-      <p>{home.services.subtitle}</p>
-
-      <div class="services-grid">
-        {home.services.cards.map((card) => (
-          <div class="services-card">
-            <div class="services-header">
-              <i data-lucide={card.icon}></i>
-              <h3>{card.title}</h3>
-            </div>
-            <p>{card.description}</p>
-          </div>
-        ))}
+      <div class="box">
+        <h2>history</h2>
+        <p class="prompt">history</p>
+        <ol class="history">
+          {home.history.map((entry, i) => (
+            <li>
+              <span class="history-num" aria-hidden="true">{i + 1}</span>
+              <span class="history-when">{entry.when}</span>
+              <div>
+                <span class="history-title">{entry.title}</span>
+                <p class="history-detail">{entry.detail}</p>
+                {entry.link && <a class="history-link" href={entry.link}>→ case study</a>}
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="alternate-section" data-reveal>
+  <section id="projects" data-reveal>
     <div class="container">
-      <div class="section-header">
-        <h2>Projects</h2>
-        <a href="/projects">View All </a>
-      </div>
-      <div class="projects-grid">
-        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      <div class="box">
+        <h2>projects/</h2>
+        <div class="section-header">
+          <p class="prompt">ls projects/ --featured</p>
+          <a href="/projects">view all →</a>
+        </div>
+        <div class="projects-grid">
+          {featuredProjects.map((project) => <ProjectCard project={project} />)}
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="blog" class="blog-section" data-reveal>
+  <section id="activity" data-reveal>
     <div class="container">
-      <div class="section-header">
-        <h2>Blog</h2>
-        <a href="/blog">View All </a>
-      </div>
-      <div class="blog-grid">
-        {featuredPosts.map((post) => <ArticleCard post={post} />)}
+      <div class="box">
+        <h2>activity</h2>
+        <GitHubActivity />
       </div>
     </div>
   </section>
 
-  <section id="skills" class="alternate-section" data-reveal>
+  <section id="blog" data-reveal>
     <div class="container">
-      <h2>Skills & Expertise</h2>
-      <SkillsSection />
+      <div class="box">
+        <h2>blog</h2>
+        <div class="section-header">
+          <p class="prompt">ls -t blog/ | head</p>
+          <a href="/blog">view all →</a>
+        </div>
+        <ul class="log">
+          {featuredPosts.map((post) => (
+            <li>
+              {post.data.date ? <time datetime={post.data.date.toISOString()}>{formatIsoDate(post.data.date)}</time> : <span />}
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+              <span class="log-meta">{readingMinutes(post.body ?? '')} min</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
   <section class="contact-cta-section" data-reveal>
     <div class="container">
-      <div class="contact-cta-content">
-        <h2>{home.contact.heading}</h2>
+      <div class="box">
+        <h2>contact</h2>
+        <p class="prompt">{home.contact.heading} <span class="cursor" aria-hidden="true"></span></p>
         <p>{home.contact.description}</p>
-        <a href="/contact" class="btn btn-primary btn-lg">{home.contact.cta}</a>
+        <a href="/contact" class="btn btn-primary btn-lg">{home.contact.cta} <span aria-hidden="true">↵</span></a>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <script>
+  import { randomCloneWarsQuote } from '../data/cloneWarsQuotes';
+
+  const fortune = randomCloneWarsQuote();
+  const fortuneText = document.getElementById('fortune-text');
+  const fortuneEpisode = document.getElementById('fortune-episode');
+  if (fortuneText && fortuneEpisode) {
+    fortuneText.textContent = `"${fortune.text}"`;
+    fortuneEpisode.textContent = `S${fortune.season}E${fortune.episode}`;
+  }
+</script>
+
+<script>
   import Typed from 'typed.js';
 
+  // The span ships with the first role so the sentence reads right without
+  // JS. Clear it first: Typed.js prepends existing text to `strings`, which
+  // would show that role twice per loop.
+  const heroText = document.getElementById('hero-text');
+  const roles: string[] = JSON.parse(heroText?.dataset.roles ?? '[]');
+  if (heroText) heroText.textContent = '';
+
   new Typed('#hero-text', {
-    strings: ['small businesses', 'churches', 'ministries', 'nonprofits'],
+    strings: roles,
     typeSpeed: 75,
     backSpeed: 50,
     backDelay: 1500,
     startDelay: 500,
     loop: true,
+    cursorChar: ' ',
   });
 </script>

@@ -14,8 +14,9 @@ const blog = defineCollection({
     date: z.coerce.date().optional(),
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
+    // Simple Icons slug for the card logo (e.g. "react"). Optional: by
+    // default the first tag with a matching logo is used.
+    logo: z.string().optional(),
   }),
 });
 
@@ -27,18 +28,17 @@ const projects = defineCollection({
     date: z.coerce.date(),
     featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
-    image: z.string(),
-    link: z.string().url(),
+    image: z.string().optional(),
+    // Public site for the project. Optional for private or employer work.
+    link: z.string().url().optional(),
+    // Extra rows on the case study's neofetch card.
+    role: z.string().optional(),
+    status: z.string().optional(),
+    repo: z.string().optional(),
+    // Simple Icons slug for the card logo (e.g. "react"). Optional: by
+    // default the first tag with a matching logo is used.
+    logo: z.string().optional(),
   }),
 });
 
-const skills = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/skills' }),
-  schema: z.object({
-    title: z.string(),
-    order: z.number(),
-    skills: z.array(z.string()),
-  }),
-});
-
-export const collections = { blog, projects, skills };
+export const collections = { blog, projects };

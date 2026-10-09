@@ -7,9 +7,10 @@ import pageMeta from '../../data/pages/projects.json';
 const projects = (await getCollection('projects')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<BaseLayout title={pageMeta.title} description={pageMeta.description} image={pageMeta.image}>
+<BaseLayout title={pageMeta.title} description={pageMeta.description} image="/og/projects.png">
   <section class="container snippet-container">
-    <h1>Projects</h1>
+    <h1 class="page-title">projects</h1>
+    <p class="prompt">ls -t projects/</p>
     <div class="projects-grid">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>

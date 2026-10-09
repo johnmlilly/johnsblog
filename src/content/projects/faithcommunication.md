@@ -10,4 +10,16 @@ tags:
 link: https://faith-communication-program-timeline.webflow.io
 image: /assets/projects/faithcommunication.jpeg
 date: 2022-02-22
+role: builder, with cohort input
+status: live
 ---
+
+## Problem
+
+Our cohort wanted a way to capture and share a year of the program in one place.
+
+## Approach
+
+- Built the timeline in Webflow, with interactions that walk through the year.
+- Worked with fellow participants on the design and look.
+- Wrote and gathered content to tell the program's story.

@@ -7,7 +7,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: "John Lilly's Blog",
-    description: 'Insights and resources from a Catholic freelance web developer in Northern Virginia.',
+    description: 'Notes on code, tools, and the craft from John Lilly, a full stack developer in Northern Virginia.',
     site: context.site!,
     items: posts
       .filter((post) => post.data.date)
