@@ -9,45 +9,6 @@ import SocialLinks from './SocialLinks.astro';
     <nav class="main-nav" aria-label="Main">
       <Navigation />
     </nav>
-    <SocialLinks class="hide-on-mobile" />
-    <button class="mobile-menu-toggle" aria-label="Open menu">menu</button>
+    <SocialLinks />
   </div>
 </header>
-
-<div class="mobile-menu">
-  <div class="container">
-    <div class="mobile-menu-header">
-      <a href="/" class="site-title" aria-label="John Lilly, home"><span class="prompt-user">john@lilly</span>:<span class="prompt-path">~</span>$</a>
-      <button class="mobile-menu-close" aria-label="Close menu">esc</button>
-    </div>
-    <nav aria-label="Mobile">
-      <Navigation />
-    </nav>
-  </div>
-</div>
-
-<script>
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileMenuClose = document.querySelector('.mobile-menu-close');
-  const mobileMenu = document.querySelector('.mobile-menu');
-
-  const closeMenu = () => {
-    mobileMenu?.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  };
-
-  mobileMenuToggle?.addEventListener('click', () => {
-    mobileMenu?.classList.add('active');
-    document.body.classList.add('menu-open');
-  });
-
-  mobileMenuClose?.addEventListener('click', closeMenu);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  document.querySelectorAll('.mobile-menu a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
-  });
-</script>

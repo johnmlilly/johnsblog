@@ -21,7 +21,7 @@ const windows = [
 
 <nav class="status-bar" aria-label="Pages">
   <div class="status-windows">
-    <span aria-hidden="true">[jl]</span>
+    <span class="status-tag" aria-hidden="true">[jl]</span>
     {windows.map((w) => (
       <a href={w.href} aria-current={w.active ? 'page' : undefined}>{w.label}{w.active ? '*' : ''}</a>
     ))}
