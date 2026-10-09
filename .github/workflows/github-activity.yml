@@ -28,22 +28,28 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Check for the push token
-        if: github.ref == 'refs/heads/main'
+      - name: Check which token is used
         env:
-          HAS_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN != '' }}
+          ACTIVITY_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN }}
         run: |
-          if [ "$HAS_TOKEN" != "true" ]; then
+          if [ -n "$ACTIVITY_TOKEN" ]; then
+            # Logs the token's account and scopes, never the token itself.
+            login=$(GH_TOKEN="$ACTIVITY_TOKEN" gh api user --jq .login)
+            scopes=$(GH_TOKEN="$ACTIVITY_TOKEN" gh api -i user | grep -i '^x-oauth-scopes:' | cut -d' ' -f2- | tr -d '\r')
+            echo "Using GH_ACTIVITY_TOKEN for $login (scopes: $scopes)"
+          elif [ "$GITHUB_REF" = "refs/heads/main" ]; then
             echo "::error::Add a GH_ACTIVITY_TOKEN secret. The built-in token can't push to the protected main branch."
             exit 1
+          else
+            echo "Using the built-in token (public contributions only)"
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # Pushes in the last step authenticate as this token's account.
           token: ${{ secrets.GH_ACTIVITY_TOKEN || github.token }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
