@@ -22,7 +22,7 @@ I wanted each post and page to get its own preview automatically, matching the t
 
 ![Generated preview for the homepage](/og/default.png)
 
-![Generated preview for the Why I Love The Terminal post](/og/blog/why-i-love-the-terminal.png)
+![Generated preview for the How to Render HTML Safely and Prevent XSS post](/og/blog/how-to-render-html-safely-and-prevent-xss.png)
 
 ## Pipeline
 

@@ -1,6 +1,6 @@
 ---
-published: true
-title: Why I Love The Terminal
+published: false
+title: Doing More in the Terminal
 description: The new design is a nod to the tool I've come to love most, a
   blinking cursor and a place to type what I need.
 date: 2026-10-04
