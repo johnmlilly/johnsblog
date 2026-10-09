@@ -86,7 +86,7 @@ const shortDate = (iso: string) => format(new Date(iso), { month: 'short', day: 
     <ul class="gitlog">
       {recent.map((commit) => (
         <li>
-          <a class="sha" href={commit.url}>{commit.sha.slice(0, 7)}</a>
+          <a class="sha" href={commit.url} target="_blank" rel="noopener noreferrer">{commit.sha.slice(0, 7)}</a>
           <span class="msg">{commit.message}</span>
           <span class="repo">{commit.repo} · {shortDate(commit.date)}</span>
         </li>
@@ -95,4 +95,4 @@ const shortDate = (iso: string) => format(new Date(iso), { month: 'short', day: 
   </>
 )}
 
-<p class="contrib-profile"><a href={profile}>github.com/{github.username} →</a></p>
+<p class="contrib-profile"><a href={profile} target="_blank" rel="noopener noreferrer">github.com/{github.username} ↗</a></p>
