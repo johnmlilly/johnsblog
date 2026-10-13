@@ -39,22 +39,16 @@
       "link": ""
     },
     {
-      "when": "2022",
+      "when": "early 2022",
       "title": "First client sites",
       "detail": "Built my first sites for clients, including a family-owned flower farm.",
       "link": "/projects/fiatgardens/"
     },
     {
-      "when": "May 2022",
+      "when": "May 2022 - present",
       "title": "Developer at Apple FCU",
       "detail": "Joined Apple Federal Credit Union full time, where I still work today.",
       "link": ""
-    },
-    {
-      "when": "2025",
-      "title": "Merger status page",
-      "detail": "Built the page members used to track the NextMark systems conversion.",
-      "link": "/projects/applefcumerger/"
     }
   ],
   "contact": {

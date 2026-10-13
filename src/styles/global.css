@@ -779,7 +779,6 @@ iframe {
 
 .history-when {
   color: var(--color-accent-3);
-  white-space: nowrap;
 }
 
 .history-title {
