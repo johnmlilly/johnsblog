@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 818,
+  "total": 825,
   "weeks": [
     [
       {
@@ -1939,46 +1939,46 @@
       },
       {
         "date": "2026-10-13",
-        "count": 2,
-        "level": 1
+        "count": 9,
+        "level": 2
       }
     ]
   ],
   "recent": [
     {
       "repo": "johnsblog",
+      "sha": "b27307805ade6f3b27909c46f8df52a97398bded",
+      "message": "chore: add prettier and prettier-plugin-astro as dev deps",
+      "date": "2026-10-13T13:05:08Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/b27307805ade6f3b27909c46f8df52a97398bded"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "b2e20e7bdf0a71a79f7e9ab6850fdafedf3405a5",
+      "message": "chore: add prettierrc matching existing single-quote style",
+      "date": "2026-10-13T12:59:09Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/b2e20e7bdf0a71a79f7e9ab6850fdafedf3405a5"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "e1b1b0f4ed66594b64cc5cf12115b21fb4b40144",
+      "message": "style(layout): use double quotes consistently in BaseLayout",
+      "date": "2026-10-13T12:53:44Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/e1b1b0f4ed66594b64cc5cf12115b21fb4b40144"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "01d6f099685ddcdb407141ec66e42f90eb91f33b",
+      "message": "fix: add sitewide OG desc",
+      "date": "2026-10-13T12:36:46Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/01d6f099685ddcdb407141ec66e42f90eb91f33b"
+    },
+    {
+      "repo": "johnsblog",
       "sha": "f8a64093516e26fe6938570265d393b941860efc",
       "message": "Update src/content/blog/never-guessing-my-claude-code-usage-again.md …",
       "date": "2026-10-13T11:22:47Z",
       "url": "https://github.com/johnmlilly/johnsblog/commit/f8a64093516e26fe6938570265d393b941860efc"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "683dca478a863d5bf7169c8bd09b735a179d2a22",
-      "message": "Update src/content/blog/doing-more-in-the-terminal.md (via Pages CMS)",
-      "date": "2026-10-13T11:21:37Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/683dca478a863d5bf7169c8bd09b735a179d2a22"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "6b0b9c49af80df0a8af99e7959499d714c48b6b1",
-      "message": "fix(blog): remove duplicate post with empty title",
-      "date": "2026-10-13T02:43:38Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/6b0b9c49af80df0a8af99e7959499d714c48b6b1"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "131a37c02942e21e1dd3a157cea1edd4b0b05aea",
-      "message": "chore: update claude code post",
-      "date": "2026-10-13T02:35:40Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/131a37c02942e21e1dd3a157cea1edd4b0b05aea"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "c645b9d146c1416c224050cd930c3d11f2ad6d70",
-      "message": "chore: fix line wrap, simplify history",
-      "date": "2026-10-13T02:35:30Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/c645b9d146c1416c224050cd930c3d11f2ad6d70"
     }
   ]
 }
