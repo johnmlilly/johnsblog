@@ -1,0 +1,120 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NeofetchCard from '../../components/NeofetchCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { hostOf, projectCard } from '../../utils/projectCard';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projects')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: {
+      project,
+      related: projects.filter((other) => other.id !== project.id && other.data.featured).slice(0, 2),
+    },
+  }));
+}
+
+const { project, related } = Astro.props;
+const { title, description, image, link, repo } = project.data;
+const { Content } = await render(project);
+---
+
+<BaseLayout
+  title={`${title} | Projects | John Lilly`}
+  description={description}
+  image={`/og/projects/${project.id}.png`}
+  imageAlt={title}
+>
+  <section class="article-content container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="/">~</a></li>
+        <li><a href="/projects">projects</a></li>
+        <li aria-current="page">{title}</li>
+      </ol>
+    </nav>
+
+    <div class="blog-post-content">
+      <h1 class="post-title">{title}</h1>
+      <p class="post-intro">{description}</p>
+      <NeofetchCard class="post-neofetch" {...projectCard(project, true)} />
+    </div>
+
+    {image && (
+      <figure class="frame project-shot">
+        <div class="frame-bar"><b>{link ? hostOf(link) : 'screenshot'}</b><span>~/projects</span></div>
+        <img src={image} alt={`${title} screenshot`} loading="eager" />
+      </figure>
+    )}
+
+    <article class="prose">
+      <Content />
+    </article>
+
+    {(link || repo) && (
+      <p class="project-links">
+        {link && <a href={link} target="_blank" rel="noopener noreferrer">open {hostOf(link)} ↗</a>}
+        {repo && repo.startsWith('http') && <a href={repo} target="_blank" rel="noopener noreferrer">view repo ↗</a>}
+      </p>
+    )}
+  </section>
+
+  {related.length > 0 && (
+    <section class="related-articles">
+      <div class="container">
+        <div class="box">
+          <h2>more projects/</h2>
+          <div class="projects-grid">
+            {related.map((other) => <ProjectCard project={other} />)}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<script>
+  // Draw ```mermaid blocks only on pages that have them, so other pages
+  // never download the library.
+  const blocks = [...document.querySelectorAll<HTMLElement>('.prose code.language-mermaid')].map(
+    (code) => code.closest('pre') ?? code
+  );
+  if (blocks.length) {
+    const { default: mermaid } = await import('mermaid');
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'base',
+      fontFamily: '"JetBrains Mono", ui-monospace, monospace',
+      themeVariables: {
+        darkMode: true,
+        background: '#0a0a0a',
+        primaryColor: '#111827',
+        primaryBorderColor: '#334155',
+        primaryTextColor: '#e5e7eb',
+        lineColor: '#60a5fa',
+        textColor: '#e5e7eb',
+        actorBkg: '#111827',
+        actorBorder: '#60a5fa',
+        actorTextColor: '#e5e7eb',
+        signalColor: '#60a5fa',
+        signalTextColor: '#e5e7eb',
+        noteBkgColor: '#1e293b',
+        noteTextColor: '#e5e7eb',
+        noteBorderColor: '#334155',
+        labelBoxBkgColor: '#111827',
+        labelTextColor: '#e5e7eb',
+        loopTextColor: '#e5e7eb',
+      },
+    });
+    const nodes = [...blocks].map((pre) => {
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = pre.textContent ?? '';
+      pre.replaceWith(div);
+      return div;
+    });
+    await mermaid.run({ nodes });
+  }
+</script>

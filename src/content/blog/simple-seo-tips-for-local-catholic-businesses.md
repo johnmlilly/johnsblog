@@ -1,7 +1,6 @@
 ---
 published: false
 title: Simple SEO Tips for Local Catholic Businesses
-featured: true
 tags:
   - SEO
 ---

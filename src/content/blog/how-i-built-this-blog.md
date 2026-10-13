@@ -4,11 +4,11 @@ title: How I Built This Site (and Why I Chose 11ty)
 description: Building this site was a chance to combine creativity and code to
   design something simple, fast, and fully my own.
 date: 2025-10-17
-featured: true
 tags:
   - Frontend Development
 image: /assets/blog/howibuildthisblog.jpg
 imageAlt: Laptop, coffee mug and paper pad on a desk
+logo: eleventy
 ---
 When I set out to build my personal website, I had a few simple goals:
 

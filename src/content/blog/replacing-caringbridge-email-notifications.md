@@ -3,7 +3,6 @@ published: false
 title: Replacing a CaringBridge Feature With a Custom Notification Stack
 description: CaringBridge emailed our followers automatically every time we posted an update about our son Francis. Moving to a custom site meant I had to rebuild that feature myself, and I ended up passing on the usual email platforms to do it.
 date: 2026-09-18
-featured: false
 tags:
   - Backend Development
   - Cloudflare
