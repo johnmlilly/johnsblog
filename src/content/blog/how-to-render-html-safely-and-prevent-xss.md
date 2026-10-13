@@ -6,9 +6,9 @@ description: Learn three safer alternatives to render HTML that help prevent XSS
 image: /assets/10221304.jpg
 imageAlt: A user browsing the web securely
 date: 2026-03-16
-featured: true
 tags:
   - Security
+logo: owasp
 ---
 If you’ve written JavaScript for any length of time, you’ve probably used `innerHTML`. It’s quick, convenient, and everywhere in video and blog tutorials. Sadly, it’s also one of the easiest ways to introduce a [**Cross-Site Scripting (XSS)**](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/XSS) vulnerability into your site or application.
 

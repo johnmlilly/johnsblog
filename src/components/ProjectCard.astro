@@ -1,28 +1,20 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import NeofetchCard from './NeofetchCard.astro';
+import { projectCard } from '../utils/projectCard';
 
 interface Props {
   project: CollectionEntry<'projects'>;
 }
 
 const { project } = Astro.props;
-const { title, description, image, tags, link } = project.data;
+const { title, description } = project.data;
+const href = `/projects/${project.id}/`;
 ---
 
 <article class="project-card">
-  <div class="project-card-flex-fill">
-    <div class="project-image">
-      <img src={image} alt={title} loading="lazy" decoding="async" />
-    </div>
-    <div class="project-content">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <div class="project-tags">
-        {tags.map((tag) => <span class="card-category gradient-2">{tag}</span>)}
-      </div>
-      <a href={link} class="btn btn-primary project-card-btn" target="_blank" rel="noopener noreferrer">
-        View Project <i data-lucide="square-arrow-out-up-right"></i>
-      </a>
-    </div>
-  </div>
+  <NeofetchCard {...projectCard(project)} />
+  <a href={href}><h3>{title}</h3></a>
+  <p>{description}</p>
+  <a href={href} class="project-link" aria-label={`Read the ${title} case study`}>case study →</a>
 </article>

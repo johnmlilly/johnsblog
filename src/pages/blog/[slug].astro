@@ -6,7 +6,6 @@ export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => data.published !== false);
 
   const mostRecent = posts
-    .filter((post) => post.data.featured)
     .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0))
     .slice(0, 3);
 

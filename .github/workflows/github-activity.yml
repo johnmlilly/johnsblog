@@ -1,0 +1,72 @@
+name: GitHub activity
+
+# Refreshes src/data/github.json for the homepage activity section. The push
+# triggers the normal Cloudflare build.
+#
+# main is protected, and the built-in GITHUB_TOKEN can't bypass branch
+# protection. So the push uses GH_ACTIVITY_TOKEN, a personal token from an
+# account that's allowed to bypass it (classic token, scopes public_repo and
+# read:user). The same token also adds private contributions to the count.
+on:
+  schedule:
+    - cron: '0 9 * * *' # daily at 09:00 UTC
+  workflow_dispatch:
+  # Also refresh when the fetcher itself changes.
+  push:
+    paths:
+      - scripts/fetch-github-activity.ts
+      - .github/workflows/github-activity.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-activity
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check which token is used
+        env:
+          ACTIVITY_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN }}
+        run: |
+          if [ -n "$ACTIVITY_TOKEN" ]; then
+            # Logs the token's account and scopes, never the token itself.
+            login=$(GH_TOKEN="$ACTIVITY_TOKEN" gh api user --jq .login)
+            scopes=$(GH_TOKEN="$ACTIVITY_TOKEN" gh api -i user | grep -i '^x-oauth-scopes:' | cut -d' ' -f2- | tr -d '\r')
+            echo "Using GH_ACTIVITY_TOKEN for $login (scopes: $scopes)"
+          elif [ "$GITHUB_REF" = "refs/heads/main" ]; then
+            echo "::error::Add a GH_ACTIVITY_TOKEN secret. The built-in token can't push to the protected main branch."
+            exit 1
+          else
+            echo "Using the built-in token (public contributions only)"
+          fi
+
+      - uses: actions/checkout@v5
+        with:
+          # Pushes in the last step authenticate as this token's account.
+          token: ${{ secrets.GH_ACTIVITY_TOKEN || github.token }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Fetch activity
+        run: node scripts/fetch-github-activity.ts
+        env:
+          # The built-in token only sees public contributions.
+          GITHUB_TOKEN: ${{ secrets.GH_ACTIVITY_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- src/data/github.json; then
+            echo "No change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/github.json
+          git commit -m "Refresh GitHub activity"
+          git push

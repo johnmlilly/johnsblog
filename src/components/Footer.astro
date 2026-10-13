@@ -1,5 +1,13 @@
 ---
 import SocialLinks from './SocialLinks.astro';
+
+const path = Astro.url.pathname;
+const windows = [
+  { label: '0:home', href: '/', active: path === '/' },
+  { label: '1:projects', href: '/projects', active: path.startsWith('/projects') },
+  { label: '2:blog', href: '/blog', active: path.startsWith('/blog') },
+  { label: '3:contact', href: '/contact', active: path.startsWith('/contact') },
+];
 ---
 
 <footer class="site-footer">
@@ -10,3 +18,13 @@ import SocialLinks from './SocialLinks.astro';
     </div>
   </div>
 </footer>
+
+<nav class="status-bar" aria-label="Pages">
+  <div class="status-windows">
+    <span class="status-tag" aria-hidden="true">[jl]</span>
+    {windows.map((w) => (
+      <a href={w.href} aria-current={w.active ? 'page' : undefined}>{w.label}{w.active ? '*' : ''}</a>
+    ))}
+  </div>
+  <span class="status-host" aria-hidden="true">full stack developer</span>
+</nav>

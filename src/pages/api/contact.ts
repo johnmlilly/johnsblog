@@ -6,6 +6,14 @@ export const prerender = false;
 const TO_EMAIL = 'hello@johnlilly.dev';
 const FROM_EMAIL = 'Johnlilly.dev <contact@johnlilly.dev>';
 
+const escapeHtml = (text: string) =>
+  text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
 
@@ -18,23 +26,19 @@ export const POST: APIRoute = async ({ request }) => {
   const email = formData.get('email')?.toString().trim();
   const message = formData.get('message')?.toString().trim();
 
-  if (!fullName || !email) {
+  if (!fullName || !email || !message) {
     return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });
   }
 
   const fields: [string, string][] = [
     ['Full Name', fullName],
     ['Email', email],
-    ['Phone', formData.get('phone')?.toString() ?? ''],
-    ['Project Type', formData.get('project-type')?.toString() ?? ''],
-    ['Budget', formData.get('budget')?.toString() ?? ''],
-    ['Timeline', formData.get('timeline')?.toString() ?? ''],
-    ['Message', message ?? ''],
+    ['Message', message],
   ];
 
   const html = fields
     .filter(([, value]) => value)
-    .map(([label, value]) => `<p><strong>${label}:</strong> ${value.replace(/\n/g, '<br>')}</p>`)
+    .map(([label, value]) => `<p><strong>${label}:</strong> ${escapeHtml(value).replace(/\n/g, '<br>')}</p>`)
     .join('');
 
   try {
