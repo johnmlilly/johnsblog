@@ -6,7 +6,6 @@ description: While Grid and Flexbox are powerful, sometimes the simplest
 image: /assets/css-columns.png
 imageAlt: CSS Columns
 date: 2026-03-02
-featured: true
 tags:
   - CSS
 ---

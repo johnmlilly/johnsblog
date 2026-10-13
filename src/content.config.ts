@@ -12,7 +12,6 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     date: z.coerce.date().optional(),
-    featured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     // Simple Icons slug for the card logo (e.g. "react"). Optional: by
     // default the first tag with a matching logo is used.

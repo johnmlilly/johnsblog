@@ -3,7 +3,6 @@ published: true
 title: Doing More in the Terminal
 description: The new site design reflects my roots and is a nod to the tool I've come to love most.
 date: 2026-10-04
-featured: true
 tags:
   - Terminal
 logo: gnometerminal

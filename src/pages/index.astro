@@ -13,8 +13,7 @@ import { randomCloneWarsQuote } from '../data/cloneWarsQuotes';
 const fortune = randomCloneWarsQuote();
 
 const allPosts = await getCollection('blog', ({ data }) => data.published !== false);
-const featuredPosts = allPosts
-  .filter((post) => post.data.featured)
+const recentPosts = allPosts
   .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0))
   .slice(0, 6);
 
@@ -129,7 +128,7 @@ const featuredProjects = allProjects
           <a href="/blog">view all →</a>
         </div>
         <ul class="log">
-          {featuredPosts.map((post) => (
+          {recentPosts.map((post) => (
             <li>
               {post.data.date ? <time datetime={post.data.date.toISOString()}>{formatIsoDate(post.data.date)}</time> : <span />}
               <a href={`/blog/${post.id}/`}>{post.data.title}</a>

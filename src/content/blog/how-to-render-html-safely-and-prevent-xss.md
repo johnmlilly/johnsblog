@@ -6,7 +6,6 @@ description: Learn three safer alternatives to render HTML that help prevent XSS
 image: /assets/10221304.jpg
 imageAlt: A user browsing the web securely
 date: 2026-03-16
-featured: true
 tags:
   - Security
 logo: owasp
