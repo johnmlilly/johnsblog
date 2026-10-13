@@ -1,30 +1,29 @@
 ---
-published: false
-title: A Better Claude Code Status Line
-description: A small bash script that shows how full my context window is and
-  how close I am to my usage limits, right at the bottom of the terminal.
+published: true
+title: Never Guessing My Claude Code Usage Again
+description: A small bash script that keeps my context window and usage limits at the bottom of Claude Code, so I don't have to check every session.
 date: 2026-10-09
-featured: false
 tags:
   - Terminal
 logo: claude
 ---
 
-I spend most of my day in Claude Code now, and there are two things I keep wanting to know. How full is the context window? And how close am I to my usage limit?
+I spend most of my day in Claude Code these days, and while it has increased my understanding, learning, and productivity when coding, I still keep coming back to these questions -  How full is the context window, and how close am I to my usage limit?
 
-Claude Code lets you run your own script for the status line at the bottom of the screen. Mine now looks like this:
+Here's how I wrote my own bash script to view the status line at the bottom of my screen, similar to the below.
 
 ```
 Opus 5.5 | Context: 20% 200k / 1M | 5h: 6% ↻2h30m | Week: 4% ↻3d11h
 ```
 
-The context part is the percent used, then tokens used out of the model's window. The last two pieces are my account usage across every session, not just the one I'm in: the 5-hour window and the weekly limit, each with a countdown until it resets. The labels are bold so they're easy to pick out, and at 70% a number turns yellow. At 90% it turns red, so I notice before I run into the wall.
+
+The context part is the percent used, then tokens used out of the model's window. The last two pieces are my account usage across every session. The labels are bold so they're easy to spot, and at 70% a number turns yellow. At 90% it turns red, so I notice before I hit a limit.
 
 I actually tried something fancier first. Claude Code has mods now, and I built one called token-weather that put a little forecast above the prompt. Sunny when the context was mostly empty, storms when it was filling up, plus a sparkline of the last few turns. It was fun to build. But I didn't need a forecast. I just wanted the numbers, always visible, in the spot I already look.
 
 So I deleted the mod and went back to a plain bash script. Claude Code pipes a chunk of JSON into the script every time it updates, and everything I wanted was already in there, including a `rate_limits` field with the 5-hour and weekly percentages and their reset times. A little `jq`, a little `awk` for formatting, and that was it.
 
-Two gotchas. First, if the script exits with an error, Claude Code hides the status line completely, even if it printed everything fine. I had a `[ -n "$color" ] && printf` as the last line, which returns 1 whenever usage is low, and my status line just vanished. When you test yours, check `echo $?` too.
+Two gotchas. First, if the script exits with an error, Claude Code hides the status line completely, even if it printed everything fine. I had a `[ -n "$color" ] && printf` as the last line, which returns 1 whenever usage is low, and my status line just vanished.
 
 Second, the status line only redraws when something happens in the conversation, so the countdown froze while I was away. Setting `refreshInterval` fixes that. Here's the config in `~/.claude/settings.json`:
 
@@ -95,5 +94,3 @@ fi
 limit 5h "$h5_pct" "$h5_reset"
 limit Week "$wk_pct" "$wk_reset"
 ```
-
-If Claude Code doesn't send the usage data, the script just leaves those pieces off.
