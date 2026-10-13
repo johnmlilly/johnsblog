@@ -29,13 +29,14 @@ const socialImage = new URL(image, Astro.site).toString();
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <script defer data-domain="johnlilly.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <script is:inline defer data-domain="johnlilly.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
     <SEO
       title={title}
       description={description}
       canonical={canonical}
       openGraph={{
         basic: { title, type: 'website', image: socialImage, url: canonical },
+        optional: { description },
         image: { alt: imageAlt },
       }}
       twitter={{ card: 'summary_large_image', creator: '@johnmlilly_', site: '@johnmlilly_' }}
