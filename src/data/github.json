@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 808,
+  "total": 816,
   "weeks": [
     [
       {
@@ -1902,13 +1902,13 @@
       },
       {
         "date": "2026-10-06",
-        "count": 0,
-        "level": 0
+        "count": 1,
+        "level": 1
       },
       {
         "date": "2026-10-07",
-        "count": 0,
-        "level": 0
+        "count": 1,
+        "level": 1
       },
       {
         "date": "2026-10-08",
@@ -1934,46 +1934,46 @@
       },
       {
         "date": "2026-10-12",
-        "count": 10,
+        "count": 16,
         "level": 2
       }
     ]
   ],
   "recent": [
     {
-      "repo": "resend-webhook",
-      "sha": "74536f41bfed6dbe2ed2f25cd68dff34027f9d88",
-      "message": "chore: update readme",
-      "date": "2026-10-13T01:19:52Z",
-      "url": "https://github.com/johnmlilly/resend-webhook/commit/74536f41bfed6dbe2ed2f25cd68dff34027f9d88"
+      "repo": "johnsblog",
+      "sha": "6b0b9c49af80df0a8af99e7959499d714c48b6b1",
+      "message": "fix(blog): remove duplicate post with empty title",
+      "date": "2026-10-13T02:43:38Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/6b0b9c49af80df0a8af99e7959499d714c48b6b1"
     },
     {
-      "repo": "resend-webhook",
-      "sha": "edf3d15470fc4dfdfb6396e805be5e7a22b37e8e",
-      "message": "fix: replace self with export",
-      "date": "2026-10-13T01:19:11Z",
-      "url": "https://github.com/johnmlilly/resend-webhook/commit/edf3d15470fc4dfdfb6396e805be5e7a22b37e8e"
+      "repo": "johnsblog",
+      "sha": "131a37c02942e21e1dd3a157cea1edd4b0b05aea",
+      "message": "chore: update claude code post",
+      "date": "2026-10-13T02:35:40Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/131a37c02942e21e1dd3a157cea1edd4b0b05aea"
     },
     {
-      "repo": "resend-webhook",
-      "sha": "cbcc57cdb35a5ecb0271f5f3b1f4ede7a2a883e8",
-      "message": "docs: add README with setup, testing, troubleshooting",
-      "date": "2026-10-13T01:16:39Z",
-      "url": "https://github.com/johnmlilly/resend-webhook/commit/cbcc57cdb35a5ecb0271f5f3b1f4ede7a2a883e8"
+      "repo": "johnsblog",
+      "sha": "c645b9d146c1416c224050cd930c3d11f2ad6d70",
+      "message": "chore: fix line wrap, simplify history",
+      "date": "2026-10-13T02:35:30Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/c645b9d146c1416c224050cd930c3d11f2ad6d70"
     },
     {
-      "repo": "resend-webhook",
-      "sha": "c62781c15c6b9dc2e5c9cfe746c6797e14511686",
-      "message": "test: replace scaffold tests with webhook coverage",
-      "date": "2026-10-13T01:13:06Z",
-      "url": "https://github.com/johnmlilly/resend-webhook/commit/c62781c15c6b9dc2e5c9cfe746c6797e14511686"
+      "repo": "johnsblog",
+      "sha": "6a29bc9f333756d9397b9092114a610cd3d02568",
+      "message": "refactor(blog): drop featured flag on blog posts",
+      "date": "2026-10-13T02:21:45Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/6a29bc9f333756d9397b9092114a610cd3d02568"
     },
     {
-      "repo": "resend-webhook",
-      "sha": "03fef3ea8a342822eeef82004e381c4478d9aa7c",
-      "message": "fix(webhook): retry webhook when alert send fails",
-      "date": "2026-10-13T00:50:45Z",
-      "url": "https://github.com/johnmlilly/resend-webhook/commit/03fef3ea8a342822eeef82004e381c4478d9aa7c"
+      "repo": "johnsblog",
+      "sha": "932e9216fc9091fbf5dca7d04a394f6a7af89767",
+      "message": "chore: remove project, set featured, and rewrite terminal post",
+      "date": "2026-10-13T02:16:31Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/932e9216fc9091fbf5dca7d04a394f6a7af89767"
     }
   ]
 }
