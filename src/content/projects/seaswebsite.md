@@ -5,7 +5,7 @@ description: Supported St. Elizabeth Ann Seton parish by redesigning their
   website to make information more accessible, improve the online experience for
   parishioners, and simplify updates for staff.
 image: /assets/projects/welcome-to-st-elizabeth-ann-seton-c.png
-featured: true
+featured: false
 tags:
   - WordPress
   - Elementor

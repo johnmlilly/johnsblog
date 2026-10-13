@@ -2,7 +2,7 @@
 title: Generated Social Previews
 description: Every page on this site gets its own link preview image, built from the same data as the page. No design tool, no manual exports.
 date: 2026-10-04
-featured: false
+featured: true
 tags:
   - Astro
   - Cloudflare
