@@ -1,13 +1,13 @@
 ---
 published: true
 title: Never Guessing My Claude Code Usage Again
-description: A small bash script that keeps my context window and usage limits at the bottom of Claude Code, so I don't have to check every session.
+description: A small bash script that keeps my context window and usage limits
+  right where I can see them.
 date: 2026-10-09
 tags:
   - Terminal
 logo: claude
 ---
-
 I spend most of my day in Claude Code these days, and while it has increased my understanding, learning, and productivity when coding, I still keep coming back to these questions -  How full is the context window, and how close am I to my usage limit?
 
 Here's how I wrote my own bash script to view the status line at the bottom of my screen, similar to the below.
@@ -15,7 +15,6 @@ Here's how I wrote my own bash script to view the status line at the bottom of m
 ```
 Opus 5.5 | Context: 20% 200k / 1M | 5h: 6% ↻2h30m | Week: 4% ↻3d11h
 ```
-
 
 The context part is the percent used, then tokens used out of the model's window. The last two pieces are my account usage across every session. The labels are bold so they're easy to spot, and at 70% a number turns yellow. At 90% it turns red, so I notice before I hit a limit.
 
@@ -94,3 +93,4 @@ fi
 limit 5h "$h5_pct" "$h5_reset"
 limit Week "$wk_pct" "$wk_reset"
 ```
+
