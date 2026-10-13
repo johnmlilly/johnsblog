@@ -1,10 +1,10 @@
 ---
-import { SEO } from 'astro-seo';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-import '../styles/blogs.css';
-import '../styles/dynamic.css';
+import { SEO } from "astro-seo";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import "../styles/blogs.css";
+import "../styles/dynamic.css";
 
 interface Props {
   title: string;
@@ -26,16 +26,36 @@ const socialImage = new URL(image, Astro.site).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" type="image/x-icon" href="/assets/logo/primary-logo.png" />
-    <script defer data-domain="johnlilly.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <script is:inline defer data-domain="johnlilly.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="preload"
+      href="/fonts/JetBrainsMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <SEO
       title={title}
       description={description}
       canonical={canonical}
       openGraph={{
-        basic: { title, type: 'website', image: socialImage, url: canonical },
+        basic: {
+          title,
+          type: "website",
+          image: socialImage,
+          url: canonical,
+        },
+        optional: { description },
         image: { alt: imageAlt },
       }}
-      twitter={{ card: 'summary_large_image', creator: '@johnmlilly_', site: '@johnmlilly_' }}
+      twitter={{
+        card: "summary_large_image",
+        creator: "@johnmlilly_",
+        site: "@johnmlilly_",
+      }}
     />
   </head>
   <body>
@@ -45,28 +65,28 @@ const socialImage = new URL(image, Astro.site).toString();
     </main>
     <Footer />
     <script>
-      import { createIcons, icons } from 'lucide';
+      import { createIcons, icons } from "lucide";
       createIcons({ icons });
     </script>
     <script>
       // Progressive enhancement: the hidden state (`.reveal-init`) is only
       // ever added here, so sections stay visible if this script fails to
       // load/run or IntersectionObserver isn't supported.
-      if ('IntersectionObserver' in window) {
-        const revealTargets = document.querySelectorAll('[data-reveal]');
+      if ("IntersectionObserver" in window) {
+        const revealTargets = document.querySelectorAll("[data-reveal]");
         const observer = new IntersectionObserver(
           (entries) => {
             for (const entry of entries) {
               if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
+                entry.target.classList.add("is-visible");
                 observer.unobserve(entry.target);
               }
             }
           },
-          { threshold: 0.15 }
+          { threshold: 0.15 },
         );
         revealTargets.forEach((el) => {
-          el.classList.add('reveal-init');
+          el.classList.add("reveal-init");
           observer.observe(el);
         });
       }
