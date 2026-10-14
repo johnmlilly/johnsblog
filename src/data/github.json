@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 825,
+  "total": 832,
   "weeks": [
     [
       {
@@ -1848,7 +1848,7 @@
       },
       {
         "date": "2026-09-26",
-        "count": 4,
+        "count": 5,
         "level": 1
       }
     ],
@@ -1939,46 +1939,51 @@
       },
       {
         "date": "2026-10-13",
-        "count": 9,
+        "count": 15,
         "level": 2
+      },
+      {
+        "date": "2026-10-14",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
   "recent": [
     {
-      "repo": "johnsblog",
-      "sha": "b27307805ade6f3b27909c46f8df52a97398bded",
-      "message": "chore: add prettier and prettier-plugin-astro as dev deps",
-      "date": "2026-10-13T13:05:08Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/b27307805ade6f3b27909c46f8df52a97398bded"
+      "repo": "ya-portal-blocks",
+      "sha": "5ef6fc6869faff67eadfc180b98c7e9f3e427a1f",
+      "message": "docs: update build plan drop access control spec",
+      "date": "2026-10-13T20:49:15Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/5ef6fc6869faff67eadfc180b98c7e9f3e427a1f"
     },
     {
-      "repo": "johnsblog",
-      "sha": "b2e20e7bdf0a71a79f7e9ab6850fdafedf3405a5",
-      "message": "chore: add prettierrc matching existing single-quote style",
-      "date": "2026-10-13T12:59:09Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/b2e20e7bdf0a71a79f7e9ab6850fdafedf3405a5"
+      "repo": "ya-portal-blocks",
+      "sha": "18f37e2cd1b456591857146f122a60a500bbe246",
+      "message": "feat: add community calendar block",
+      "date": "2026-10-13T20:45:15Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/18f37e2cd1b456591857146f122a60a500bbe246"
     },
     {
-      "repo": "johnsblog",
-      "sha": "e1b1b0f4ed66594b64cc5cf12115b21fb4b40144",
-      "message": "style(layout): use double quotes consistently in BaseLayout",
-      "date": "2026-10-13T12:53:44Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/e1b1b0f4ed66594b64cc5cf12115b21fb4b40144"
+      "repo": "ya-portal-blocks",
+      "sha": "3b247e9507069dc906e229d952e2516aa994e8c0",
+      "message": "feat: add community documents block",
+      "date": "2026-10-13T20:26:03Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/3b247e9507069dc906e229d952e2516aa994e8c0"
     },
     {
-      "repo": "johnsblog",
-      "sha": "01d6f099685ddcdb407141ec66e42f90eb91f33b",
-      "message": "fix: add sitewide OG desc",
-      "date": "2026-10-13T12:36:46Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/01d6f099685ddcdb407141ec66e42f90eb91f33b"
+      "repo": "ya-portal-blocks",
+      "sha": "c953be981b3d74c8d909707c096355575ec07818",
+      "message": "feat: add formation documents block",
+      "date": "2026-10-13T20:09:11Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/c953be981b3d74c8d909707c096355575ec07818"
     },
     {
-      "repo": "johnsblog",
-      "sha": "f8a64093516e26fe6938570265d393b941860efc",
-      "message": "Update src/content/blog/never-guessing-my-claude-code-usage-again.md …",
-      "date": "2026-10-13T11:22:47Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/f8a64093516e26fe6938570265d393b941860efc"
+      "repo": "ya-portal-blocks",
+      "sha": "44587e7403391aab7327e23025a9f1aa556e66e2",
+      "message": "feat: add quick actions block",
+      "date": "2026-10-13T19:31:48Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/44587e7403391aab7327e23025a9f1aa556e66e2"
     }
   ]
 }
