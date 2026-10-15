@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 832,
+  "total": 842,
   "weeks": [
     [
       {
@@ -1944,46 +1944,51 @@
       },
       {
         "date": "2026-10-14",
-        "count": 0,
-        "level": 0
+        "count": 9,
+        "level": 2
+      },
+      {
+        "date": "2026-10-15",
+        "count": 1,
+        "level": 1
       }
     ]
   ],
   "recent": [
     {
       "repo": "ya-portal-blocks",
-      "sha": "5ef6fc6869faff67eadfc180b98c7e9f3e427a1f",
-      "message": "docs: update build plan drop access control spec",
-      "date": "2026-10-13T20:49:15Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/5ef6fc6869faff67eadfc180b98c7e9f3e427a1f"
+      "sha": "419d32917861d2a37550e8c78a27fb1fe35099e2",
+      "message": "chore: update plugin name",
+      "date": "2026-10-15T02:18:42Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/419d32917861d2a37550e8c78a27fb1fe35099e2"
     },
     {
       "repo": "ya-portal-blocks",
-      "sha": "18f37e2cd1b456591857146f122a60a500bbe246",
-      "message": "feat: add community calendar block",
-      "date": "2026-10-13T20:45:15Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/18f37e2cd1b456591857146f122a60a500bbe246"
+      "sha": "21e5663b479d269d52609729dc87a4c81b138fe2",
+      "message": "chore: release 1.1.0",
+      "date": "2026-10-15T02:14:54Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/21e5663b479d269d52609729dc87a4c81b138fe2"
     },
     {
       "repo": "ya-portal-blocks",
-      "sha": "3b247e9507069dc906e229d952e2516aa994e8c0",
-      "message": "feat: add community documents block",
-      "date": "2026-10-13T20:26:03Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/3b247e9507069dc906e229d952e2516aa994e8c0"
+      "sha": "3ab047961549374101d098aaf0f8aef8d31f8049",
+      "message": "docs: describe hero search filter in readmes",
+      "date": "2026-10-15T02:14:24Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/3ab047961549374101d098aaf0f8aef8d31f8049"
     },
     {
       "repo": "ya-portal-blocks",
-      "sha": "c953be981b3d74c8d909707c096355575ec07818",
-      "message": "feat: add formation documents block",
-      "date": "2026-10-13T20:09:11Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/c953be981b3d74c8d909707c096355575ec07818"
+      "sha": "fbe124bb80c9084e371192d35cd1deb6ddc0289d",
+      "message": "feat: add hero search filter",
+      "date": "2026-10-15T02:14:14Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/fbe124bb80c9084e371192d35cd1deb6ddc0289d"
     },
     {
       "repo": "ya-portal-blocks",
-      "sha": "44587e7403391aab7327e23025a9f1aa556e66e2",
-      "message": "feat: add quick actions block",
-      "date": "2026-10-13T19:31:48Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/44587e7403391aab7327e23025a9f1aa556e66e2"
+      "sha": "d497de5f05bd35d2271ee19039107773adcc5bcd",
+      "message": "docs: add featured block to readmes",
+      "date": "2026-10-15T01:52:39Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/d497de5f05bd35d2271ee19039107773adcc5bcd"
     }
   ]
 }
