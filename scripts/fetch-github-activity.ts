@@ -23,7 +23,7 @@ const LEVELS = {
 interface CommitNode {
   oid: string;
   messageHeadline: string;
-  authoredDate: string;
+  committedDate: string;
   url: string;
   author: { user: { login: string } | null } | null;
 }
@@ -70,7 +70,7 @@ const QUERY = `
             target {
               ... on Commit {
                 history(first: 10) {
-                  nodes { oid messageHeadline authoredDate url author { user { login } } }
+                  nodes { oid messageHeadline committedDate url author { user { login } } }
                 }
               }
             }
@@ -120,7 +120,7 @@ const recent: RecentCommit[] = user.repositories.nodes
       repo: repo.name,
       sha: commit.oid,
       message: commit.messageHeadline,
-      date: commit.authoredDate,
+      date: commit.committedDate,
       url: commit.url,
     }))
   )
