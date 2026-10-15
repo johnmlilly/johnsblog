@@ -37,7 +37,9 @@ weeks.forEach((week, i) => {
   }
 });
 
-const shortDate = (iso: string) => format(new Date(iso), { month: 'short', day: 'numeric' });
+// Commit timestamps are real instants, so show them in local (Eastern) time.
+const shortDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/New_York' }).toLowerCase();
 ---
 
 {weeks.length > 0 ? (
