@@ -10,7 +10,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "check": "astro check",
+    "verify": "astro check && astro build",
+    "audit": "npm audit --omit=dev --audit-level=high"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,29 @@
+name: Links
+
+# Checks external links in blog posts and project pages. Old posts pick up
+# dead links over time, so this runs weekly as well as on content changes.
+on:
+  pull_request:
+    paths:
+      - 'src/content/**'
+      - 'lychee.toml'
+      - '.github/workflows/links.yml'
+  schedule:
+    - cron: '0 10 * * 1' # weekly, Mondays 10am UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml 'src/content/**/*.md'
+          # Raises the GitHub API rate limit for github.com links.
+          token: ${{ github.token }}
