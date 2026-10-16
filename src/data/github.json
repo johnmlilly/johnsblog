@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 851,
+  "total": 860,
   "weeks": [
     [
       {
@@ -1949,51 +1949,51 @@
       },
       {
         "date": "2026-10-15",
-        "count": 10,
+        "count": 16,
         "level": 2
       },
       {
         "date": "2026-10-16",
-        "count": 0,
-        "level": 0
+        "count": 3,
+        "level": 1
       }
     ]
   ],
   "recent": [
     {
-      "repo": "ya-portal-blocks",
-      "sha": "e4601f6ef34a820b76295d2ad1b617f23cce4227",
-      "message": "fix(deps): bump shell-quote and proxy-addr to patched versions",
-      "date": "2026-10-16T02:38:13Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/e4601f6ef34a820b76295d2ad1b617f23cce4227"
-    },
-    {
-      "repo": "ya-portal-blocks",
-      "sha": "c5f39e7c4fd89b056e1f4abfb9e54fa2d998bca9",
-      "message": "ci: harden workflows per review",
-      "date": "2026-10-16T02:33:50Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/c5f39e7c4fd89b056e1f4abfb9e54fa2d998bca9"
-    },
-    {
-      "repo": "ya-portal-blocks",
-      "sha": "6417ea206f9f4e0cd3b6e3e230d12908f4567057",
-      "message": "ci: add verify, dependency review, Dependabot, and release workflows",
-      "date": "2026-10-16T02:19:12Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/6417ea206f9f4e0cd3b6e3e230d12908f4567057"
+      "repo": "johnsblog",
+      "sha": "1a7e93e814272c49be1b2c11fb93982398016c73",
+      "message": "Update src/content/blog/doing-more-in-the-terminal.md (via Pages CMS)",
+      "date": "2026-10-16T18:50:05Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/1a7e93e814272c49be1b2c11fb93982398016c73"
     },
     {
       "repo": "johnsblog",
-      "sha": "d2e394aaada7fc09151835d6f95c19d0e8d60182",
-      "message": "Update src/content/blog/never-guessing-my-claude-code-usage-again.md …",
-      "date": "2026-10-16T02:11:50Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/d2e394aaada7fc09151835d6f95c19d0e8d60182"
+      "sha": "c7476477c5cef09c8ea4c45165aba9d5aed3b99c",
+      "message": "chore: add images",
+      "date": "2026-10-16T03:05:21Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/c7476477c5cef09c8ea4c45165aba9d5aed3b99c"
     },
     {
-      "repo": "ya-portal-blocks",
-      "sha": "419d32917861d2a37550e8c78a27fb1fe35099e2",
-      "message": "chore: update plugin name",
-      "date": "2026-10-15T02:18:42Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/419d32917861d2a37550e8c78a27fb1fe35099e2"
+      "repo": "johnsblog",
+      "sha": "aee32b89e3a97baded2c11092ce6ef379fe2752b",
+      "message": "chore: drop unrelated images from CI branch",
+      "date": "2026-10-16T03:03:01Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/aee32b89e3a97baded2c11092ce6ef379fe2752b"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "0a1c12354bae3163c29fd1daa3f09b117260f066",
+      "message": "chore: add images",
+      "date": "2026-10-16T02:58:05Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/0a1c12354bae3163c29fd1daa3f09b117260f066"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "bdeea9c4ae82399732508b55227ccefe723a70c6",
+      "message": "fix: resolve root-relative links in lychee, fix broken MDN link",
+      "date": "2026-10-16T02:51:21Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/bdeea9c4ae82399732508b55227ccefe723a70c6"
     }
   ]
 }
