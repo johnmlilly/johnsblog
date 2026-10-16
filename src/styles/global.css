@@ -650,6 +650,8 @@ iframe {
 
 .neofetch-head .nf-user {
   color: var(--color-accent-2);
+  display: inline-flex;
+  overflow-wrap: anywhere;
 }
 
 .neofetch-head .nf-host {
