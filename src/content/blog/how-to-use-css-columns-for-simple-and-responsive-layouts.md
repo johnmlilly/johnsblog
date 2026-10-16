@@ -17,7 +17,7 @@ For content-driven sections especially, this approach can dramatically reduce th
 
 ## What is the Columns Property?
 
-The [columns](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/columns\)) shorthand property accepts two values:
+The [columns](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/columns) shorthand property accepts two values:
 
 *   A **column width**
     

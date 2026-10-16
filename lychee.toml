@@ -5,10 +5,15 @@ timeout = 20
 accept = ["200..=299", "429"]
 exclude_all_private = true
 
+# Resolves root-relative links like /projects against the live site.
+base_url = "https://johnlilly.dev"
+
 exclude = [
-  # Sites that block automated requests.
+  # Sites that block automated requests (403 from CI).
   '^https://(www\.)?linkedin\.com',
   '^https://(www\.)?(twitter|x)\.com',
   '^https://(www\.)?instagram\.com',
   '^https://(www\.)?facebook\.com',
+  '^https://(www\.)?leetcode\.com',
+  '^https://(www\.)?applefcu\.org',
 ]
