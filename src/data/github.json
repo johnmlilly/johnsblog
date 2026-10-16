@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 842,
+  "total": 851,
   "weeks": [
     [
       {
@@ -1949,46 +1949,46 @@
       },
       {
         "date": "2026-10-15",
-        "count": 1,
-        "level": 1
+        "count": 10,
+        "level": 2
       }
     ]
   ],
   "recent": [
     {
       "repo": "ya-portal-blocks",
+      "sha": "e4601f6ef34a820b76295d2ad1b617f23cce4227",
+      "message": "fix(deps): bump shell-quote and proxy-addr to patched versions",
+      "date": "2026-10-16T02:38:13Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/e4601f6ef34a820b76295d2ad1b617f23cce4227"
+    },
+    {
+      "repo": "ya-portal-blocks",
+      "sha": "c5f39e7c4fd89b056e1f4abfb9e54fa2d998bca9",
+      "message": "ci: harden workflows per review",
+      "date": "2026-10-16T02:33:50Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/c5f39e7c4fd89b056e1f4abfb9e54fa2d998bca9"
+    },
+    {
+      "repo": "ya-portal-blocks",
+      "sha": "6417ea206f9f4e0cd3b6e3e230d12908f4567057",
+      "message": "ci: add verify, dependency review, Dependabot, and release workflows",
+      "date": "2026-10-16T02:19:12Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/6417ea206f9f4e0cd3b6e3e230d12908f4567057"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "d2e394aaada7fc09151835d6f95c19d0e8d60182",
+      "message": "Update src/content/blog/never-guessing-my-claude-code-usage-again.md …",
+      "date": "2026-10-16T02:11:50Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/d2e394aaada7fc09151835d6f95c19d0e8d60182"
+    },
+    {
+      "repo": "ya-portal-blocks",
       "sha": "419d32917861d2a37550e8c78a27fb1fe35099e2",
       "message": "chore: update plugin name",
       "date": "2026-10-15T02:18:42Z",
       "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/419d32917861d2a37550e8c78a27fb1fe35099e2"
-    },
-    {
-      "repo": "ya-portal-blocks",
-      "sha": "21e5663b479d269d52609729dc87a4c81b138fe2",
-      "message": "chore: release 1.1.0",
-      "date": "2026-10-15T02:14:54Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/21e5663b479d269d52609729dc87a4c81b138fe2"
-    },
-    {
-      "repo": "ya-portal-blocks",
-      "sha": "3ab047961549374101d098aaf0f8aef8d31f8049",
-      "message": "docs: describe hero search filter in readmes",
-      "date": "2026-10-15T02:14:24Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/3ab047961549374101d098aaf0f8aef8d31f8049"
-    },
-    {
-      "repo": "ya-portal-blocks",
-      "sha": "fbe124bb80c9084e371192d35cd1deb6ddc0289d",
-      "message": "feat: add hero search filter",
-      "date": "2026-10-15T02:14:14Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/fbe124bb80c9084e371192d35cd1deb6ddc0289d"
-    },
-    {
-      "repo": "ya-portal-blocks",
-      "sha": "d497de5f05bd35d2271ee19039107773adcc5bcd",
-      "message": "docs: add featured block to readmes",
-      "date": "2026-10-15T01:52:39Z",
-      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/d497de5f05bd35d2271ee19039107773adcc5bcd"
     }
   ]
 }
