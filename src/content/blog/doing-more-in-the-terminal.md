@@ -24,14 +24,14 @@ That's especially true with AI tools like [Claude Code](https://claude.com/produ
 
 That's what reminds me of writing. Some of my best writing happens in a plain document with nothing else on the screen. A terminal feels the same way. You focus on what you're trying to do, not on how it looks.
 
-Which is a funny thing for a web developer to say, since how things look is a big part of my job. Don't get me wrong, design matters a lot, maybe more now than ever in this AI era. But even when working on frontend UI, I want my focus on my work with no distractions.
+Which is a funny thing for a web developer to say, since how things look is a big part of what I do. Don't get me wrong, design matters a lot, maybe more now than ever in this AI era. But even when working on frontend UI, I want my focus on my work with no distractions.
 
 ## New Site, Same Me
 
 I wanted my site to still showcase my career, my goals, where I've been and what I've learned along the way. But I also wanted it to feel more uniquely me. A few details I had the most fun with:
 
 - The different home page sections styled as terminal inputs and outputs, including the latest GitHub activity pulled directly from my actual profile
-- Under the hood, moving the site from 11ty to Astro. Better support and integration with [Cloudflare](https://www.cloudflare.com/) (my go-to platform for hosting and deployment these days)
+- Under the hood, moving the site from 11ty to [Astro](https://astro.build/). Better support and integration with [Cloudflare](https://www.cloudflare.com/) (my go-to platform for hosting and deployment these days)
 - [Projects](https://johnlilly.dev/projects/) and [posts](https://johnlilly.dev/blog/) show up as neofetch-style cards with pixel-art logos, generated automatically from their tags. The [social preview image](/projects/social-previews/) for every page is built from those same cards
 
 That last one is my favorite. It all runs on its own, so I don't have to hunt for an image every time I publish a post.
