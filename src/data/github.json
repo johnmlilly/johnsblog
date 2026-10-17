@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 860,
+  "total": 866,
   "weeks": [
     [
       {
@@ -1954,7 +1954,12 @@
       },
       {
         "date": "2026-10-16",
-        "count": 3,
+        "count": 7,
+        "level": 1
+      },
+      {
+        "date": "2026-10-17",
+        "count": 2,
         "level": 1
       }
     ]
@@ -1969,31 +1974,31 @@
     },
     {
       "repo": "johnsblog",
+      "sha": "f07fe80181d8b8030f562162cf14108b6f2940cd",
+      "message": "Update src/styles/global.css",
+      "date": "2026-10-16T14:55:26Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/f07fe80181d8b8030f562162cf14108b6f2940cd"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "cb92333bbb39e0396564261a275adab92886e816",
+      "message": "Fix dev server cold-start crash and nf-user overflow",
+      "date": "2026-10-16T14:47:52Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/cb92333bbb39e0396564261a275adab92886e816"
+    },
+    {
+      "repo": "johnsblog",
+      "sha": "4ab1d2902893df26ff2063edeebb8d8d5c55183d",
+      "message": "fix: add inline-flex to neofetch card",
+      "date": "2026-10-16T14:43:40Z",
+      "url": "https://github.com/johnmlilly/johnsblog/commit/4ab1d2902893df26ff2063edeebb8d8d5c55183d"
+    },
+    {
+      "repo": "johnsblog",
       "sha": "c7476477c5cef09c8ea4c45165aba9d5aed3b99c",
       "message": "chore: add images",
       "date": "2026-10-16T03:05:21Z",
       "url": "https://github.com/johnmlilly/johnsblog/commit/c7476477c5cef09c8ea4c45165aba9d5aed3b99c"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "aee32b89e3a97baded2c11092ce6ef379fe2752b",
-      "message": "chore: drop unrelated images from CI branch",
-      "date": "2026-10-16T03:03:01Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/aee32b89e3a97baded2c11092ce6ef379fe2752b"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "0a1c12354bae3163c29fd1daa3f09b117260f066",
-      "message": "chore: add images",
-      "date": "2026-10-16T02:58:05Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/0a1c12354bae3163c29fd1daa3f09b117260f066"
-    },
-    {
-      "repo": "johnsblog",
-      "sha": "bdeea9c4ae82399732508b55227ccefe723a70c6",
-      "message": "fix: resolve root-relative links in lychee, fix broken MDN link",
-      "date": "2026-10-16T02:51:21Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/bdeea9c4ae82399732508b55227ccefe723a70c6"
     }
   ]
 }
