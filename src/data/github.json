@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 866,
+  "total": 798,
   "weeks": [
     [
       {
@@ -1931,6 +1931,11 @@
         "date": "2026-10-18",
         "count": 0,
         "level": 0
+      },
+      {
+        "date": "2026-10-19",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
@@ -1964,11 +1969,11 @@
       "url": "https://github.com/johnmlilly/johnsblog/commit/4ab1d2902893df26ff2063edeebb8d8d5c55183d"
     },
     {
-      "repo": "johnsblog",
-      "sha": "c7476477c5cef09c8ea4c45165aba9d5aed3b99c",
-      "message": "chore: add images",
-      "date": "2026-10-16T03:05:21Z",
-      "url": "https://github.com/johnmlilly/johnsblog/commit/c7476477c5cef09c8ea4c45165aba9d5aed3b99c"
+      "repo": "ya-portal-blocks",
+      "sha": "e4601f6ef34a820b76295d2ad1b617f23cce4227",
+      "message": "fix(deps): bump shell-quote and proxy-addr to patched versions",
+      "date": "2026-10-16T02:38:13Z",
+      "url": "https://github.com/johnmlilly/ya-portal-blocks/commit/e4601f6ef34a820b76295d2ad1b617f23cce4227"
     }
   ]
 }
