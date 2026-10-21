@@ -230,4 +230,6 @@ One last thing: you've probably noticed the long hashes after each action in the
 
 All of these workflows are fairly straightforward. Each one is a few lines of YAML that saves me from a mistake I'd otherwise find on the live site (or never find at all). Between the build checks, dependency audits, and link checking, I feel a lot better about pushing changes to both of these projects. I plan to implement a similar setup for my future and existing projects.
 
+If you want a quick overview of every workflow and what it caught, check out the [CI automation project](/projects/ci-automation/).
+
 If you're working on a project and want help setting up CI or GitHub Actions, I'd love to help! Send me a message by [filling out my contact form](https://johnlilly.dev/contact). Reach out anytime if you're looking for freelance development work or want to bring an idea to life.
