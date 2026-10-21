@@ -219,8 +219,8 @@ jobs:
 After a review of my first pass, I went back and enhanced every workflow in both repos. Here's what I learned: These are small changes, but I'd add them first thing next time.
 
 1. **Setup Tests First**: Before I start any project, I plan to build testing suites, workflows, and regular audits anytime I scaffold a new repo. This ensures everything is testable and works before major features or components are shpipped.
-2.** The Necessity of Testing:** The world of testing is something I've largely avoided because it has seemed too intimidating. But after building it out myself, I've learned that it's more possible and easier than I thought. The amount of code produced is larger than I can review myself, so setting up automated tests, checks, and audits is a must these days.
-3.** Build into AI workflow**: I've checked out several AI workflow tools, but the one I keep coming back to is Brad Traversy's [AI Blueprint](https://ai-blueprint.dev/). It's a basic but effective workflow that I've used in several projects to date, and the built-in /check skill will make it easy to integrate these and other tests into it.
+2. ** The Necessity of Testing:** The world of testing is something I've largely avoided because it has seemed too intimidating. But after building it out myself, I've learned that it's more possible and easier than I thought. The amount of code produced is larger than I can review myself, so setting up automated tests, checks, and audits is a must these days.
+3. ** Build into AI workflow**: I've checked out several AI workflow tools, but the one I keep coming back to is Brad Traversy's [AI Blueprint](https://ai-blueprint.dev/). It's a basic but effective workflow that I've used in several projects to date, and the built-in /check skill will make it easy to integrate these and other tests into it.
 
 
 If you want further reading or need to get started yourself, GitHub has a good guide that covers all of this and more: https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions
