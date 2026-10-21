@@ -11,6 +11,9 @@ import type { ContributionDay, GitHubActivity, RecentCommit } from '../src/utils
 const FILE = new URL('../src/data/github.json', import.meta.url);
 const USERNAME = 'johnmlilly';
 const RECENT = 5;
+// Commits read per repo. Bot refreshes, Dependabot bumps and merges are
+// filtered out after fetching, so this needs headroom above RECENT.
+const HISTORY = 50;
 
 const LEVELS = {
   NONE: 0,
@@ -69,7 +72,7 @@ const QUERY = `
           defaultBranchRef {
             target {
               ... on Commit {
-                history(first: 10) {
+                history(first: ${HISTORY}) {
                   nodes { oid messageHeadline committedDate url author { user { login } } }
                 }
               }
