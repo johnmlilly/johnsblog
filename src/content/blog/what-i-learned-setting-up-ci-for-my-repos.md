@@ -1,26 +1,28 @@
 ---
 published: false
 title: What I Learned Setting Up CI for My Repos
-description: Using GitHub Actions, added automated checks and tests to
-  catch broken builds, risky dependencies, and dead links before they ship.
+description: I used GitHub Actions to add automated checks that catch broken
+  builds, risky dependencies, and dead links before they ship.
 date: 2026-10-21
 tags:
   - GitHub Actions
 logo: githubactions
 ---
-The way code is written has fundamentally changed with AI tools these days. They make writing code faster than many ever thought possible, but with it comes challenges such as
+The way code is written has fundamentally changed with AI tools these days. They make writing code faster than many ever thought possible, but with that come new challenges, such as:
+
 1. How do I know this code works?
 2. How do I test this?
 3. How does this integrate into external systems?
 4. What security vulnerabilities does this introduce?
 
-As the majority of the code I produce is written by AI, I've shifted my workflow to reviewing, verifying, and testing the code - something that I haven't had time to do in the past because I was focusing on code generation and proper language syntax.
-Now, that all has changed.
+As the majority of the code I produce is written by AI, I've shifted my workflow to reviewing, verifying, and testing the code. That's something I haven't had time to do in the past because I was focusing on code generation and proper language syntax.
+
+Now that's all changed.
 
 ## My Old "Testing" Method
-For a long time my "testing process" was pushing to main and refreshing the live site to see if anything broke. That works fine until it something breaks. 
+For a long time my "testing process" was pushing to main and refreshing the live site to see if anything broke. That works fine until something breaks.
 
-Last week I finally sat down and added a real CI ([Continous Integration](https://aws.amazon.com/devops/continuous-integration/) workflow to two of my repos: this blog (built with [Astro](https://astro.build/) and deployed on [Cloudflare](https://workers.cloudflare.com/)) and [ya-portal-blocks](https://github.com/johnmlilly/ya-portal-blocks), a WordPress block plugin I built for the [Youth Apostles](https://www.youthapostles.org/) member portal.
+Last week I finally sat down and added a real CI ([Continuous Integration](https://aws.amazon.com/devops/continuous-integration/)) workflow to two of my repos: this blog (built with [Astro](https://astro.build/) and deployed on [Cloudflare](https://workers.cloudflare.com/)) and [ya-portal-blocks](https://github.com/johnmlilly/ya-portal-blocks), a WordPress block plugin I built for the [Youth Apostles](https://www.youthapostles.org/) member portal.
 
 If you haven't used it yet, [GitHub Actions](https://docs.github.com/en/actions) lets you run scripts automatically when something happens in your repo, like opening a pull request or pushing to a branch. You write a YAML file, drop it in `.github/workflows`, and GitHub runs it for you.
 
@@ -216,15 +218,16 @@ jobs:
 
 ## A Few Things I'd Do From the Start
 
-After a review of my first pass, I went back and enhanced every workflow in both repos. Here's what I learned: These are small changes, but I'd add them first thing next time.
+Looking back, here's what I'd do differently next time:
 
-1. **Setup Tests First**: Before I start any project, I plan to build testing suites, workflows, and regular audits anytime I scaffold a new repo. This ensures everything is testable and works before major features or components are shpipped.
-2. **The Necessity of Testing:** The world of testing is something I've largely avoided because it has seemed too intimidating. But after building it out myself, I've learned that it's more possible and easier than I thought. The amount of code produced is larger than I can review myself, so setting up automated tests, checks, and audits is a must these days.
-3. **Build into AI workflow**: I've checked out several AI workflow tools, but the one I keep coming back to is Brad Traversy's [AI Blueprint](https://ai-blueprint.dev/). It's a basic but effective workflow that I've used in several projects to date, and the built-in /check skill will make it easy to integrate these and other tests into it.
+1. **Set Up Tests First:** Anytime I scaffold a new repo, I plan to build testing suites, workflows, and regular audits. This ensures everything is testable and works before major features or components are shipped.
+2. **The Necessity of Testing:** The world of testing is something I've largely avoided because it seemed too intimidating. But after building it out myself, I've learned that it's easier than I thought. The amount of code produced is larger than I can review myself, so setting up automated tests, checks, and audits is a must these days.
+3. **Build It Into My AI Workflow:** I've checked out several AI workflow tools, but the one I keep coming back to is Brad Traversy's [AI Blueprint](https://ai-blueprint.dev/). It's a basic but effective workflow that I've used in several projects to date, and the built-in `/check` skill will make it easy to integrate these and other tests into it.
 
-
-If you want further reading or need to get started yourself, GitHub has a good guide that covers all of this and more: https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions
+One last thing: you've probably noticed the long hashes after each action in the examples above. A tag like `@v5` can be moved to point at different code, but a commit SHA can't. The comment at the end keeps it readable, and Dependabot still keeps them updated. GitHub's security hardening guide covers this and more: https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions
 
 ## Conclusion
 
-All of these workflows are fairly straightforward. Each one is a few lines of YAML that saves me from a mistake I'd otherwise find on the live site (or never find at all). Between the build checks, dependency audits, and link checking, I feel a lot better about pushing changes to both of these projects. I plan to implement a similar setup for my future and existing projects going forward.
+All of these workflows are fairly straightforward. Each one is a few lines of YAML that saves me from a mistake I'd otherwise find on the live site (or never find at all). Between the build checks, dependency audits, and link checking, I feel a lot better about pushing changes to both of these projects. I plan to implement a similar setup for my future and existing projects.
+
+If you're working on a project and want help setting up CI or GitHub Actions, I'd love to help! Send me a message by [filling out my contact form](https://johnlilly.dev/contact). Reach out anytime if you're looking for freelance development work or want to bring an idea to life.
