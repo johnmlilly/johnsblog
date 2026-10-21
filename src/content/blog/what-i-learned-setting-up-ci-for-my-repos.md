@@ -8,17 +8,29 @@ tags:
   - GitHub Actions
 logo: githubactions
 ---
-This one is for the tech nerds again. For a long time my "testing process" was pushing to main and refreshing the live site to see if anything broke. That works fine until it doesn't. Last week I finally sat down and added real CI to two of my repos: this blog (built with [Astro](https://astro.build/) and deployed on [Cloudflare](https://workers.cloudflare.com/)) and [ya-portal-blocks](https://github.com/johnmlilly/ya-portal-blocks), a WordPress block plugin I built for the [Youth Apostles](https://www.youthapostles.org/) member portal.
+The way code is written has fundamentally changed with AI tools these days. They make writing code faster than many ever thought possible, but with it comes challenges such as
+1. How do I know this code works?
+2. How do I test this?
+3. How does this integrate into external systems?
+4. What security vulnerabilities does this introduce?
 
-If you haven't used it yet, [GitHub Actions](https://docs.github.com/en/actions) lets you run scripts automatically when something happens in your repo, like opening a pull request or pushing to a branch. You write a YAML file, drop it in `.github/workflows`, and GitHub runs it for you. That's it.
+As the majority of the code I produce is written by AI, I've shifted my workflow to reviewing, verifying, and testing the code - something that I haven't had time to do in the past because I was focusing on code generation and proper language syntax.
+Now, that all has changed.
 
-Below are the workflows I set up and what I learned from each one. Most of this is pretty standard stuff, but putting it together myself taught me a lot more than reading about it ever did.
+## My Old "Testing" Method
+For a long time my "testing process" was pushing to main and refreshing the live site to see if anything broke. That works fine until it something breaks. 
+
+Last week I finally sat down and added a real CI ([Continous Integration](https://aws.amazon.com/devops/continuous-integration/) workflow to two of my repos: this blog (built with [Astro](https://astro.build/) and deployed on [Cloudflare](https://workers.cloudflare.com/)) and [ya-portal-blocks](https://github.com/johnmlilly/ya-portal-blocks), a WordPress block plugin I built for the [Youth Apostles](https://www.youthapostles.org/) member portal.
+
+If you haven't used it yet, [GitHub Actions](https://docs.github.com/en/actions) lets you run scripts automatically when something happens in your repo, like opening a pull request or pushing to a branch. You write a YAML file, drop it in `.github/workflows`, and GitHub runs it for you.
+
+Below are the workflows I set up and what I learned from each one. Most of this is pretty standard stuff, but putting it together myself taught me a lot more than a tutorial or reading ever did.
 
 ## Verify: Does It Even Build?
 
 This is the one every repo should have. On every pull request and every push to main, it installs dependencies and runs a single `verify` script. If anything fails, the PR gets a red X and I know before it ever reaches the live site.
 
-For the blog, `verify` runs `astro check` (TypeScript and template type checking) and then a full `astro build`. For the WordPress plugin, it runs the JavaScript and CSS linters from `@wordpress/scripts` and then builds the blocks. The plugin also has a second job that runs `php -l` on every PHP file to catch syntax errors, since a single missing semicolon in PHP can take down a whole WordPress site.
+For this blog, `verify` runs `astro check` (TypeScript and template type checking) and then a full `astro build`. For the WordPress plugin, it runs the JavaScript and CSS linters from `@wordpress/scripts` and then builds the blocks. The plugin also has a second job that runs `php -l` on every PHP file to catch syntax errors, since a single missing semicolon in PHP can take down a whole WordPress site.
 
 My favorite part of this setup is keeping the actual logic in `package.json` instead of the workflow. CI just runs `npm run verify`, and I can run the exact same command locally before I push.
 
@@ -204,18 +216,15 @@ jobs:
 
 ## A Few Things I'd Do From the Start
 
-After a review of my first pass, I went back and hardened every workflow in both repos. These are small changes, but I'd add them from day one next time.
+After a review of my first pass, I went back and enhanced every workflow in both repos. Here's what I learned: These are small changes, but I'd add them first thing next time.
 
-**Pin actions to a commit SHA.** You've probably noticed the long hashes in the examples above. A tag like `@v5` can be moved to point at different code, but a commit SHA can't. The comment at the end keeps it readable, and Dependabot still updates them for me.
+1. **Setup Tests First**: Before I start any project, I plan to build testing suites, workflows, and regular audits anytime I scaffold a new repo. This ensures everything is testable and works before major features or components are shpipped.
+2.** The Necessity of Testing:** The world of testing is something I've largely avoided because it has seemed too intimidating. But after building it out myself, I've learned that it's more possible and easier than I thought. The amount of code produced is larger than I can review myself, so setting up automated tests, checks, and audits is a must these days.
+3.** Build into AI workflow**: I've checked out several AI workflow tools, but the one I keep coming back to is Brad Traversy's [AI Blueprint](https://ai-blueprint.dev/). It's a basic but effective workflow that I've used in several projects to date, and the built-in /check skill will make it easy to integrate these and other tests into it.
 
-**Turn off `persist-credentials`.** By default, `actions/checkout` leaves the GitHub token in the repo's git config for later steps to use. None of my jobs need it, so `persist-credentials: false` keeps it out of reach.
 
-**Default to read-only permissions.** Every workflow starts with `contents: read` at the top. A job only gets write access when it actually needs it, like the publish job above.
-
-GitHub has a good guide that covers all of this and more: https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions
+If you want further reading or need to get started yourself, GitHub has a good guide that covers all of this and more: https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions
 
 ## Conclusion
 
-None of these workflows are complicated, and that's kind of the point. Each one is a few lines of YAML that saves me from a mistake I'd otherwise find on the live site (or never find at all). Between the build checks, dependency audits, and link checking, I feel a lot better about pushing changes to both of these projects.
-
-If you're working on a project and want help setting up CI or GitHub Actions, I'd love to help! Send me a message by [filling out my contact form](https://johnlilly.dev/contact). Reach out anytime if you're looking for freelance development work or want to bring an idea to life.
+All of these workflows are fairly straightforward. Each one is a few lines of YAML that saves me from a mistake I'd otherwise find on the live site (or never find at all). Between the build checks, dependency audits, and link checking, I feel a lot better about pushing changes to both of these projects. I plan to implement a similar setup for my future and existing projects going forward.
