@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 806,
+  "total": 808,
   "weeks": [
     [
       {
@@ -1939,6 +1939,11 @@
       },
       {
         "date": "2026-10-20",
+        "count": 2,
+        "level": 1
+      },
+      {
+        "date": "2026-10-21",
         "count": 1,
         "level": 1
       }
