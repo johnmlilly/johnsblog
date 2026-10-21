@@ -1,7 +1,7 @@
 ---
 published: false
 title: What I Learned Setting Up CI for My Repos
-description: The GitHub Actions I added to my blog and a WordPress plugin to
+description: Using GitHub Actions, added automated checks and tests to
   catch broken builds, risky dependencies, and dead links before they ship.
 date: 2026-10-21
 tags:
