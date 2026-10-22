@@ -1,5 +1,15 @@
 # My Personal Portfolio Site
 
+[![Verify](https://github.com/johnmlilly/johnsblog/actions/workflows/verify.yml/badge.svg)](https://github.com/johnmlilly/johnsblog/actions/workflows/verify.yml)
+[![Links](https://github.com/johnmlilly/johnsblog/actions/workflows/links.yml/badge.svg)](https://github.com/johnmlilly/johnsblog/actions/workflows/links.yml)
+[![Last commit](https://img.shields.io/github/last-commit/johnmlilly/johnsblog)](https://github.com/johnmlilly/johnsblog/commits/main)
+[![Top language](https://img.shields.io/github/languages/top/johnmlilly/johnsblog)](https://github.com/johnmlilly/johnsblog)
+[![License: MIT](https://img.shields.io/github/license/johnmlilly/johnsblog)](LICENSE)
+
+![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)
+
 ## Overview
 This is my personal blog and portfolio site, built with **[Astro](https://astro.build/)** and deployed to **Cloudflare Workers**. Content is managed through **[Pages CMS](https://pagescms.org/)**, a Git-based CMS configured via `.pages.yml`.
 
