@@ -2,7 +2,7 @@
 title: CI Automation & Testing
 description: CI workflows that catch problems before they reach the live site.
 date: 2026-10-15
-featured: false
+featured: true
 tags:
   - GitHub Actions
   - Astro
