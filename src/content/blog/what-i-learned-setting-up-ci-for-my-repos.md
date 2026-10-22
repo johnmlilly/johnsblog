@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: What I Learned Setting Up CI for My Repos
 description: I used GitHub Actions to add automated checks that catch broken
   builds, risky dependencies, and dead links before they ship.
