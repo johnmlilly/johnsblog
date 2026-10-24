@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 822,
+  "total": 851,
   "weeks": [
     [
       {
@@ -1917,7 +1917,7 @@
       },
       {
         "date": "2026-10-16",
-        "count": 7,
+        "count": 8,
         "level": 1
       },
       {
@@ -1944,56 +1944,61 @@
       },
       {
         "date": "2026-10-21",
-        "count": 1,
+        "count": 5,
         "level": 1
       },
       {
         "date": "2026-10-22",
-        "count": 13,
+        "count": 16,
         "level": 2
       },
       {
         "date": "2026-10-23",
-        "count": 1,
-        "level": 1
+        "count": 22,
+        "level": 3
+      },
+      {
+        "date": "2026-10-24",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
   "recent": [
     {
-      "repo": "harvest-tracker",
-      "sha": "b6cbccf72f1f82c219151b1f4b34ff3a7a6123a0",
-      "message": "chore: update build plan",
-      "date": "2026-10-23T02:20:41Z",
-      "url": "https://github.com/johnmlilly/harvest-tracker/commit/b6cbccf72f1f82c219151b1f4b34ff3a7a6123a0"
+      "repo": "frp-events-watch",
+      "sha": "279cd3d6703755236d19d917aa1f23295dd77154",
+      "message": "chore: remove CF badge",
+      "date": "2026-10-23T19:34:08Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/279cd3d6703755236d19d917aa1f23295dd77154"
     },
     {
-      "repo": "harvest-tracker",
-      "sha": "e99607ed2bf59e12399360bc5565cf0662636ca8",
-      "message": "feat: ingest foundation",
-      "date": "2026-10-23T02:18:32Z",
-      "url": "https://github.com/johnmlilly/harvest-tracker/commit/e99607ed2bf59e12399360bc5565cf0662636ca8"
+      "repo": "frp-events-watch",
+      "sha": "e8107443bc2d62f4a0ffc85a9d9aa9110262c9d8",
+      "message": "chore: add readme file",
+      "date": "2026-10-23T19:32:31Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/e8107443bc2d62f4a0ffc85a9d9aa9110262c9d8"
     },
     {
-      "repo": "harvest-tracker",
-      "sha": "62c54a5cfcb8862761723ca11ef37413638800ba",
-      "message": "chore: establish Blueprint project baseline",
-      "date": "2026-10-23T01:48:48Z",
-      "url": "https://github.com/johnmlilly/harvest-tracker/commit/62c54a5cfcb8862761723ca11ef37413638800ba"
+      "repo": "frp-events-watch",
+      "sha": "d48d36afee412c757208f3bd62a0d69d54768805",
+      "message": "Send optional Cloudflare bypass header; retry 5xx",
+      "date": "2026-10-23T19:30:06Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/d48d36afee412c757208f3bd62a0d69d54768805"
     },
     {
-      "repo": "harvest-tracker",
-      "sha": "264fa68448970634a4a2795636cfd3c48a91057f",
-      "message": "ci: add Verify, dependency review, Python audit, and Dependabot",
-      "date": "2026-10-23T01:42:44Z",
-      "url": "https://github.com/johnmlilly/harvest-tracker/commit/264fa68448970634a4a2795636cfd3c48a91057f"
+      "repo": "frp-events-watch",
+      "sha": "bc818051c128fdde35436ba7dd57744eb99ecbac",
+      "message": "remove probe",
+      "date": "2026-10-23T19:15:13Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/bc818051c128fdde35436ba7dd57744eb99ecbac"
     },
     {
-      "repo": "harvest-tracker",
-      "sha": "3d71a76030d0b54100c995fffd70b26bf3197866",
-      "message": "test: add Vitest for frontend and pytest for ingest",
-      "date": "2026-10-23T01:36:58Z",
-      "url": "https://github.com/johnmlilly/harvest-tracker/commit/3d71a76030d0b54100c995fffd70b26bf3197866"
+      "repo": "frp-events-watch",
+      "sha": "a5bf1191cd626466d5ca6bb181b75481b56db762",
+      "message": "temp probe",
+      "date": "2026-10-23T19:14:54Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/a5bf1191cd626466d5ca6bb181b75481b56db762"
     }
   ]
 }
