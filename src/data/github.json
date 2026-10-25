@@ -1,44 +1,7 @@
 {
   "username": "johnmlilly",
-  "total": 851,
+  "total": 857,
   "weeks": [
-    [
-      {
-        "date": "2025-10-19",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-10-20",
-        "count": 6,
-        "level": 1
-      },
-      {
-        "date": "2025-10-21",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-10-22",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-10-23",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-10-24",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-10-25",
-        "count": 0,
-        "level": 0
-      }
-    ],
     [
       {
         "date": "2025-10-26",
@@ -1959,12 +1922,26 @@
       },
       {
         "date": "2026-10-24",
-        "count": 0,
-        "level": 0
+        "count": 5,
+        "level": 1
+      }
+    ],
+    [
+      {
+        "date": "2026-10-25",
+        "count": 1,
+        "level": 1
       }
     ]
   ],
   "recent": [
+    {
+      "repo": "frp-events-watch",
+      "sha": "5e1e17ee375759b492ffdc61971dafbd4b3d0def",
+      "message": "chore(readme): update badges",
+      "date": "2026-10-24T20:13:51Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/5e1e17ee375759b492ffdc61971dafbd4b3d0def"
+    },
     {
       "repo": "frp-events-watch",
       "sha": "279cd3d6703755236d19d917aa1f23295dd77154",
@@ -1992,13 +1969,6 @@
       "message": "remove probe",
       "date": "2026-10-23T19:15:13Z",
       "url": "https://github.com/johnmlilly/frp-events-watch/commit/bc818051c128fdde35436ba7dd57744eb99ecbac"
-    },
-    {
-      "repo": "frp-events-watch",
-      "sha": "a5bf1191cd626466d5ca6bb181b75481b56db762",
-      "message": "temp probe",
-      "date": "2026-10-23T19:14:54Z",
-      "url": "https://github.com/johnmlilly/frp-events-watch/commit/a5bf1191cd626466d5ca6bb181b75481b56db762"
     }
   ]
 }
