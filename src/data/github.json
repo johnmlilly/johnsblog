@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 858,
+  "total": 872,
   "weeks": [
     [
       {
@@ -1939,8 +1939,13 @@
       },
       {
         "date": "2026-10-27",
-        "count": 0,
-        "level": 0
+        "count": 11,
+        "level": 2
+      },
+      {
+        "date": "2026-10-28",
+        "count": 3,
+        "level": 1
       }
     ]
   ],
@@ -1974,11 +1979,11 @@
       "url": "https://github.com/johnmlilly/frp-events-watch/commit/d48d36afee412c757208f3bd62a0d69d54768805"
     },
     {
-      "repo": "frp-events-watch",
-      "sha": "bc818051c128fdde35436ba7dd57744eb99ecbac",
-      "message": "remove probe",
-      "date": "2026-10-23T19:15:13Z",
-      "url": "https://github.com/johnmlilly/frp-events-watch/commit/bc818051c128fdde35436ba7dd57744eb99ecbac"
+      "repo": "harvest-tracker",
+      "sha": "785ba35ad07984a7396b9493f1a784e0a0186417",
+      "message": "docs: regenerate overview for new build order",
+      "date": "2026-10-23T13:03:09Z",
+      "url": "https://github.com/johnmlilly/harvest-tracker/commit/785ba35ad07984a7396b9493f1a784e0a0186417"
     }
   ]
 }
