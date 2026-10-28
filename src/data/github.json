@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 872,
+  "total": 878,
   "weeks": [
     [
       {
@@ -1944,12 +1944,26 @@
       },
       {
         "date": "2026-10-28",
-        "count": 3,
-        "level": 1
+        "count": 9,
+        "level": 2
       }
     ]
   ],
   "recent": [
+    {
+      "repo": "frp-events-watch",
+      "sha": "047678053dc3dfae6bcc0926762f233de5892164",
+      "message": "Plugin 1.8.0: urgent graphics, unpromoted events, duplicates, dismiss",
+      "date": "2026-10-28T20:16:33Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/047678053dc3dfae6bcc0926762f233de5892164"
+    },
+    {
+      "repo": "frp-events-watch",
+      "sha": "77285914d188661e87b66d6bdd7bf8f9adfd3624",
+      "message": "Plugin 1.7.0: flag events missing a graphic; send to several addresses",
+      "date": "2026-10-28T19:53:41Z",
+      "url": "https://github.com/johnmlilly/frp-events-watch/commit/77285914d188661e87b66d6bdd7bf8f9adfd3624"
+    },
     {
       "repo": "frp-events-watch",
       "sha": "5e1e17ee375759b492ffdc61971dafbd4b3d0def",
@@ -1958,32 +1972,18 @@
       "url": "https://github.com/johnmlilly/frp-events-watch/commit/5e1e17ee375759b492ffdc61971dafbd4b3d0def"
     },
     {
-      "repo": "frp-events-watch",
-      "sha": "279cd3d6703755236d19d917aa1f23295dd77154",
-      "message": "chore: remove CF badge",
-      "date": "2026-10-23T19:34:08Z",
-      "url": "https://github.com/johnmlilly/frp-events-watch/commit/279cd3d6703755236d19d917aa1f23295dd77154"
-    },
-    {
-      "repo": "frp-events-watch",
-      "sha": "e8107443bc2d62f4a0ffc85a9d9aa9110262c9d8",
-      "message": "chore: add readme file",
-      "date": "2026-10-23T19:32:31Z",
-      "url": "https://github.com/johnmlilly/frp-events-watch/commit/e8107443bc2d62f4a0ffc85a9d9aa9110262c9d8"
-    },
-    {
-      "repo": "frp-events-watch",
-      "sha": "d48d36afee412c757208f3bd62a0d69d54768805",
-      "message": "Send optional Cloudflare bypass header; retry 5xx",
-      "date": "2026-10-23T19:30:06Z",
-      "url": "https://github.com/johnmlilly/frp-events-watch/commit/d48d36afee412c757208f3bd62a0d69d54768805"
-    },
-    {
       "repo": "harvest-tracker",
       "sha": "785ba35ad07984a7396b9493f1a784e0a0186417",
       "message": "docs: regenerate overview for new build order",
       "date": "2026-10-23T13:03:09Z",
       "url": "https://github.com/johnmlilly/harvest-tracker/commit/785ba35ad07984a7396b9493f1a784e0a0186417"
+    },
+    {
+      "repo": "harvest-tracker",
+      "sha": "a55609e280184de0bd26fb9e8f6aecd0cc0c5274",
+      "message": "chore: land work through pull requests",
+      "date": "2026-10-23T12:54:49Z",
+      "url": "https://github.com/johnmlilly/harvest-tracker/commit/a55609e280184de0bd26fb9e8f6aecd0cc0c5274"
     }
   ]
 }
