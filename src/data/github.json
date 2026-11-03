@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 884,
+  "total": 887,
   "weeks": [
     [
       {
@@ -1934,12 +1934,24 @@
       },
       {
         "date": "2026-11-02",
+        "count": 3,
+        "level": 1
+      },
+      {
+        "date": "2026-11-03",
         "count": 0,
         "level": 0
       }
     ]
   ],
   "recent": [
+    {
+      "repo": "clone-wars-quotes",
+      "sha": "1ad817bab28c8dc4c750139261dda276ab505dc6",
+      "message": "chore: update badges and plan",
+      "date": "2026-11-03T03:21:48Z",
+      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/1ad817bab28c8dc4c750139261dda276ab505dc6"
+    },
     {
       "repo": "clone-wars-quotes",
       "sha": "a3dc1d268873f49974af2423ac951ce1f88d6dce",
@@ -1967,13 +1979,6 @@
       "message": "feat: move to project.toml for packages and deps",
       "date": "2026-10-30T19:54:53Z",
       "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/2de2e9208aa41e6c4d4ce3bdc71984d61f397b7c"
-    },
-    {
-      "repo": "clone-wars-quotes",
-      "sha": "582e16462f6f9c772753a2b088dff6c475fb9684",
-      "message": "chore: add agent and plan files",
-      "date": "2026-10-30T19:47:55Z",
-      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/582e16462f6f9c772753a2b088dff6c475fb9684"
     }
   ]
 }
