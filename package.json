@@ -43,7 +43,7 @@
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.4.4",
     "astro-seo": "^1.2.0",
-    "lucide": "^0.515.0",
+    "lucide": "^1.66.0",
     "mermaid": "^12.1.0",
     "simple-icons": "^16.36.0",
     "svgpath": "^2.6.0",
