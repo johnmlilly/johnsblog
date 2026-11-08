@@ -1,44 +1,7 @@
 {
   "username": "johnmlilly",
-  "total": 894,
+  "total": 908,
   "weeks": [
-    [
-      {
-        "date": "2025-11-02",
-        "count": 8,
-        "level": 1
-      },
-      {
-        "date": "2025-11-03",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-11-04",
-        "count": 5,
-        "level": 1
-      },
-      {
-        "date": "2025-11-05",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-11-06",
-        "count": 0,
-        "level": 0
-      },
-      {
-        "date": "2025-11-07",
-        "count": 46,
-        "level": 4
-      },
-      {
-        "date": "2025-11-08",
-        "count": 2,
-        "level": 1
-      }
-    ],
     [
       {
         "date": "2025-11-09",
@@ -1959,6 +1922,13 @@
       },
       {
         "date": "2026-11-07",
+        "count": 14,
+        "level": 2
+      }
+    ],
+    [
+      {
+        "date": "2026-11-08",
         "count": 0,
         "level": 0
       }
@@ -1966,39 +1936,39 @@
   ],
   "recent": [
     {
-      "repo": "clone-wars-quotes",
-      "sha": "a78b662440253effaf987ccfaf92c51a53355c96",
-      "message": "chore: update docs",
-      "date": "2026-11-05T03:20:58Z",
-      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/a78b662440253effaf987ccfaf92c51a53355c96"
+      "repo": "car-tracker",
+      "sha": "f83bd276c4d444a216436c03e42b2f6412acea8a",
+      "message": "feat: manual service entry",
+      "date": "2026-11-08T02:41:42Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/f83bd276c4d444a216436c03e42b2f6412acea8a"
     },
     {
-      "repo": "clone-wars-quotes",
-      "sha": "9d87a0a24ddd7a1ae04fde7228f1b3c2c0ebd054",
-      "message": "feat: update docs and add workflow action",
-      "date": "2026-11-05T03:19:25Z",
-      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/9d87a0a24ddd7a1ae04fde7228f1b3c2c0ebd054"
+      "repo": "car-tracker",
+      "sha": "d63042238d6ddf483a4423d06e47cb992c127f57",
+      "message": "feat: odyssey minder code logging",
+      "date": "2026-11-08T01:54:32Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/d63042238d6ddf483a4423d06e47cb992c127f57"
     },
     {
-      "repo": "clone-wars-quotes",
-      "sha": "16ddd8ba4df74e43b68bbf47c53abf50c35403be",
-      "message": "feat: create star wars theme landing page",
-      "date": "2026-11-05T03:11:10Z",
-      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/16ddd8ba4df74e43b68bbf47c53abf50c35403be"
+      "repo": "car-tracker",
+      "sha": "35d0bb1f36927a4b2db5f3f2da043ec6864b5439",
+      "message": "fix: clear open audit findings",
+      "date": "2026-11-07T20:45:39Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/35d0bb1f36927a4b2db5f3f2da043ec6864b5439"
     },
     {
-      "repo": "clone-wars-quotes",
-      "sha": "a7eac877a88d7ce470a36a74f999a57e47e244dc",
-      "message": "feat: add wrangler and deploy to cloudflare",
-      "date": "2026-11-05T03:03:12Z",
-      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/a7eac877a88d7ce470a36a74f999a57e47e244dc"
+      "repo": "car-tracker",
+      "sha": "8a5531f73c9345cd5fc31f033dd2889732405297",
+      "message": "chore: update DB id",
+      "date": "2026-11-07T20:38:25Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/8a5531f73c9345cd5fc31f033dd2889732405297"
     },
     {
-      "repo": "clone-wars-quotes",
-      "sha": "1ad817bab28c8dc4c750139261dda276ab505dc6",
-      "message": "chore: update badges and plan",
-      "date": "2026-11-03T03:21:48Z",
-      "url": "https://github.com/johnmlilly/clone-wars-quotes/commit/1ad817bab28c8dc4c750139261dda276ab505dc6"
+      "repo": "car-tracker",
+      "sha": "9338a28dc56cbf25bff49132675636dfc09fac40",
+      "message": "feat: odometer logging and mileage estimate",
+      "date": "2026-11-07T20:28:20Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/9338a28dc56cbf25bff49132675636dfc09fac40"
     }
   ]
 }
