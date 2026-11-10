@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 847,
+  "total": 853,
   "weeks": [
     [
       {
@@ -1934,12 +1934,31 @@
       },
       {
         "date": "2026-11-09",
+        "count": 6,
+        "level": 1
+      },
+      {
+        "date": "2026-11-10",
         "count": 0,
         "level": 0
       }
     ]
   ],
   "recent": [
+    {
+      "repo": "car-tracker",
+      "sha": "4ca96e5de528b6c8128e99d4f1b989911db3af2a",
+      "message": "chore: add r2 bucket to wrangler",
+      "date": "2026-11-10T02:54:40Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/4ca96e5de528b6c8128e99d4f1b989911db3af2a"
+    },
+    {
+      "repo": "car-tracker",
+      "sha": "d4cf6a9d3329364cdbfc411f1d5c729d751fb191",
+      "message": "feat: receipt upload",
+      "date": "2026-11-10T02:49:44Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/d4cf6a9d3329364cdbfc411f1d5c729d751fb191"
+    },
     {
       "repo": "car-tracker",
       "sha": "f83bd276c4d444a216436c03e42b2f6412acea8a",
@@ -1960,20 +1979,6 @@
       "message": "fix: clear open audit findings",
       "date": "2026-11-07T20:45:39Z",
       "url": "https://github.com/johnmlilly/car-tracker/commit/35d0bb1f36927a4b2db5f3f2da043ec6864b5439"
-    },
-    {
-      "repo": "car-tracker",
-      "sha": "8a5531f73c9345cd5fc31f033dd2889732405297",
-      "message": "chore: update DB id",
-      "date": "2026-11-07T20:38:25Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/8a5531f73c9345cd5fc31f033dd2889732405297"
-    },
-    {
-      "repo": "car-tracker",
-      "sha": "9338a28dc56cbf25bff49132675636dfc09fac40",
-      "message": "feat: odometer logging and mileage estimate",
-      "date": "2026-11-07T20:28:20Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/9338a28dc56cbf25bff49132675636dfc09fac40"
     }
   ]
 }
