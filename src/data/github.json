@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 853,
+  "total": 856,
   "weeks": [
     [
       {
@@ -1944,12 +1944,38 @@
       },
       {
         "date": "2026-11-11",
+        "count": 3,
+        "level": 1
+      },
+      {
+        "date": "2026-11-12",
         "count": 0,
         "level": 0
       }
     ]
   ],
   "recent": [
+    {
+      "repo": "car-tracker",
+      "sha": "b8c62d55338674179683ef2662e1a0279d0be02a",
+      "message": "feat: receipt review and confirm",
+      "date": "2026-11-12T04:03:22Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/b8c62d55338674179683ef2662e1a0279d0be02a"
+    },
+    {
+      "repo": "car-tracker",
+      "sha": "dd098175e36409fecb55e91885b45f481d53f2ec",
+      "message": "feat: receipt reading",
+      "date": "2026-11-12T03:40:54Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/dd098175e36409fecb55e91885b45f481d53f2ec"
+    },
+    {
+      "repo": "car-tracker",
+      "sha": "c0cd2878e2ab127b36b633e4c80705a9bdb244d8",
+      "message": "fix: store receipt photos as webp",
+      "date": "2026-11-12T03:06:32Z",
+      "url": "https://github.com/johnmlilly/car-tracker/commit/c0cd2878e2ab127b36b633e4c80705a9bdb244d8"
+    },
     {
       "repo": "car-tracker",
       "sha": "4ca96e5de528b6c8128e99d4f1b989911db3af2a",
@@ -1963,27 +1989,6 @@
       "message": "feat: receipt upload",
       "date": "2026-11-10T02:49:44Z",
       "url": "https://github.com/johnmlilly/car-tracker/commit/d4cf6a9d3329364cdbfc411f1d5c729d751fb191"
-    },
-    {
-      "repo": "car-tracker",
-      "sha": "f83bd276c4d444a216436c03e42b2f6412acea8a",
-      "message": "feat: manual service entry",
-      "date": "2026-11-08T02:41:42Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/f83bd276c4d444a216436c03e42b2f6412acea8a"
-    },
-    {
-      "repo": "car-tracker",
-      "sha": "d63042238d6ddf483a4423d06e47cb992c127f57",
-      "message": "feat: odyssey minder code logging",
-      "date": "2026-11-08T01:54:32Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/d63042238d6ddf483a4423d06e47cb992c127f57"
-    },
-    {
-      "repo": "car-tracker",
-      "sha": "35d0bb1f36927a4b2db5f3f2da043ec6864b5439",
-      "message": "fix: clear open audit findings",
-      "date": "2026-11-07T20:45:39Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/35d0bb1f36927a4b2db5f3f2da043ec6864b5439"
     }
   ]
 }
