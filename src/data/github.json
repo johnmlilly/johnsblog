@@ -1,6 +1,6 @@
 {
   "username": "johnmlilly",
-  "total": 858,
+  "total": 872,
   "weeks": [
     [
       {
@@ -686,7 +686,7 @@
       },
       {
         "date": "2026-03-18",
-        "count": 8,
+        "count": 4,
         "level": 1
       },
       {
@@ -1685,7 +1685,7 @@
       },
       {
         "date": "2026-09-23",
-        "count": 6,
+        "count": 7,
         "level": 1
       },
       {
@@ -1954,46 +1954,51 @@
       },
       {
         "date": "2026-11-13",
-        "count": 2,
-        "level": 1
+        "count": 19,
+        "level": 3
+      },
+      {
+        "date": "2026-11-14",
+        "count": 0,
+        "level": 0
       }
     ]
   ],
   "recent": [
     {
-      "repo": "car-tracker",
-      "sha": "b8c62d55338674179683ef2662e1a0279d0be02a",
-      "message": "feat: receipt review and confirm",
-      "date": "2026-11-12T04:03:22Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/b8c62d55338674179683ef2662e1a0279d0be02a"
+      "repo": "francisroylilly",
+      "sha": "cca64f6c2ba393155a7a44fd461dc3e5af23284e",
+      "message": "fix: rename D1 binding SUBSCRIBERS_DB to DB",
+      "date": "2026-11-14T02:35:00Z",
+      "url": "https://github.com/johnmlilly/francisroylilly/commit/cca64f6c2ba393155a7a44fd461dc3e5af23284e"
     },
     {
-      "repo": "car-tracker",
-      "sha": "dd098175e36409fecb55e91885b45f481d53f2ec",
-      "message": "feat: receipt reading",
-      "date": "2026-11-12T03:40:54Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/dd098175e36409fecb55e91885b45f481d53f2ec"
+      "repo": "francisroylilly",
+      "sha": "fd4965a929778d36acd0f4ae292daeae4d08f9d7",
+      "message": "docs: archive feature 15",
+      "date": "2026-11-14T02:21:13Z",
+      "url": "https://github.com/johnmlilly/francisroylilly/commit/fd4965a929778d36acd0f4ae292daeae4d08f9d7"
     },
     {
-      "repo": "car-tracker",
-      "sha": "c0cd2878e2ab127b36b633e4c80705a9bdb244d8",
-      "message": "fix: store receipt photos as webp",
-      "date": "2026-11-12T03:06:32Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/c0cd2878e2ab127b36b633e4c80705a9bdb244d8"
+      "repo": "francisroylilly",
+      "sha": "0765c6ba7bab857077c186b1923b2b625ac4c52e",
+      "message": "chore: remove tsx package",
+      "date": "2026-11-14T02:08:31Z",
+      "url": "https://github.com/johnmlilly/francisroylilly/commit/0765c6ba7bab857077c186b1923b2b625ac4c52e"
     },
     {
-      "repo": "car-tracker",
-      "sha": "4ca96e5de528b6c8128e99d4f1b989911db3af2a",
-      "message": "chore: add r2 bucket to wrangler",
-      "date": "2026-11-10T02:54:40Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/4ca96e5de528b6c8128e99d4f1b989911db3af2a"
+      "repo": "francisroylilly",
+      "sha": "177aa8d4362e210de4ab28cb926f79be5a4e6fd6",
+      "message": "refactor(db): move libSQL out of worker",
+      "date": "2026-11-14T02:04:12Z",
+      "url": "https://github.com/johnmlilly/francisroylilly/commit/177aa8d4362e210de4ab28cb926f79be5a4e6fd6"
     },
     {
-      "repo": "car-tracker",
-      "sha": "d4cf6a9d3329364cdbfc411f1d5c729d751fb191",
-      "message": "feat: receipt upload",
-      "date": "2026-11-10T02:49:44Z",
-      "url": "https://github.com/johnmlilly/car-tracker/commit/d4cf6a9d3329364cdbfc411f1d5c729d751fb191"
+      "repo": "francisroylilly",
+      "sha": "b0375ddcd3c6fd5648058fc84c2d4935aa13bbad",
+      "message": "chore: update docs with d1 backfill",
+      "date": "2026-11-14T01:52:34Z",
+      "url": "https://github.com/johnmlilly/francisroylilly/commit/b0375ddcd3c6fd5648058fc84c2d4935aa13bbad"
     }
   ]
 }
